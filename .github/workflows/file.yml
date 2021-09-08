@@ -1,0 +1,96 @@
+name: Build
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.3
+
+      - name: Set up JDK environment
+        uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 1.8
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Lint
+        run: ./gradlew lint
+
+      - name: Clean
+        run: ./gradlew clean
+
+      - name: Run Unit Tests
+        run: ./gradlew test
+
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: 'keystore/keystore.jks'
+          encodedString: ${{ secrets.KEYSTORE }}
+
+      - name: Build Artifacts
+        id: buildAllAabs
+        uses: eskatos/gradle-command-action@v1.3.3
+        with:
+          gradle-version: 7.2
+          wrapper-cache-enabled: true
+          dependencies-cache-enabled: true
+          configuration-cache-enabled: true
+          arguments: assembleRelease
+
+        # Run on android emulator
+        # uses: reactivecircus/android-emulator-runner@v2
+        #   with:
+        #     api-level: 23
+        #     target: default
+        #     arch: x86
+        #     profile: Nexus 6
+        #     script: ./gradlew connectedCheck --stacktrace
+
+      - name: Sign artifact
+        id: signArtifact
+        uses: r0adkll/sign-android-release@v1.0.1
+        with:
+          releaseDirectory: app/build/outputs/apk/release
+          alias: ${{ secrets.KEYALIAS }}
+          signingKeyBase64: ${{ secrets.KEYSTORE }}
+          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+
+      - name: Upload our APK
+        uses: actions/upload-artifact@v2.2.0
+        with:
+          name: Release artifact
+          path: app/build/outputs/apk/release/app-monpotager-*.apk
+
+#      - name: Create Release
+#        id: create_release
+#        uses: actions/create-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          tag_name: ${{ github.ref }}
+#          release_name: Release ${{ github.ref }}
+#          draft: false
+#          prerelease: false
+  notify:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_USERNAME: Mon Potager
+        uses: Ilshidur/action-discord@master
+        with:
+          args: 'Le projet {{ EVENT_PAYLOAD.repository.full_name }} a bien été déployé !'

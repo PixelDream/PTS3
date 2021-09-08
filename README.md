@@ -1,3 +1,8 @@
+[![YourActionName Actions Status](https://github.com/PixelDream/PTS3/workflows/Build/badge.svg)](https://github.com/PixelDream/PTS3/actions)
+
+<br/>
+<br/>
+
 # PTS3 - Mon Potager
 
 Étudiants de deuxième année en informatique à l’IUT de Laval, nous devons mettre en œuvre les méthodes de conduite d’un projet et ce dans le cadre de notre projet tutoré. Le projet se déroule sur l’ensemble du semestre 3, il consiste à concevoir et réaliser une application mobile.

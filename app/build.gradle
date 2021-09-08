@@ -16,20 +16,42 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs {
-        release {
-            storeFile file("my-release-key.jks")
-            storePassword "password"
-            keyAlias "my-alias"
-            keyPassword "password"
-        }
-    }
+//    signingConfigs {
+//        release {
+//            storeFile file("my-release-key.jks")
+//            storePassword "password"
+//            keyAlias "my-alias"
+//            keyPassword "password"
+//        }
+//    }
+
+//    if (System.getenv("CI")) {
+//        signingConfigs {
+//            release {
+//                def keystoreFile = System.getenv("SIGNING_KEY_STORE")
+//                keystoreFile.renameTo("keystore/keystore.jks")
+//
+//                storeFile = file("keystore/keystore.jks")
+//                storePassword System.getenv("SIGNING_STORE_PASSWORD")
+//                keyAlias System.getenv("SIGNING_KEY_ALIAS")
+//                keyPassword System.getenv("SIGNING_KEY_PASSWORD")
+//            }
+//        }
+//    }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+//            if (System.getenv("CI")) {
+//                signingConfig signingConfigs.release
+//            }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        android.applicationVariants.all { variant ->
+            variant.outputs.all {
+                outputFileName = "app-monpotager-${ variant.versionName }.apk"
+            }
         }
     }
     compileOptions {
