@@ -1,8 +1,8 @@
 # Workflow name
 name: Build
 on:
-# When it will be triggered
-# And in which branch
+  # When it will be triggered
+  # And in which branch
   pull_request:
   push:
     branches:
@@ -24,11 +24,11 @@ jobs:
           java-version: 1.8
 
       - name: Decode Keystore
-          id: decode_keystore
-          uses: timheuer/base64-to-file@v1
-          with:
-            fileName: 'keystore/keystore.jks'
-            encodedString: ${{ secrets.KEYSTORE }}
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: 'keystore/keystore.jks'
+          encodedString: ${{ secrets.KEYSTORE }}
 
       # Build all our Build Types at once
       - name: Build Artifacts
