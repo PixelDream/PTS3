@@ -16,14 +16,14 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs {
-        release {
-            storeFile file("my-release-key.jks")
-            storePassword "password"
-            keyAlias "my-alias"
-            keyPassword "password"
-        }
-    }
+//    signingConfigs {
+//        release {
+//            storeFile file("my-release-key.jks")
+//            storePassword "password"
+//            keyAlias "my-alias"
+//            keyPassword "password"
+//        }
+//    }
 
     buildTypes {
         release {
