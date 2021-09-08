@@ -25,25 +25,25 @@ android {
 //        }
 //    }
 
-    if (System.getenv("CI")) {
-        signingConfigs {
-            release {
-                def keystoreFile = System.getenv("SIGNING_KEY_STORE")
-                keystoreFile.renameTo("keystore/keystore.jks")
-
-                storeFile = file("keystore/keystore.jks")
-                storePassword System.getenv("SIGNING_STORE_PASSWORD")
-                keyAlias System.getenv("SIGNING_KEY_ALIAS")
-                keyPassword System.getenv("SIGNING_KEY_PASSWORD")
-            }
-        }
-    }
+//    if (System.getenv("CI")) {
+//        signingConfigs {
+//            release {
+//                def keystoreFile = System.getenv("SIGNING_KEY_STORE")
+//                keystoreFile.renameTo("keystore/keystore.jks")
+//
+//                storeFile = file("keystore/keystore.jks")
+//                storePassword System.getenv("SIGNING_STORE_PASSWORD")
+//                keyAlias System.getenv("SIGNING_KEY_ALIAS")
+//                keyPassword System.getenv("SIGNING_KEY_PASSWORD")
+//            }
+//        }
+//    }
 
     buildTypes {
         release {
-            if (System.getenv("CI")) {
-                signingConfig signingConfigs.release
-            }
+//            if (System.getenv("CI")) {
+//                signingConfig signingConfigs.release
+//            }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
