@@ -28,7 +28,10 @@ android {
     if (System.getenv("CI")) {
         signingConfigs {
             release {
-                storeFile = System.getenv("SIGNING_KEY_STORE") ? file(System.getenv("SIGNING_KEY_STORE")) : null
+                def keystoreFile = System.getenv("SIGNING_KEY_STORE")
+                keystoreFile.renameTo("keystore/keystore.jks")
+
+                storeFile = file("keystore/keystore.jks")
                 storePassword System.getenv("SIGNING_STORE_PASSWORD")
                 keyAlias System.getenv("SIGNING_KEY_ALIAS")
                 keyPassword System.getenv("SIGNING_KEY_PASSWORD")
