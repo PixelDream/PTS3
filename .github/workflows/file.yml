@@ -22,6 +22,18 @@ jobs:
         with:
           java-version: 1.8
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Lint
+        run: ./gradlew lint
+
+      - name: Lint
+        run: ./gradlew clean
+
+      - name: Run Unit Tests
+        run: ./gradlew test
+
       - name: Decode Keystore
         id: decode_keystore
         uses: timheuer/base64-to-file@v1
@@ -31,7 +43,7 @@ jobs:
 
       # Build all our Build Types at once
       - name: Build Artifacts
-        id: buildAllApks
+        id: buildAllAabs
         uses: eskatos/gradle-command-action@v1.3.3
         env:
           SIGNING_KEY_STORE: ${{ steps.decode_keystore.outputs.filePath }}
@@ -40,20 +52,11 @@ jobs:
           SIGNING_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           CI: true
         with:
-          gradle-version: current
+          gradle-version: 7.2
           wrapper-cache-enabled: true
           dependencies-cache-enabled: true
           configuration-cache-enabled: true
           arguments: assembleRelease
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Lint
-        run: ./gradlew lint
-
-      - name: Run Unit Tests
-        run: ./gradlew test
 
         # Run on android emulator
         # uses: reactivecircus/android-emulator-runner@v2
@@ -69,7 +72,7 @@ jobs:
         id: signArtifact
         uses: r0adkll/sign-android-release@v1.0.1
         with:
-          releaseDirectory: app/build/outputs/apk/ourbuildtype/release
+          releaseDirectory: app/build/outputs/bundle/release
           alias: ${{ secrets.KEYALIAS }}
           signingKeyBase64: ${{ secrets.KEYSTORE }}
           keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
@@ -79,7 +82,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.0
         with:
           name: Release artifact
-          path: app/build/outputs/apk/ourbuildtype/release/app-artifact-*.apk
+          path: app/build/outputs/bundle/app-release.aab
 
       - name: Create Release
         id: create_release
