@@ -1,9 +1,10 @@
-name: Build
+name: Publish Release APK
+
 on:
-  pull_request:
   push:
-    branches:
-      - dev
+    branches: [master]
+      tags:
+        - '*'
 
 jobs:
   build:
@@ -72,25 +73,8 @@ jobs:
           name: Release artifact
           path: app/build/outputs/apk/release/app-monpotager-*.apk
 
-#      - name: Create Release
-#        id: create_release
-#        uses: actions/create-release@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          tag_name: ${{ github.ref }}
-#          release_name: Release ${{ github.ref }}
-#          draft: false
-#          prerelease: false
-  notify:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Discord notification
+      - name: Releasing using Hub
+        uses: kyze8439690/action-release-releaseapk@master
         env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          DISCORD_USERNAME: Mon Potager
-        uses: Ilshidur/action-discord@master
-        with:
-          args: 'Le projet {{ EVENT_PAYLOAD.repository.full_name }} a bien été déployé !'
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          APP_FOLDER: app
