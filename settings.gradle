@@ -1,0 +1,2 @@
+rootProject.name = "Mon Potager"
+include ':app'
