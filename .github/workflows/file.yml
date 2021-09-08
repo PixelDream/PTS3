@@ -35,6 +35,7 @@ jobs:
         id: buildAllApks
         uses: eskatos/gradle-command-action@v1.3.3
         env:
+          SIGNING_KEY_STORE: ${{ steps.decode_keystore.outputs.filePath }}
           SIGNING_KEY_ALIAS: ${{ secrets.KEYALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           SIGNING_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
