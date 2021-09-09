@@ -3,7 +3,7 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - dev
 
 jobs:
   build:
@@ -65,6 +65,9 @@ jobs:
           signingKeyBase64: ${{ secrets.KEYSTORE }}
           keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
+        env:
+          # override default build-tools version (29.0.3) -- optional
+          BUILD_TOOLS_VERSION: "30.0.3"
 
       - name: Upload our APK
         uses: actions/upload-artifact@v2.2.0
