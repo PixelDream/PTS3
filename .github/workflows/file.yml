@@ -75,12 +75,13 @@ jobs:
         uses: Ilshidur/action-discord@master
         with:
           args: 'La nouvelle version de Mon Potager est disponible !'
+
       - name: Send file README.md to discord channel
-          uses: sinshutu/upload-to-discord@master
-          env:
-            DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          with:
-            args: app/build/outputs/apk/release/app-monpotager-*.apk
+        uses: sinshutu/upload-to-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: app/build/outputs/apk/release/app-monpotager-*.apk
 
 #      - name: Create Release
 #        id: create_release
