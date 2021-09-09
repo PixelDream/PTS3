@@ -40,6 +40,11 @@ jobs:
       - name: Build Artifacts
         id: buildAllAabs
         uses: eskatos/gradle-command-action@v1.3.3
+        env:
+          SIGNING_KEY_ALIAS: ${{ secrets.KEYALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          CI: true
         with:
           gradle-version: 7.2
           wrapper-cache-enabled: true
@@ -56,18 +61,18 @@ jobs:
         #     profile: Nexus 6
         #     script: ./gradlew connectedCheck --stacktrace
 
-      - name: Sign artifact
-        id: signArtifact
-        uses: r0adkll/sign-android-release@v1.0.1
-        with:
-          releaseDirectory: app/build/outputs/apk/release
-          alias: ${{ secrets.KEYALIAS }}
-          signingKeyBase64: ${{ secrets.KEYSTORE }}
-          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
-        env:
-          # override default build-tools version (29.0.3) -- optional
-          BUILD_TOOLS_VERSION: "30.0.3"
+#      - name: Sign artifact
+#        id: signArtifact
+#        uses: r0adkll/sign-android-release@v1.0.1
+#        with:
+#          releaseDirectory: app/build/outputs/apk/release
+#          alias: ${{ secrets.KEYALIAS }}
+#          signingKeyBase64: ${{ secrets.KEYSTORE }}
+#          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
+#          keyPassword: ${{ secrets.KEY_PASSWORD }}
+#        env:
+#          # override default build-tools version (29.0.3) -- optional
+#          BUILD_TOOLS_VERSION: "30.0.3"
 
       - name: Upload our APK
         uses: actions/upload-artifact@v2.2.0
