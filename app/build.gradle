@@ -28,7 +28,7 @@ android {
     if (System.getenv("CI")) {
         signingConfigs {
             release {
-                def tmpFilePath = System.getProperty("user.home") + "/work/_temp/keystore/"
+                def tmpFilePath = "/home/runner/work/_temp/keystore/"
                 def allFilesFromDir = new File(tmpFilePath).listFiles()
 
                 if (allFilesFromDir != null) {
