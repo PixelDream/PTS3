@@ -62,24 +62,25 @@ jobs:
         #     profile: Nexus 6
         #     script: ./gradlew connectedCheck --stacktrace
 
-#      - name: Sign artifact
-#        id: signArtifact
-#        uses: r0adkll/sign-android-release@v1.0.1
-#        with:
-#          releaseDirectory: app/build/outputs/apk/release
-#          alias: ${{ secrets.KEYALIAS }}
-#          signingKeyBase64: ${{ secrets.KEYSTORE }}
-#          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
-#          keyPassword: ${{ secrets.KEY_PASSWORD }}
-#        env:
-#          # override default build-tools version (29.0.3) -- optional
-#          BUILD_TOOLS_VERSION: "30.0.3"
-
       - name: Upload our APK
         uses: actions/upload-artifact@v2.2.0
         with:
           name: Release artifact
           path: app/build/outputs/apk/release/app-monpotager-*.apk
+
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_USERNAME: Mon Potager
+        uses: Ilshidur/action-discord@master
+        with:
+          args: 'La nouvelle version de Mon Potager est disponible !'
+      - name: Send file README.md to discord channel
+          uses: sinshutu/upload-to-discord@master
+          env:
+            DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          with:
+            args: app/build/outputs/apk/release/app-monpotager-*.apk
 
 #      - name: Create Release
 #        id: create_release
@@ -91,27 +92,4 @@ jobs:
 #          release_name: Release ${{ github.ref }}
 #          draft: false
 #          prerelease: false
-  notify:
-    needs: build
-    runs-on: ubuntu-latest
 
-    steps:
-      - name: Discord notification
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          DISCORD_USERNAME: Mon Potager
-        uses: Ilshidur/action-discord@master
-        with:
-          args: 'Le projet {{ EVENT_PAYLOAD.repository.full_name }} a bien été déployé !'
-
-
-  github-action:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Send file README.md to discord channel
-        uses: sinshutu/upload-to-discord@master
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        with:
-          args: app/build/outputs/apk/release/app-monpotager-*.apk
