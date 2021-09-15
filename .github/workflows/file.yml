@@ -126,7 +126,7 @@ jobs:
           BASE_BRANCH: dev
           BRANCH: gh-pages
           FOLDER: javadoc
-          BUILD_SCRIPT: gradlew generateJavadoc
+          BUILD_SCRIPT: ./gradlew generateJavadoc
 
 #      - name: Deploy 🚀
 #        uses: JamesIves/github-pages-deploy-action@4.1.5
