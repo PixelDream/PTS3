@@ -1,18 +1,16 @@
-name: Build
+name: "Build APK 🚀"
+
 on:
-  pull_request:
-    branches:
-      - master
   push:
     branches:
-      - dev
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout 🛎️
         uses: actions/checkout@v2.3.3
 
       - name: Set up JDK environment
@@ -76,9 +74,9 @@ jobs:
           DISCORD_USERNAME: Github Action
         uses: Ilshidur/action-discord@master
         with:
-          args: 'La nouvelle version de Mon Potager est disponible !'
+          args: 'La nouvelle version de Mon Potager est disponible ! 🚀'
 
-      - name: Send file README.md to discord channel
+      - name: Send file apk to discord channel
         uses: sinshutu/upload-to-discord@master
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
@@ -95,42 +93,3 @@ jobs:
   #          release_name: Release ${{ github.ref }}
   #          draft: false
   #          prerelease: false
-#  publish:
-#    runs-on: ubuntu-latest
-#    needs: build
-#
-#    steps:
-#      - name: Checkout 🛎️
-#        uses: actions/checkout@v2.3.1
-#
-#      - uses: actions/setup-java@v1
-#        with:
-#          java-version: 11
-#          java-package: jdk+fx
-#
-#      - name: Grant execute permission for gradlew
-#        run: chmod +x gradlew
-#
-#      - name: Generate Javadoc
-#        run: ./gradlew generateJavadoc
-#
-#
-#      - name: Set Actions Allow Unsecure Commands
-#        run: |
-#          echo "ACTIONS_ALLOW_UNSECURE_COMMANDS=true" >> $GITHUB_ENV
-#
-#      - name: Build and Deploy
-#        uses: JamesIves/github-pages-deploy-action@releases/v2
-#        env:
-#          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-#          BASE_BRANCH: dev
-#          BRANCH: gh-pages
-#          FOLDER: javadoc
-#          BUILD_SCRIPT: ./gradlew generateJavadoc
-#
-##      - name: Deploy 🚀
-##        uses: JamesIves/github-pages-deploy-action@4.1.5
-##        with:
-##          BRANCH: gh-pages
-##          CLEAN: true
-##          FOLDER: javadoc

@@ -1,4 +1,4 @@
-name: "Build and deploy javadoc"
+name: "Build and deploy javadoc 🚀"
 
 on:
   push:
@@ -10,14 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-      - name: "Checkout"
+      - name: Checkout 🛎️
         uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-
-
+      - name: Remove .gitignore
+        run: rm .gitignore && rm app/.gitignore
 
       - uses: actions/setup-java@v1
         with:
@@ -30,11 +29,17 @@ jobs:
       - name: Generate Javadoc
         run: ./gradlew generateJavadoc
 
-
-
-      - name: "Deploy Github Pages"
+      - name: Deploy Github Pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: javadoc/
+
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_USERNAME: Github Action
+        uses: Ilshidur/action-discord@master
+        with:
+          args: 'La documentation a été mise à jour 📖 \n\t https://github.com/PixelDream/PTS3/'
