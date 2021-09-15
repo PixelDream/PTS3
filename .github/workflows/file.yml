@@ -111,8 +111,8 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-#      - name: Generate Javadoc
-#        run: ./gradlew generateJavadoc
+      - name: Generate Javadoc
+        run: ./gradlew generateJavadoc
 
 
       - name: Set Actions Allow Unsecure Commands
