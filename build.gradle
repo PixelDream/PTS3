@@ -19,7 +19,3 @@ allprojects {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
