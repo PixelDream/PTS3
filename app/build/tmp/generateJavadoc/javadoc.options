@@ -1,0 +1,7 @@
+-classpath 'C:\\Users\\yanna\\AppData\\Local\\Android\\Sdk\\platforms\\android-30\\android.jar;C:\\Users\\yanna\\AppData\\Local\\Android\\Sdk\\build-tools\\30.0.3\\core-lambda-stubs.jar'
+-d 'C:\\Users\\yanna\\AndroidStudioProjects\\MonPotager\\javadoc'
+-doctitle 'app API'
+-notimestamp 
+-quiet 
+-windowtitle 'app API'
+'C:\\Users\\yanna\\AndroidStudioProjects\\MonPotager\\app\\src\\main\\java\\fr\\iut\\monpotager\\view\\MainActivity.java'
