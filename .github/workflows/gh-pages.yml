@@ -42,4 +42,4 @@ jobs:
           DISCORD_USERNAME: Github Action
         uses: Ilshidur/action-discord@master
         with:
-          args: 'La documentation a été mise à jour 📖 \n\t https://github.com/PixelDream/PTS3/'
+          args: 'La documentation a été mise à jour 📖 https://pixeldream.github.io/PTS3'
