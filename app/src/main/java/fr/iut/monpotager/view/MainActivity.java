@@ -8,6 +8,11 @@ import fr.iut.monpotager.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Create app
+     * @param savedInstanceState
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
