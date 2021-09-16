@@ -16,34 +16,32 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-//    signingConfigs {
-//        release {
-//            storeFile file("my-release-key.jks")
-//            storePassword "password"
-//            keyAlias "my-alias"
-//            keyPassword "password"
-//        }
-//    }
+    signingConfigs {
+        release {
+            storeFile file("my-release-key.jks")
+            storePassword "password"
+            keyAlias "my-alias"
+            keyPassword "password"
+        }
+    }
 
-//    if (System.getenv("CI")) {
-//        signingConfigs {
-//            release {
-//                def keystoreFile = System.getenv("SIGNING_KEY_STORE")
-//                keystoreFile.renameTo("keystore/keystore.jks")
-//
-//                storeFile = file("keystore/keystore.jks")
-//                storePassword System.getenv("SIGNING_STORE_PASSWORD")
-//                keyAlias System.getenv("SIGNING_KEY_ALIAS")
-//                keyPassword System.getenv("SIGNING_KEY_PASSWORD")
-//            }
-//        }
-//    }
+    if (System.getenv("CI")) {
+        signingConfigs {
+            release {
+                storeFile = System.getenv("SIGNING_BASE64") ? file(System.getenv("SIGNING_BASE64")) : null
+                storePassword System.getenv("SIGNING_STORE_PASSWORD")
+                keyAlias System.getenv("SIGNING_KEY_ALIAS")
+                keyPassword System.getenv("SIGNING_KEY_PASSWORD")
+                v2SigningEnabled true
+            }
+        }
+    }
 
     buildTypes {
         release {
-//            if (System.getenv("CI")) {
-//                signingConfig signingConfigs.release
-//            }
+            if (System.getenv("CI")) {
+                signingConfig signingConfigs.release
+            }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -68,4 +66,11 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
+
+task generateJavadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    destinationDir = file("./build/docs/javadoc/")
+    failOnError false
 }
