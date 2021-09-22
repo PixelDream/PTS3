@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1076885930625",
+    "firebase_url": "https://monpotager-ea052-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "monpotager-ea052",
+    "storage_bucket": "monpotager-ea052.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076885930625:android:bacc20e840c8667c458380",
+        "android_client_info": {
+          "package_name": "fr.iut.monpotager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076885930625-7cpdu4fbp0niq5ida0fgjcvtal3u8ef7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADRJ9M3rjsnl6kxDrRiZ9mvmyTwWqtWnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076885930625-7cpdu4fbp0niq5ida0fgjcvtal3u8ef7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
