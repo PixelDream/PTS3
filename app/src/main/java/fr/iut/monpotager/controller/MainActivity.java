@@ -29,6 +29,7 @@ import fr.iut.monpotager.controller.sidemenu.SpaceItem;
 
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
 
+
     private static final int POS_CLOSE = 0;
     private static final int POS_DASHBOARD = 1;
     private static final int POS_MY_PROFILE = 2;
