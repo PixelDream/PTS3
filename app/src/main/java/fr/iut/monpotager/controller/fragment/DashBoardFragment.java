@@ -1,4 +1,4 @@
-package fr.iut.monpotager.controller;
+package fr.iut.monpotager.controller.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,13 +9,13 @@ import androidx.fragment.app.Fragment;
 
 import fr.iut.monpotager.R;
 
-public class ProfileFragment extends Fragment {
+public class DashBoardFragment extends Fragment {
 
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        ViewGroup root = (ViewGroup)  inflater.inflate(R.layout.profile_fragment, container, false);
+        ViewGroup root = (ViewGroup)  inflater.inflate(R.layout.dashboard_fragment, container, false);
         return root;
     }
 }

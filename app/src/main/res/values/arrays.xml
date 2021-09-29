@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="id_activityScreenTitles">
+        <item></item>
         <item>Dashboard</item>
-        <item>My Account</item>
-        <item>Messages</item>
-        <item>Cart</item>
-        <item />
-        <item>Log Out</item>
+        <item>My Profile</item>
+        <item>Nearby Rest</item>
+        <item>Settings</item>
+        <item>About</item>
+        <item/>
+        <item>Log out </item>
     </string-array>
     <array name="id_activityScreenIcon">
+        <item>@drawable/ic_launcher_background</item>
+        <item>@drawable/ic_launcher_background</item>
         <item>@drawable/ic_launcher_background</item>
         <item>@drawable/ic_launcher_background</item>
         <item>@drawable/ic_launcher_background</item>
