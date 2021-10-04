@@ -1,5 +1,16 @@
 package fr.iut.monpotager.controller;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import fr.iut.monpotager.R;
+import fr.iut.monpotager.controller.auth.LoginActivity;
+import fr.iut.monpotager.controller.auth.SignupActivity;
+import fr.iut.monpotager.manager.UserManager;
+
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -29,7 +40,7 @@ import fr.iut.monpotager.controller.sidemenu.SimpleItem;
 import fr.iut.monpotager.controller.sidemenu.SpaceItem;
 
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
-
+    private UserManager userManager = UserManager.getInstance();
 
     /*private static final int POS_CLOSE = 0;*/
     private static final int POS_PERSO = 0;
@@ -145,5 +156,16 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     @ColorInt
     private int color(@ColorRes int res) {
         return ContextCompat.getColor(this, res);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        if (!userManager.isCurrentUserLogged()) {
+            //Toast.makeText(this, "test", Toast.LENGTH_LONG);
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
     }
 }
