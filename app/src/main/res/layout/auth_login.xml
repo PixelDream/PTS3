@@ -28,7 +28,7 @@
         android:layout_height="120dp"
         android:layout_below="@+id/header"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/logo" />
 
     <EditText
@@ -70,7 +70,7 @@
         android:textColorHint="@color/white_65" />
 
     <Button
-        android:id="@+id/connect"
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@+id/password"
@@ -82,6 +82,32 @@
         android:text="Se connecter"
         android:textColor="@color/white"
         app:backgroundTint="#A60C9869" />
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginButton"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="15dp"
+        android:text="Mot de passe oublié ?"
+        android:textAllCaps="false"
+        android:textColor="@color/green"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginButton"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:text="Créer un compte"
+        android:textAllCaps="false"
+        android:textColor="@color/green"
+        android:textSize="13dp" />
 
 
     <RelativeLayout
@@ -132,18 +158,33 @@
         android:weightSum="100">
 
         <ImageButton
+            android:id="@+id/googleButton"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginRight="10dp"
             android:layout_weight="50"
             android:src="@drawable/google_btn" />
 
-        <ImageButton
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="50"
-            android:src="@drawable/facebook_btn" />
+            android:layout_weight="50">
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/facebook_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/facebookButton"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/facebook_btn" />
+        </FrameLayout>
+
+
     </LinearLayout>
 
 </RelativeLayout>
