@@ -17,7 +17,7 @@ public class SpaceItem extends DrawerItem<SpaceItem.ViewHolder> {
     public ViewHolder createViewHolder(ViewGroup parent) {
         Context c = parent.getContext();
         View view = new View(c);
-        int height = (int) (c.getResources().getDisplayMetrics().density * spaceDp);
+        int height = (int) (c.getResources().getDisplayMetrics().density * spaceDp / 2);
         view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height));
 
         return new ViewHolder(view);
@@ -31,6 +31,11 @@ public class SpaceItem extends DrawerItem<SpaceItem.ViewHolder> {
     @Override
     public boolean isSelectable() {
         return false;
+    }
+
+    @Override
+    public DrawerItem withSelectedTextBold() {
+        return this;
     }
 
     public class ViewHolder extends DrawerAdapter.ViewHolder {

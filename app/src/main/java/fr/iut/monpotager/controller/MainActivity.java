@@ -7,7 +7,6 @@ import android.view.WindowManager;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -17,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
+
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 
@@ -30,13 +31,13 @@ import fr.iut.monpotager.controller.sidemenu.SpaceItem;
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
 
 
-    private static final int POS_CLOSE = 0;
+    /*private static final int POS_CLOSE = 0;*/
+    private static final int POS_PERSO = 0;
     private static final int POS_DASHBOARD = 1;
     private static final int POS_MY_PROFILE = 2;
     private static final int POS_NEARBY_RES = 3;
     private static final int POS_SETTINGS = 4;
-    private static final int POS_ABOUT_US = 5;
-    private static final int POS_LOGOUT = 7;
+    private static final int POS_LOGOUT = 6;
 
     private String[] screenTitles;
     private Drawable[] screenIcons;
@@ -67,12 +68,11 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         screenTitles = loadScreenTitles();
 
         DrawerAdapter adapter = new DrawerAdapter(Arrays.asList(
-                createItemFor(POS_CLOSE),
+                createItemFor(POS_PERSO),
                 createItemFor(POS_DASHBOARD).setChecked(true),
                 createItemFor(POS_MY_PROFILE),
                 createItemFor(POS_NEARBY_RES),
                 createItemFor(POS_SETTINGS),
-                createItemFor(POS_ABOUT_US),
                 new SpaceItem(260),
                 createItemFor(POS_LOGOUT)
         ));
@@ -93,29 +93,16 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         if (position == POS_DASHBOARD) {
             DashBoardFragment dashBoardFragment = new DashBoardFragment();
             transaction.replace(R.id.container, dashBoardFragment);
-        }
-
-        else if (position == POS_MY_PROFILE) {
+        } else if (position == POS_MY_PROFILE) {
             DashBoardFragment dashBoardFragment = new DashBoardFragment();
             transaction.replace(R.id.container, dashBoardFragment);
-        }
-
-        else if (position == POS_NEARBY_RES) {
+        } else if (position == POS_NEARBY_RES) {
             DashBoardFragment dashBoardFragment = new DashBoardFragment();
             transaction.replace(R.id.container, dashBoardFragment);
-        }
-
-        else if (position == POS_SETTINGS) {
+        } else if (position == POS_SETTINGS) {
             DashBoardFragment dashBoardFragment = new DashBoardFragment();
             transaction.replace(R.id.container, dashBoardFragment);
-        }
-
-        else if (position == POS_ABOUT_US) {
-            DashBoardFragment dashBoardFragment = new DashBoardFragment();
-            transaction.replace(R.id.container, dashBoardFragment);
-        }
-
-        else if (position == POS_LOGOUT) {
+        } else if (position == POS_LOGOUT) {
             finish();
         }
 
@@ -128,10 +115,9 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     @SuppressWarnings("rawtypes")
     private DrawerItem createItemFor(int position) {
         return new SimpleItem(screenIcons[position], screenTitles[position])
-                .withIconTint(color(R.color.purple_200))
-                .withTextTint(color(R.color.purple_500))
-                .withSelectedIconTint(color(R.color.purple_700))
-                .withSelectedTextTint(color(R.color.purple_700));
+                .withTextTint(color(R.color.black))
+                .withSelectedTextTint(color(R.color.green))
+                .withSelectedTextBold();
     }
 
     private String[] loadScreenTitles() {

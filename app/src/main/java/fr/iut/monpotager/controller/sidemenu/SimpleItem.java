@@ -1,5 +1,6 @@
 package fr.iut.monpotager.controller.sidemenu;
 
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder> {
 
     private int selectedItemIconTint;
     private int selectedItemTextTint;
+    private boolean selectedItemTextStyle;
 
     private int normalItemIconTint;
     private int normalItemTextTint;
@@ -35,10 +37,19 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder> {
     @Override
     public void bindViewHolder(ViewHolder holder) {
         holder.title.setText(title);
+        if (selectedItemTextStyle && isChecked) {
+            holder.title.setTypeface(Typeface.DEFAULT_BOLD);
+        }
         holder.icon.setImageDrawable(icon);
 
         holder.title.setTextColor(isChecked ? selectedItemTextTint : normalItemTextTint);
         holder.icon.setColorFilter(isChecked ? selectedItemIconTint : normalItemIconTint);
+    }
+
+    @Override
+    public DrawerItem withSelectedTextBold() {
+        this.selectedItemTextStyle = true;
+        return this;
     }
 
     public SimpleItem withSelectedIconTint(int selectedItemIconTint) {

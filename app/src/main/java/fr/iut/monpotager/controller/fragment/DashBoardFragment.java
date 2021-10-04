@@ -12,10 +12,9 @@ import fr.iut.monpotager.R;
 public class DashBoardFragment extends Fragment {
 
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        ViewGroup root = (ViewGroup)  inflater.inflate(R.layout.dashboard_fragment, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.dashboard_fragment, container, false);
         return root;
     }
 }

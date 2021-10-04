@@ -9,14 +9,16 @@
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="2dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"/>
 

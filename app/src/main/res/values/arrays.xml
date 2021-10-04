@@ -2,22 +2,20 @@
 <resources>
     <string-array name="id_activityScreenTitles">
         <item></item>
-        <item>Dashboard</item>
-        <item>My Profile</item>
-        <item>Nearby Rest</item>
-        <item>Settings</item>
-        <item>About</item>
+        <item>Accueil</item>
+        <item>Mon Potager</item>
+        <item>Mon Compte</item>
+        <item>Paramètre</item>
         <item/>
-        <item>Log out </item>
+        <item>Déconnexion</item>
     </string-array>
     <array name="id_activityScreenIcon">
-        <item>@drawable/ic_launcher_background</item>
-        <item>@drawable/ic_launcher_background</item>
-        <item>@drawable/ic_launcher_background</item>
-        <item>@drawable/ic_launcher_background</item>
-        <item>@drawable/ic_launcher_background</item>
-        <item>@drawable/ic_launcher_background</item>
+        <item></item>
+        <item>@drawable/home</item>
+        <item>@drawable/pelle</item>
+        <item>@drawable/com</item>
+        <item>@drawable/param</item>
         <item>0</item>
-        <item>@drawable/ic_launcher_background</item>
+        <item>@drawable/deco</item>
     </array>
 </resources>
