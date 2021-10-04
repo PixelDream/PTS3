@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="id_activityScreenTitles">
+        <item></item>
+        <item>Accueil</item>
+        <item>Mon Potager</item>
+        <item>Mon Compte</item>
+        <item>Paramètre</item>
+        <item/>
+        <item>Déconnexion</item>
+    </string-array>
+    <array name="id_activityScreenIcon">
+        <item></item>
+        <item>@drawable/home</item>
+        <item>@drawable/pelle</item>
+        <item>@drawable/com</item>
+        <item>@drawable/param</item>
+        <item>0</item>
+        <item>@drawable/deco</item>
+    </array>
+</resources>
