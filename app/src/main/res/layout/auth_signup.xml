@@ -24,12 +24,12 @@
 
 
     <EditText
-        android:id="@+id/prenom"
+        android:id="@+id/firstNameInput"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@+id/header"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:width="250dp"
         android:background="@drawable/input_light"
         android:drawableLeft="@drawable/mail"
@@ -42,10 +42,10 @@
         android:textColorHint="@color/white_65" />
 
     <EditText
-        android:id="@+id/nom"
+        android:id="@+id/lastNameInput"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/prenom"
+        android:layout_below="@+id/firstNameInput"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:width="250dp"
@@ -60,10 +60,10 @@
         android:textColorHint="@color/white_65" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/emailInput"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/nom"
+        android:layout_below="@+id/lastNameInput"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:width="250dp"
@@ -78,10 +78,10 @@
         android:textColorHint="@color/white_65" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordInput"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/email"
+        android:layout_below="@+id/emailInput"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:width="250dp"
@@ -98,10 +98,10 @@
         android:textColorHint="@color/white_65" />
 
     <Button
-        android:id="@+id/connect"
+        android:id="@+id/signupButton"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/password"
+        android:layout_below="@+id/passwordInput"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:height="2dp"
@@ -110,68 +110,5 @@
         android:text="S'inscrire"
         android:textColor="@color/white"
         app:backgroundTint="#A60C9869" />
-
-
-    <RelativeLayout
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/connectService"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="60dp">
-
-        <TextView
-            android:id="@+id/tvText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Ou avec"
-            android:textColor="@color/black_30" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:layout_toLeftOf="@id/tvText"
-            android:background="@color/black_30" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="16dp"
-            android:layout_toRightOf="@id/tvText"
-            android:background="@color/black_30" />
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/connectService"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginVertical="15dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="100">
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="50"
-            android:src="@drawable/google_btn" />
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="50"
-            android:src="@drawable/facebook_btn" />
-    </LinearLayout>
 
 </RelativeLayout>
