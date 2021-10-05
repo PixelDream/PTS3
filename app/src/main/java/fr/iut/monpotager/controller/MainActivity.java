@@ -1,16 +1,6 @@
 package fr.iut.monpotager.controller;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import fr.iut.monpotager.R;
-import fr.iut.monpotager.controller.auth.LoginActivity;
-import fr.iut.monpotager.controller.auth.SignupActivity;
-import fr.iut.monpotager.manager.UserManager;
-
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -33,11 +23,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 
 import fr.iut.monpotager.R;
+import fr.iut.monpotager.controller.auth.LoginActivity;
 import fr.iut.monpotager.controller.fragment.DashBoardFragment;
 import fr.iut.monpotager.controller.sidemenu.DrawerAdapter;
 import fr.iut.monpotager.controller.sidemenu.DrawerItem;
 import fr.iut.monpotager.controller.sidemenu.SimpleItem;
 import fr.iut.monpotager.controller.sidemenu.SpaceItem;
+import fr.iut.monpotager.manager.UserManager;
 
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
     private UserManager userManager = UserManager.getInstance();
@@ -114,7 +106,10 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
             DashBoardFragment dashBoardFragment = new DashBoardFragment();
             transaction.replace(R.id.container, dashBoardFragment);
         } else if (position == POS_LOGOUT) {
+            userManager.signOut();
+            Intent intent = getIntent();
             finish();
+            startActivity(intent);
         }
 
 

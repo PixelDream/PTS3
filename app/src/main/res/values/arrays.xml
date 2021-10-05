@@ -11,11 +11,11 @@
     </string-array>
     <array name="id_activityScreenIcon">
         <item></item>
-        <item>@drawable/home</item>
+        <item>@drawable/ic_sidebar_home</item>
         <item>@drawable/pelle</item>
-        <item>@drawable/com</item>
-        <item>@drawable/param</item>
+        <item>@drawable/ic_sidebar_account</item>
+        <item>@drawable/ic_sidebar_settings</item>
         <item>0</item>
-        <item>@drawable/deco</item>
+        <item>@drawable/ic_sidebar_logout</item>
     </array>
 </resources>

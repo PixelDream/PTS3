@@ -1,9 +1,13 @@
 package fr.iut.monpotager.controller.auth;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -30,34 +34,53 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.mobsandgeeks.saripaar.ValidationError;
+import com.mobsandgeeks.saripaar.Validator;
+import com.mobsandgeeks.saripaar.annotation.Email;
+import com.mobsandgeeks.saripaar.annotation.NotEmpty;
+import com.mobsandgeeks.saripaar.annotation.Password;
 
 import java.util.Arrays;
 import java.util.List;
 
 import fr.iut.monpotager.R;
+import fr.iut.monpotager.controller.MainActivity;
+import fr.iut.monpotager.controller.fragment.DashBoardFragment;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements Validator.ValidationListener {
 
     private static final String TAG = "LoginActivity";
     private static final int RC_SIGN_IN = 9001;
 
     private FirebaseAuth mAuth;
+    private Validator validator;
 
-    private TextView forgotPassword, signup;
-    private EditText firstNameInput, lastNameInput, emailInput, passwordInput;
-    private ImageButton googleButton, facebookButton;
+    @Email
+    @NotEmpty
+    private EditText emailInput;
+
+    @Password(scheme = Password.Scheme.ALPHA_NUMERIC_MIXED_CASE_SYMBOLS)
+    private EditText passwordInput;
+
+    private TextView signup;
+    private TextView forgotPassword;
+    private ImageButton googleButton;
+    private ImageButton facebookButton;
     private Button loginButton;
     private LoginButton facebook_btn;
     private GoogleSignInClient googleSignInClient;
     private CallbackManager mcallbackManager;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.auth_login);
+
+        validator = new Validator(this);
+        validator.setValidationListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -74,9 +97,6 @@ public class LoginActivity extends AppCompatActivity {
 
         mcallbackManager = CallbackManager.Factory.create();
 
-
-        firstNameInput = findViewById(R.id.firstNameInput);
-        lastNameInput = findViewById(R.id.lastNameInput);
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
 
@@ -104,25 +124,12 @@ public class LoginActivity extends AppCompatActivity {
         facebookButton.setOnClickListener(v -> facebook_btn.performClick());
         loginButton.setOnClickListener(view -> {
 
-            String email = emailInput.getText().toString().trim();
-            String password = passwordInput.getText().toString().trim();
+            String email = emailInput.getText().toString();
+            String password = passwordInput.getText().toString();
 
-            if (TextUtils.isEmpty(email)) {
-                Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
-                return;
-            }
+            validator.validate();
 
-            if (TextUtils.isEmpty(password)) {
-                Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (password.length() < 6) {
-                Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            login(email, password);
+            if (validator.isValidating()) login(email, password);
         });
     }
 
@@ -155,9 +162,7 @@ public class LoginActivity extends AppCompatActivity {
         new AccessTokenTracker() {
             @Override
             protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
-                if (currentAccessToken == null) {
-                    mAuth.signOut();
-                }
+                if (currentAccessToken == null) mAuth.signOut();
             }
         };
     }
@@ -176,6 +181,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Log.d(TAG, "signInWithEmail:success");
                         FirebaseUser user = mAuth.getCurrentUser();
+                        redirectUser();
                     } else {
                         Log.w(TAG, "signInWithEmail:failure", task.getException());
                         Toast.makeText(LoginActivity.this, "Authentication failed.",
@@ -217,12 +223,12 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(this, "Existing user...\n" + email, Toast.LENGTH_LONG).show();
                         }
 
+                        redirectUser();
                     } else {
                         Log.w(TAG, "signInWithCredential:failure", task.getException());
                     }
 
                 });
-        finish();
     }
 
     public void firebaseAuthWithFacebook(AccessToken token) {
@@ -236,10 +242,46 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(this, "Existing user...\n", Toast.LENGTH_LONG).show();
                 }
 
-                finish();
+                redirectUser();
             } else {
-                Log.w(TAG, "signInWithCredential:failure", task.getException());
+                try {
+                    throw task.getException();
+                } catch (FirebaseAuthUserCollisionException e) {
+                    AlertDialog alertDialog = new AlertDialog.Builder(LoginActivity.this).create();
+                    alertDialog.setTitle("Alert");
+                    alertDialog.setMessage("You have already an account with other service...");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            (dialog, which) -> dialog.dismiss());
+                    alertDialog.show();
+                    Log.w(TAG, e.getMessage());
+                } catch (Exception e) {
+                    Log.w(TAG, e.getMessage());
+                }
             }
         });
+
+    }
+
+    public void redirectUser() {
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
+    @Override
+    public void onValidationSucceeded() {}
+
+    @Override
+    public void onValidationFailed(List<ValidationError> errors) {
+        for (ValidationError error : errors) {
+            View view = error.getView();
+            String message = error.getCollatedErrorMessage(this);
+
+            // Display error messages ;)
+            if (view instanceof EditText) {
+                ((EditText) view).setError(message);
+            } else {
+                Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
