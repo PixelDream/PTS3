@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/drawable/border_img.xml" value="0.21770833333333334" />
+        <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/drawable/header.xml" value="0.21770833333333334" />
+        <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/drawable/input.xml" value="0.20364583333333333" />
+        <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/drawable/input_light.xml" value="0.21041666666666667" />
+        <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/layout-v21/adapter_item_search_list.xml" value="0.20572916666666666" />
+        <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/layout/adapter_item_search_list.xml" value="0.33" />
+        <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/layout/auth_login.xml" value="0.19519927536231885" />
+        <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/layout/auth_register.xml" value="0.19519927536231885" />
+        <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/layout/border_img_search_page.xml" value="0.2015625" />
+        <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/layout/search_page.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/javadoc" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.18857142857142858" />
-      </ProjectState>
-    </option>
   </component>
 </project>
