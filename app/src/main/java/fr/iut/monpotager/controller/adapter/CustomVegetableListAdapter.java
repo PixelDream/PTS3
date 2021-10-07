@@ -1,20 +1,24 @@
 package fr.iut.monpotager.controller.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.Vegetable;
 
-public class CustomVegetableListAdapter extends BaseAdapter {
+public class CustomVegetableListAdapter extends BaseAdapter implements Filterable{
 
     private List<Vegetable> listData;
     private LayoutInflater layoutInflater;
@@ -59,4 +63,52 @@ public class CustomVegetableListAdapter extends BaseAdapter {
 
         return view;
     }
+
+
+    @Override
+    public Filter getFilter() {
+
+        Filter filter = new Filter() {
+
+            @SuppressWarnings("unchecked")
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+
+                listData = (List<Vegetable>) results.values;
+                notifyDataSetChanged();
+            }
+
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+
+                FilterResults results = new FilterResults();
+                ArrayList<Vegetable> FilteredArrayNames = new ArrayList<Vegetable>();
+
+                // perform your search here using the searchConstraint String.
+
+                constraint = constraint.toString().toLowerCase();
+                for (int i = 0; i < listData.size(); i++) {
+                    Vegetable dataNames = listData.get(i);
+                    if (dataNames.getName().toLowerCase().startsWith(constraint.toString()))  {
+                        FilteredArrayNames.add(dataNames);
+                    }
+                }
+
+                results.count = FilteredArrayNames.size();
+                results.values = FilteredArrayNames;
+                Log.e("VALUES", results.values.toString());
+
+                return results;
+            }
+        };
+
+        return filter;
+    }
+
+    public void setListData(List<Vegetable> listData) {
+        this.listData = listData;
+    }
 }
+
+
+
