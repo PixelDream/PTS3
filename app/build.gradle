@@ -84,6 +84,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
+
+    implementation project(':library')
 }
 
 task generateJavadoc(type: Javadoc) {
