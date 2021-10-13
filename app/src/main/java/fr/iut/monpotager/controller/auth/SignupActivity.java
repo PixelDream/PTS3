@@ -33,11 +33,11 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
     private Validator validator;
 
     @NotEmpty
-    @Min(3)
+    @Min(2)
     private EditText firstNameInput;
 
     @NotEmpty
-    @Min(3)
+    @Min(2)
     private EditText lastNameInput;
 
     @NotEmpty
@@ -77,32 +77,8 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
             String email = emailInput.getText().toString().trim();
             String password = passwordInput.getText().toString().trim();
 
-            if (TextUtils.isEmpty(firtName)) {
-                Toast.makeText(getApplicationContext(), "Enter firstName!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (TextUtils.isEmpty(lastName)) {
-                Toast.makeText(getApplicationContext(), "Enter lastName!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (TextUtils.isEmpty(email)) {
-                Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (TextUtils.isEmpty(password)) {
-                Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (password.length() < 6) {
-                Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            signup(firtName, lastName, email, password);
+            validator.validate();
+            if (validator.isValidating()) signup(firtName, lastName, email, password);
         });
     }
 

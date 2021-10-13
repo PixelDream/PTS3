@@ -15,11 +15,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.media.Image;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.GridView;
-
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
@@ -29,7 +24,7 @@ import java.util.Arrays;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.auth.LoginActivity;
-import fr.iut.monpotager.controller.fragment.DashBoardFragment;
+import fr.iut.monpotager.controller.fragment.HomeFragment;
 import fr.iut.monpotager.controller.sidemenu.DrawerAdapter;
 import fr.iut.monpotager.controller.sidemenu.DrawerItem;
 import fr.iut.monpotager.controller.sidemenu.SimpleItem;
@@ -52,17 +47,16 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
 
     private SlidingRootNav slidingRootNav;
 
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         slidingRootNav = new SlidingRootNavBuilder(this)
                 .withDragDistance(180)
@@ -102,17 +96,14 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
         if (position == POS_DASHBOARD) {
-            DashBoardFragment dashBoardFragment = new DashBoardFragment();
-            transaction.replace(R.id.container, dashBoardFragment);
+            HomeFragment homeFragment = new HomeFragment();
+            transaction.replace(R.id.container, homeFragment);
         } else if (position == POS_MY_PROFILE) {
-            DashBoardFragment dashBoardFragment = new DashBoardFragment();
-            transaction.replace(R.id.container, dashBoardFragment);
+
         } else if (position == POS_NEARBY_RES) {
-            DashBoardFragment dashBoardFragment = new DashBoardFragment();
-            transaction.replace(R.id.container, dashBoardFragment);
+
         } else if (position == POS_SETTINGS) {
-            DashBoardFragment dashBoardFragment = new DashBoardFragment();
-            transaction.replace(R.id.container, dashBoardFragment);
+
         } else if (position == POS_LOGOUT) {
             userManager.signOut();
             Intent intent = getIntent();
@@ -120,13 +111,11 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
             startActivity(intent);
         }
 
-
         slidingRootNav.closeMenu();
         transaction.addToBackStack(null);
         transaction.commit();
     }
 
-    @SuppressWarnings("rawtypes")
     private DrawerItem createItemFor(int position) {
         return new SimpleItem(screenIcons[position], screenTitles[position])
                 .withTextTint(color(R.color.black))

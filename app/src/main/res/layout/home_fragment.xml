@@ -9,7 +9,7 @@
     <View
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="140dp"
         android:background="@drawable/header" />
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="40dp"
         android:text="Bonjour john"
         android:textColor="@color/white"
         android:textSize="30dp"
@@ -28,7 +28,7 @@
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="120dp"
         android:background="@drawable/input_white"
         android:drawableRight="@drawable/search"
         android:elevation="30dp"
@@ -79,32 +79,6 @@
         android:layout_marginTop="215dp"
         app:srcCompat="@drawable/tips" />
 
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="330dp"
-        android:layout_marginTop="15dp"
-        app:srcCompat="@drawable/heart"
-
-        />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="370dp"
-        android:layout_marginTop="15dp"
-        app:srcCompat="@drawable/bell" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
-        app:srcCompat="@drawable/menu" />
 
     <TextView
         android:layout_width="wrap_content"

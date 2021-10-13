@@ -9,12 +9,12 @@ import androidx.fragment.app.Fragment;
 
 import fr.iut.monpotager.R;
 
-public class DashBoardFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.dashboard_fragment, container, false);
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.home_fragment, container, false);
         return root;
     }
 }

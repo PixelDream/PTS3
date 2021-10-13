@@ -25,29 +25,20 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         this.items = items;
         this.viewTypes = new HashMap<>();
         this.holderFactories = new SparseArray<>();
-        processViewTypes();
-    }
 
-    private void processViewTypes() {
-        int type = 0;
-        for (DrawerItem item : items) {
-            if (!viewTypes.containsKey(items.getClass())) {
-                viewTypes.put(item.getClass(), type);
-                holderFactories.put(type, item);
-                type++;
-            }
-        }
+        processViewTypes();
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ViewHolder holder = holderFactories.get(viewType).createViewHolder(parent);
-        holder.drawerAdapter = this;
+        holder.adapter = this;
         return holder;
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         items.get(position).bindViewHolder(holder);
     }
@@ -62,6 +53,17 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         return viewTypes.get(items.get(position).getClass());
     }
 
+    private void processViewTypes() {
+        int type = 0;
+        for (DrawerItem item : items) {
+            if (!viewTypes.containsKey(item.getClass())) {
+                viewTypes.put(item.getClass(), type);
+                holderFactories.put(type, item);
+                type++;
+            }
+        }
+    }
+
     public void setSelected(int position) {
         DrawerItem newChecked = items.get(position);
         if (!newChecked.isSelectable()) {
@@ -70,7 +72,6 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
 
         for (int i = 0; i < items.size(); i++) {
             DrawerItem item = items.get(i);
-
             if (item.isChecked()) {
                 item.setChecked(false);
                 notifyItemChanged(i);
@@ -90,18 +91,18 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         this.listener = listener;
     }
 
-
     static abstract class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private DrawerAdapter drawerAdapter;
 
-        public ViewHolder(@NonNull View itemView) {
+        private DrawerAdapter adapter;
+
+        public ViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            drawerAdapter.setSelected(getAdapterPosition());
+            adapter.setSelected(getAdapterPosition());
         }
     }
 

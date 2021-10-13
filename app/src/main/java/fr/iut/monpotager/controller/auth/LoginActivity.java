@@ -1,11 +1,8 @@
 package fr.iut.monpotager.controller.auth;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -48,7 +45,6 @@ import java.util.List;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.MainActivity;
-import fr.iut.monpotager.controller.fragment.DashBoardFragment;
 
 public class LoginActivity extends AppCompatActivity implements Validator.ValidationListener {
 
