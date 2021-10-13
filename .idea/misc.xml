@@ -14,10 +14,17 @@
         <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/layout/auth_register.xml" value="0.19519927536231885" />
         <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/layout/border_img_search_page.xml" value="0.2015625" />
         <entry key="..\:/Baptiste Buvron/Documents/Dut Informatique/S3/Informatique/PTUT/PTS3/app/src/main/res/layout/search_page.xml" value="0.2" />
+        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/dashboard_fragment.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/drawer_menu.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/item_option.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/menuderoulant.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/profile_fragment.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/side_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/javadoc" />
   </component>

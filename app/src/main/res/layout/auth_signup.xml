@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/header" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Inscription"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/firstNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/header"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:width="250dp"
+        android:background="@drawable/input_light"
+        android:hint="Prénom"
+        android:inputType="textEmailAddress"
+        android:paddingVertical="9dp"
+        android:paddingHorizontal="15dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white_65"
+        android:textColorHint="@color/white_65" />
+
+    <EditText
+        android:id="@+id/lastNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/firstNameInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:width="250dp"
+        android:background="@drawable/input_light"
+        android:hint="Nom"
+        android:inputType="textEmailAddress"
+        android:paddingVertical="9dp"
+        android:paddingHorizontal="15dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white_65"
+        android:textColorHint="@color/white_65" />
+
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/lastNameInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:width="250dp"
+        android:background="@drawable/input_light"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="9dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white_65"
+        android:textColorHint="@color/white_65" />
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/emailInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:width="250dp"
+        android:background="@drawable/input_light"
+        android:drawableRight="@drawable/ic_auth_eye"
+        android:drawableTint="@color/white"
+        android:hint="Mot de passe"
+        android:paddingHorizontal="15dp"
+        android:inputType="textPassword"
+        android:paddingVertical="9dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/white_65"
+        android:textColorHint="@color/white_65" />
+
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/passwordInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:height="2dp"
+        android:background="@drawable/input"
+        android:paddingHorizontal="25dp"
+        android:text="S'inscrire"
+        android:textColor="@color/white"
+        app:backgroundTint="#A60C9869" />
+
+</RelativeLayout>
