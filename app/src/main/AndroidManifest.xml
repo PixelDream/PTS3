@@ -33,10 +33,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".controller.auth.LoginActivity" />
         <activity android:name=".controller.auth.SignupActivity" />
         <activity android:name=".controller.auth.PasswordActivity" />
-
     </application>
 
 </manifest>

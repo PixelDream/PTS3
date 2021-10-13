@@ -155,10 +155,8 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         super.onStart();
 
         if (!userManager.isCurrentUserLogged()) {
-            //Toast.makeText(this, "test", Toast.LENGTH_LONG);
             startActivity(new Intent(this, LoginActivity.class));
             finish();
         }
-
     }
 }
