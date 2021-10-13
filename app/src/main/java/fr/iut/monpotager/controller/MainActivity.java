@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
@@ -170,6 +171,5 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
             startActivity(new Intent(this, LoginActivity.class));
             finish();
         }
-
     }
 }
