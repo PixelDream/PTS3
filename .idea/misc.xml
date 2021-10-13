@@ -3,10 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.240625" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/drawable/header.xml" value="0.240625" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/drawable/ic_calendar.xml" value="0.5" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/drawable/ic_entertain_pic.xml" value="0.240625" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/drawable/ic_harvest_pic.xml" value="0.240625" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/drawable/ic_launcher_background.xml" value="0.240625" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/drawable/input.xml" value="0.240625" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/drawable/input_light.xml" value="0.240625" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/drawable/input_light_tight.xml" value="0.240625" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/drawable/input_tight.xml" value="0.240625" />
         <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/layout/activity_main.xml" value="0.20471014492753623" />
         <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/layout/auth_login.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/layout/auth_register.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/layout/plant_spec.xml" value="0.20878623188405798" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/layout/plant_spec.xml" value="0.4527310924369748" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/layout/plant_spec_entertain.xml" value="0.14" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/layout/plant_spec_harvest.xml" value="0.25" />
+        <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/layout/plant_spec_info.xml" value="0.39791666666666664" />
         <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12" />
         <entry key="..\:/Users/lenny/Project/Android/DUTInfo-PTS3_MonPotager/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.12604166666666666" />
       </map>
