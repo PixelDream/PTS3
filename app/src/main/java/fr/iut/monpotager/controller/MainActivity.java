@@ -15,6 +15,11 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.media.Image;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.GridView;
+
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
@@ -47,9 +52,12 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
 
     private SlidingRootNav slidingRootNav;
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+      
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
@@ -162,5 +170,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
             startActivity(new Intent(this, LoginActivity.class));
             finish();
         }
+
     }
 }
