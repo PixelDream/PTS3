@@ -1,4 +1,4 @@
-package fr.iut.monpotager.controller;
+package fr.iut.monpotager.model;
 
 import java.io.Serializable;
 
@@ -16,10 +16,6 @@ public class Vegetable implements Serializable {
         this.name = name;
         this.duration = duration;
     }
-
-
-
-
 
     public String getName() {
         return name;

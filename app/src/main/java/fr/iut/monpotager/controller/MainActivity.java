@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
@@ -25,6 +26,7 @@ import java.util.Arrays;
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.auth.LoginActivity;
 import fr.iut.monpotager.controller.fragment.HomeFragment;
+import fr.iut.monpotager.controller.fragment.search.SearchFragment;
 import fr.iut.monpotager.controller.sidemenu.DrawerAdapter;
 import fr.iut.monpotager.controller.sidemenu.DrawerItem;
 import fr.iut.monpotager.controller.sidemenu.SimpleItem;
@@ -50,6 +52,11 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (!userManager.isCurrentUserLogged()) {
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
 
         setContentView(R.layout.activity_main);
 
@@ -148,15 +155,5 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     @ColorInt
     private int color(@ColorRes int res) {
         return ContextCompat.getColor(this, res);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        if (!userManager.isCurrentUserLogged()) {
-            startActivity(new Intent(this, LoginActivity.class));
-            finish();
-        }
     }
 }

@@ -1,19 +1,23 @@
-package fr.iut.monpotager.controller;
+package fr.iut.monpotager.controller.fragment.search;
 
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
 import fr.iut.monpotager.R;
-import fr.iut.monpotager.controller.adapter.CustomVegetableListAdapter;
+import fr.iut.monpotager.controller.fragment.search.adapter.CustomVegetableListAdapter;
+import fr.iut.monpotager.model.Vegetable;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchFragment extends Fragment {
 
 
     private ArrayList origList;
@@ -25,9 +29,10 @@ public class SearchActivity extends AppCompatActivity {
      */
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.search_page);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.search_page, container, false);
+
 
         Vegetable vegetable1 = new Vegetable("Tomate",5);
         Vegetable vegetable2 = new Vegetable("Poire",5);
@@ -41,9 +46,9 @@ public class SearchActivity extends AppCompatActivity {
 
         origList = (ArrayList) vegetableArrayList.clone();
 
-        CustomVegetableListAdapter adapter = new CustomVegetableListAdapter(this, vegetableArrayList);
-        searchVegetable = (EditText) findViewById(R.id.searchVegetable);
-        listView = (ListView) findViewById(R.id.search_list);
+        CustomVegetableListAdapter adapter = new CustomVegetableListAdapter(getContext(), vegetableArrayList);
+        searchVegetable = root.findViewById(R.id.searchVegetable);
+        listView = root.findViewById(R.id.search_list);
         listView.setAdapter(adapter);
 
 
@@ -66,7 +71,8 @@ public class SearchActivity extends AppCompatActivity {
         });
 
 
-
-
+        return root;
     }
+
+
 }

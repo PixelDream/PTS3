@@ -1,4 +1,4 @@
-package fr.iut.monpotager.controller.adapter;
+package fr.iut.monpotager.controller.fragment.search.adapter;
 
 import android.content.Context;
 import android.util.Log;
@@ -10,13 +10,11 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import fr.iut.monpotager.R;
-import fr.iut.monpotager.controller.Vegetable;
+import fr.iut.monpotager.model.Vegetable;
 
 public class CustomVegetableListAdapter extends BaseAdapter implements Filterable{
 

@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:background="@color/green"
         app:title=""
+        app:titleTextColor="@color/green"
         >
 
         <ImageView

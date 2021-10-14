@@ -13,7 +13,7 @@
         android:background="@drawable/header" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/helloUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -24,7 +24,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/searchBar"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
@@ -41,13 +41,11 @@
         android:textColorHint="@color/green_40" />
 
     <RelativeLayout
-        android:layout_width="307dp"
+        android:layout_width="340dp"
         android:layout_height="70dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
-        android:background="@drawable/card_light"
-
-        >
+        android:layout_marginTop="200dp"
+        android:background="@drawable/card_light">
 
 
         <TextView
@@ -75,8 +73,8 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="215dp"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="165dp"
         app:srcCompat="@drawable/tips" />
 
 
@@ -84,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="355dp"
+        android:layout_marginTop="300dp"
         android:text="Fruits et légumes de saison"
         android:textSize="20dp"
         android:textStyle="bold">
@@ -95,7 +93,7 @@
         android:id="@+id/flsaison"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="340dp"
         android:layout_marginBottom="10dp"
         android:scrollbars="none">
 
@@ -131,7 +129,7 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <TextView
+<!--    <TextView
         android:id="@+id/title2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -149,5 +147,5 @@
         android:scrollbars="none">
 
 
-    </ScrollView>
+    </ScrollView>-->
 </RelativeLayout>

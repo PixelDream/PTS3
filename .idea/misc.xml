@@ -4,11 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/DEV/MonPotager/app/src/main/res/layout/activity_main.xml" value="0.4427083333333333" />
+        <entry key="..\:/DEV/MonPotager/app/src/main/res/layout/adapter_item_search_list.xml" value="0.4427083333333333" />
         <entry key="..\:/DEV/MonPotager/app/src/main/res/layout/dashboard_fragment.xml" value="0.253125" />
         <entry key="..\:/DEV/MonPotager/app/src/main/res/layout/drawer_menu.xml" value="0.1" />
         <entry key="..\:/DEV/MonPotager/app/src/main/res/layout/home.xml" value="0.4427083333333333" />
         <entry key="..\:/DEV/MonPotager/app/src/main/res/layout/home_fragment.xml" value="0.4427083333333333" />
         <entry key="..\:/DEV/MonPotager/app/src/main/res/layout/item_option.xml" value="0.1" />
+        <entry key="..\:/DEV/MonPotager/app/src/main/res/layout/layout.xml" value="0.4427083333333333" />
+        <entry key="..\:/DEV/MonPotager/app/src/main/res/layout/search_page.xml" value="0.25625" />
         <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/dashboard_fragment.xml" value="0.25052083333333336" />
