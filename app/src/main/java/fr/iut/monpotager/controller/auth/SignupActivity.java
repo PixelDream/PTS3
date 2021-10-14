@@ -16,7 +16,6 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
-import com.mobsandgeeks.saripaar.annotation.Max;
 import com.mobsandgeeks.saripaar.annotation.Min;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Password;
@@ -129,7 +128,8 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
 
 
     @Override
-    public void onValidationSucceeded() {}
+    public void onValidationSucceeded() {
+    }
 
     @Override
     public void onValidationFailed(List<ValidationError> errors) {

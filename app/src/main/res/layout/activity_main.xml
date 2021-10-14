@@ -4,24 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
     android:background="@color/white"
-    tools:context=".controller.MainActivity"
-    >
+    android:orientation="horizontal"
+    tools:context=".controller.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#fff"
-        app:titleTextColor="@color/white"
-        />
+        app:titleTextColor="@color/white" />
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1" />
 
 </LinearLayout>

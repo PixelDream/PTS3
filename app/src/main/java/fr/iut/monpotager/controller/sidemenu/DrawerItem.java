@@ -10,17 +10,17 @@ public abstract class DrawerItem<T extends DrawerAdapter.ViewHolder> {
 
     public abstract void bindViewHolder(T holder);
 
-    public DrawerItem<T> setChecked(boolean isChecked) {
-        this.isChecked = isChecked;
-        return this;
-    }
-
     public boolean isSelectable() {
         return true;
     }
 
     public boolean isChecked() {
         return isChecked;
+    }
+
+    public DrawerItem<T> setChecked(boolean isChecked) {
+        this.isChecked = isChecked;
+        return this;
     }
 
     public abstract DrawerItem withSelectedTextBold();

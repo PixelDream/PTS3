@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,9 +14,9 @@ import java.util.Map;
 @SuppressWarnings({"rawtypes", "ConstantConditions"})
 public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder> {
 
-    private List<DrawerItem> items;
-    private Map<Class<? extends DrawerItem>, Integer> viewTypes;
-    private SparseArray<DrawerItem> holderFactories;
+    private final List<DrawerItem> items;
+    private final Map<Class<? extends DrawerItem>, Integer> viewTypes;
+    private final SparseArray<DrawerItem> holderFactories;
 
     private OnItemSelectedListener listener;
 
@@ -91,6 +90,10 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
     }
 
 
+    public interface OnItemSelectedListener {
+        void onItemSelected(int position);
+    }
+
     static abstract class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private DrawerAdapter drawerAdapter;
 
@@ -103,9 +106,5 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         public void onClick(View v) {
             drawerAdapter.setSelected(getAdapterPosition());
         }
-    }
-
-    public interface OnItemSelectedListener {
-        void onItemSelected(int position);
     }
 }

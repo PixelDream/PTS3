@@ -1,10 +1,7 @@
 package fr.iut.monpotager.repository;
 
-import android.content.Context;
-
 import androidx.annotation.Nullable;
 
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -12,7 +9,8 @@ public final class UserRepository {
 
     private static volatile UserRepository instance;
 
-    private UserRepository() { }
+    private UserRepository() {
+    }
 
     public static UserRepository getInstance() {
         UserRepository result = instance;
@@ -21,7 +19,7 @@ public final class UserRepository {
             return result;
         }
 
-        synchronized(UserRepository.class) {
+        synchronized (UserRepository.class) {
             if (instance == null) {
                 instance = new UserRepository();
             }
@@ -30,7 +28,7 @@ public final class UserRepository {
     }
 
     @Nullable
-    public FirebaseUser getCurrentUser(){
+    public FirebaseUser getCurrentUser() {
         return FirebaseAuth.getInstance().getCurrentUser();
     }
 
