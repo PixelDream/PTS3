@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageVegetable"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/tomatoes" />
@@ -20,6 +20,7 @@
         android:layout_gravity="start"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="-20dp"
         android:text="Tomate"
         android:textColor="#0C9869"
         android:textSize="20dp"

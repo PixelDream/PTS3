@@ -8,7 +8,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +61,14 @@ public class CustomVegetableListAdapter extends BaseAdapter implements Filterabl
 
         TextView vegetableName = view.findViewById(R.id.nameVegetable);
         vegetableName.setText(vegetable.getName());
+
+        ImageView imageVegetable = view.findViewById(R.id.imageVegetable);
+
+
+        final int radius = 50;
+        final int margin = 5;
+        final Transformation transformation = new RoundedCornersTransformation(radius, margin, RoundedCornersTransformation.CornerType.TOP);
+        Picasso.get().load(vegetable.getPicture()).transform(transformation).into(imageVegetable);
 
 
         return view;

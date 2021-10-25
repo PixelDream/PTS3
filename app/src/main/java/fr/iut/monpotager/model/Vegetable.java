@@ -10,11 +10,12 @@ public class Vegetable implements Serializable {
 
     private int duration;
 
-    private String image;
+    private String picture;
 
-    public Vegetable(String name, int duration) {
+    public Vegetable(String name, int duration, String image) {
         this.name = name;
         this.duration = duration;
+        this.picture = image;
     }
 
     public String getName() {
@@ -41,11 +42,11 @@ public class Vegetable implements Serializable {
         this.duration = duration;
     }
 
-    public String getImage() {
-        return image;
+    public String getPicture() {
+        return picture;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }
