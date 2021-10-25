@@ -4,13 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.model.Period;
@@ -18,7 +12,7 @@ import fr.iut.monpotager.model.Plant;
 import fr.iut.monpotager.model.Season;
 import fr.iut.monpotager.model.Species;
 
-public class MainActivity extends AppCompatActivity {
+public class PlantActivity extends AppCompatActivity {
 
     /**
      * Create app
@@ -28,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_plant);
 
         final Button tomate = findViewById(R.id.tomate);
         tomate.setOnClickListener(v -> {
