@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -45,29 +47,34 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private static final int POS_LOGOUT = 6;
     boolean inDrag;
     TextView profil;
+
     private final UserManager userManager = UserManager.getInstance();
     private FirebaseAuth mAuth;
     private String[] screenTitles;
     private Drawable[] screenIcons;
     private SlidingRootNav slidingRootNav;
-
     /*
-        @Override
-        public boolean dispatchTouchEvent(MotionEvent ev) {
-            if (slidingRootNav != null && slidingRootNav.isMenuOpened()) {
-                boolean menuTouched = findViewById(R.id.container).dispatchTouchEvent(ev) ;
-                if(menuTouched) {
-                    slidingRootNav.closeMenu();
-                }
-                return true;
-            } else {
-                return super.dispatchTouchEvent(ev);
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (slidingRootNav != null && slidingRootNav.isMenuOpened()) {
+            boolean menuTouched = findViewById(R.id.container).dispatchTouchEvent(ev) ;
+            if(menuTouched) {
+                slidingRootNav.closeMenu();
             }
+            return true;
+        } else {
+            return super.dispatchTouchEvent(ev);
         }
+    }
     */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (!userManager.isCurrentUserLogged()) {
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
@@ -123,7 +130,9 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         FrameLayout container = findViewById(R.id.container);
         container.setOnClickListener(view -> slidingRootNav.closeMenu());
 
-
+        ImageView image = findViewById(R.id.icon);
+        Log.d("+++++", userManager.getCurrentUser().getPhotoUrl().toString());
+        //image.setImageDrawable();
         TextView profil = findViewById(R.id.nameUser);
         profil.setText(userManager.getCurrentUser().getDisplayName());
 
@@ -191,16 +200,5 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     @ColorInt
     private int color(@ColorRes int res) {
         return ContextCompat.getColor(this, res);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        if (!userManager.isCurrentUserLogged()) {
-            //Toast.makeText(this, "test", Toast.LENGTH_LONG);
-            startActivity(new Intent(this, LoginActivity.class));
-            finish();
-        }
     }
 }
