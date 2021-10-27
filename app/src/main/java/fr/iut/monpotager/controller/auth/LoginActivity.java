@@ -119,7 +119,6 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
         googleButton.setOnClickListener(v -> loginGoogle());
         facebookButton.setOnClickListener(v -> facebook_btn.performClick());
         loginButton.setOnClickListener(view -> {
-
             String email = emailInput.getText().toString();
             String password = passwordInput.getText().toString();
 
