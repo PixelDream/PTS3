@@ -1,2 +1,3 @@
 rootProject.name = "Mon Potager"
 include ':app'
+include ':library'

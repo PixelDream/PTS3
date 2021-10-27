@@ -7,7 +7,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 
 public class SpaceItem extends DrawerItem<SpaceItem.ViewHolder> {
+<<<<<<< HEAD
     private int spaceDp;
+=======
+    private final int spaceDp;
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
 
     public SpaceItem(int spaceDp) {
         this.spaceDp = spaceDp;

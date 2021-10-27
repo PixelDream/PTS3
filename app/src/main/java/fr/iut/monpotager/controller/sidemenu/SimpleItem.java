@@ -19,8 +19,13 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder> {
     private int normalItemIconTint;
     private int normalItemTextTint;
 
+<<<<<<< HEAD
     private Drawable icon;
     private String title;
+=======
+    private final Drawable icon;
+    private final String title;
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
 
     public SimpleItem(Drawable icon, String title) {
         this.icon = icon;
@@ -39,6 +44,11 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder> {
         holder.title.setText(title);
         if (selectedItemTextStyle && isChecked) {
             holder.title.setTypeface(Typeface.DEFAULT_BOLD);
+<<<<<<< HEAD
+=======
+        } else {
+            holder.title.setTypeface(Typeface.DEFAULT);
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
         }
         holder.icon.setImageDrawable(icon);
 
@@ -74,6 +84,7 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder> {
 
     static class ViewHolder extends DrawerAdapter.ViewHolder {
 
+<<<<<<< HEAD
         private ImageView icon;
         private TextView title;
 
@@ -81,6 +92,15 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder> {
             super(itemView);
             icon = (ImageView) itemView.findViewById(R.id.icon);
             title = (TextView) itemView.findViewById(R.id.title);
+=======
+        private final ImageView icon;
+        private final TextView title;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            icon = itemView.findViewById(R.id.icon);
+            title = itemView.findViewById(R.id.title);
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
         }
     }
 }

@@ -4,15 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".controller.MainActivity"
     >
+=======
+    android:background="@color/white"
+    android:orientation="horizontal"
+    tools:context=".controller.MainActivity">
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:background="@color/green"
         app:title=""
         app:titleTextColor="@color/green"
@@ -40,6 +47,11 @@
             />
     </androidx.appcompat.widget.Toolbar>
 
+=======
+        android:background="#fff"
+        app:titleTextColor="@color/white" />
+
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"

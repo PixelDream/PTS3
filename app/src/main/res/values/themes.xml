@@ -2,9 +2,15 @@
     <!-- Base application theme. -->
     <style name="Theme.MonPotager" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
+<<<<<<< HEAD
         <item name="colorPrimary">@color/green</item>
         <item name="colorPrimaryVariant">@color/green_40</item>
         <item name="colorOnPrimary">@color/green</item>
+=======
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_200</item>
+        <item name="colorOnPrimary">@color/white</item>
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/green_light</item>
         <item name="colorSecondaryVariant">@color/green_light</item>
@@ -22,6 +28,12 @@
     <style name="text_vegetable_search">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">#0C9869</item>
+    </style>
+
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">30%</item>
+        <item name="android:background">@color/green_light</item>
     </style>
 
     <style name="roundedImageViewRounded">

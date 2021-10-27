@@ -16,7 +16,10 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
+<<<<<<< HEAD
 import com.mobsandgeeks.saripaar.annotation.Max;
+=======
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
 import com.mobsandgeeks.saripaar.annotation.Min;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Password;
@@ -33,11 +36,19 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
     private Validator validator;
 
     @NotEmpty
+<<<<<<< HEAD
     @Min(2)
     private EditText firstNameInput;
 
     @NotEmpty
     @Min(2)
+=======
+    @Min(3)
+    private EditText firstNameInput;
+
+    @NotEmpty
+    @Min(3)
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
     private EditText lastNameInput;
 
     @NotEmpty
@@ -77,8 +88,37 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
             String email = emailInput.getText().toString().trim();
             String password = passwordInput.getText().toString().trim();
 
+<<<<<<< HEAD
             validator.validate();
             if (validator.isValidating()) signup(firtName, lastName, email, password);
+=======
+            if (TextUtils.isEmpty(firtName)) {
+                Toast.makeText(getApplicationContext(), "Enter firstName!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (TextUtils.isEmpty(lastName)) {
+                Toast.makeText(getApplicationContext(), "Enter lastName!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (TextUtils.isEmpty(email)) {
+                Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (TextUtils.isEmpty(password)) {
+                Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (password.length() < 6) {
+                Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            signup(firtName, lastName, email, password);
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
         });
     }
 
@@ -105,7 +145,12 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
 
 
     @Override
+<<<<<<< HEAD
     public void onValidationSucceeded() {}
+=======
+    public void onValidationSucceeded() {
+    }
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
 
     @Override
     public void onValidationFailed(List<ValidationError> errors) {

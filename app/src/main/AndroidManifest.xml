@@ -26,6 +26,10 @@
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
         <activity android:name=".controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,10 +37,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 
         <activity android:name=".controller.auth.LoginActivity" />
         <activity android:name=".controller.auth.SignupActivity" />
         <activity android:name=".controller.auth.PasswordActivity" />
+=======
+        <activity android:name=".controller.auth.LoginActivity" />
+        <activity android:name=".controller.auth.SignupActivity" />
+        <activity android:name=".controller.auth.PasswordActivity" />
+
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
     </application>
 
 </manifest>
