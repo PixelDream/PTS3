@@ -7,7 +7,7 @@ import fr.iut.monpotager.repository.UserRepository;
 public class UserManager {
 
     private static volatile UserManager instance;
-    private final UserRepository userRepository;
+    private UserRepository userRepository;
 
     private UserManager() {
         userRepository = UserRepository.getInstance();
@@ -29,6 +29,12 @@ public class UserManager {
     public FirebaseUser getCurrentUser() {
         return userRepository.getCurrentUser();
     }
+
+    public String getFirstName() {
+        String firstName = userRepository.getCurrentUser().getDisplayName().split(" ")[0];
+        return firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
+    }
+
 
     public Boolean isCurrentUserLogged() {
         return (this.getCurrentUser() != null);

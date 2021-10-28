@@ -34,8 +34,8 @@
         android:background="@drawable/input_light"
         android:hint="Prénom"
         android:inputType="textEmailAddress"
-        android:paddingVertical="9dp"
         android:paddingHorizontal="15dp"
+        android:paddingVertical="9dp"
         android:paddingLeft="10dp"
         android:textColor="@color/white_65"
         android:textColorHint="@color/white_65" />

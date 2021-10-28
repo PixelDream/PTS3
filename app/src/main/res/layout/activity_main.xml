@@ -13,29 +13,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/green"
-        app:titleTextColor="@color/green"
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_gravity="end"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="5dp"
-                app:srcCompat="@drawable/heart"
-                />
+        app:title=""
+        app:titleTextColor="@color/green">
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="20dp"
-                app:srcCompat="@drawable/bell" />
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="15dp"
+            android:paddingEnd="20dp"
+            android:paddingRight="20dp"
+            app:srcCompat="@drawable/heart" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="15dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            app:srcCompat="@drawable/bell" />
     </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
