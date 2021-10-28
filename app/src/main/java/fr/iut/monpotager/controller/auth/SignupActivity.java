@@ -85,7 +85,7 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
             if (event.getAction() == MotionEvent.ACTION_UP) {
                 if (event.getRawX() >= (passwordInput.getRight() - passwordInput.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width() - 20)) {
                     passwordInput.clearFocus();
-                    Drawable right;
+                    Drawable right, left = getResources().getDrawable(R.drawable.ic_auth_password);
 
                     if (passwordInput.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
                         passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
@@ -95,7 +95,7 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
                         right = getResources().getDrawable(R.drawable.ic_auth_eye_open);
                     }
 
-                    passwordInput.setCompoundDrawablesWithIntrinsicBounds(null, null, right, null);
+                    passwordInput.setCompoundDrawablesWithIntrinsicBounds(left, null, right, null);
                     passwordInput.setTypeface(emailInput.getTypeface());
                     return true;
                 }

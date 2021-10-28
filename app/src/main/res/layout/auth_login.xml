@@ -41,11 +41,11 @@
         android:width="250dp"
         android:background="@drawable/input_light"
         android:drawableLeft="@drawable/ic_auth_email"
-        android:drawablePadding="10dp"
         android:drawableTint="@color/white"
+        android:drawablePadding="10dp"
+        android:paddingHorizontal="15dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:paddingHorizontal="15dp"
         android:paddingVertical="9dp"
         android:paddingLeft="10dp"
         android:textColor="@color/white_65"
@@ -61,12 +61,12 @@
         android:width="250dp"
         android:background="@drawable/input_light"
         android:drawableLeft="@drawable/ic_auth_password"
+        android:drawableTint="@color/white"
         android:drawableRight="@drawable/ic_auth_eye"
         android:drawablePadding="10dp"
-        android:drawableTint="@color/white"
+        android:paddingHorizontal="15dp"
         android:hint="Mot de passe"
         android:inputType="textPassword"
-        android:paddingHorizontal="15dp"
         android:paddingVertical="9dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
@@ -106,8 +106,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/loginButton"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="15dp"
         android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
         android:text="Créer un compte"
         android:textAllCaps="false"
         android:textColor="@color/green"
@@ -167,8 +167,8 @@
             android:layout_height="50dp"
             android:layout_marginRight="10dp"
             android:layout_weight="50"
-            android:background="@color/white"
             android:scaleType="centerCrop"
+            android:background="@color/white"
             android:src="@drawable/google_btn" />
 
         <FrameLayout
@@ -187,8 +187,8 @@
                 android:id="@+id/facebookButton"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:background="@color/white"
                 android:scaleType="centerCrop"
+                android:background="@color/white"
                 android:src="@drawable/facebook_btn" />
         </FrameLayout>
 

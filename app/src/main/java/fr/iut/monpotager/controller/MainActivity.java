@@ -1,13 +1,10 @@
 package fr.iut.monpotager.controller;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -28,8 +25,7 @@ import java.util.Arrays;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.auth.LoginActivity;
-import fr.iut.monpotager.controller.fragment.HomeFragment;
-import fr.iut.monpotager.controller.fragment.garden.GardenFragment;
+import fr.iut.monpotager.controller.fragment.DashBoardFragment;
 import fr.iut.monpotager.controller.sidemenu.DrawerAdapter;
 import fr.iut.monpotager.controller.sidemenu.DrawerItem;
 import fr.iut.monpotager.controller.sidemenu.SimpleItem;
@@ -39,8 +35,8 @@ import fr.iut.monpotager.manager.UserManager;
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
     private static final int POS_PERSO = 0;
     private static final int POS_DASHBOARD = 1;
-    private static final int POS_GARDEN = 2;
-    private static final int POS_MY_PROFILE = 3;
+    private static final int POS_MY_PROFILE = 2;
+    private static final int POS_NEARBY_RES = 3;
     private static final int POS_SETTINGS = 4;
     private static final int POS_LOGOUT = 6;
     private UserManager userManager = UserManager.getInstance();
@@ -81,8 +77,8 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         DrawerAdapter adapter = new DrawerAdapter(Arrays.asList(
                 createItemFor(POS_PERSO),
                 createItemFor(POS_DASHBOARD).setChecked(true),
-                createItemFor(POS_GARDEN),
                 createItemFor(POS_MY_PROFILE),
+                createItemFor(POS_NEARBY_RES),
                 createItemFor(POS_SETTINGS),
                 new SpaceItem(260),
                 createItemFor(POS_LOGOUT)
@@ -106,25 +102,19 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     @Override
     public void onItemSelected(int position) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        View view = this.getCurrentFocus();
-
-        if (view != null) {
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
 
         if (position == POS_DASHBOARD) {
-            HomeFragment homeFragment = new HomeFragment();
-            transaction.replace(R.id.container, homeFragment);
+            DashBoardFragment dashBoardFragment = new DashBoardFragment();
+            transaction.replace(R.id.container, dashBoardFragment);
         } else if (position == POS_MY_PROFILE) {
-            HomeFragment homeFragment = new HomeFragment();
-            transaction.replace(R.id.container, homeFragment);
-        } else if (position == POS_GARDEN) {
-            GardenFragment gardenFragment = new GardenFragment();
-            transaction.replace(R.id.container, gardenFragment);
+            DashBoardFragment dashBoardFragment = new DashBoardFragment();
+            transaction.replace(R.id.container, dashBoardFragment);
+        } else if (position == POS_NEARBY_RES) {
+            DashBoardFragment dashBoardFragment = new DashBoardFragment();
+            transaction.replace(R.id.container, dashBoardFragment);
         } else if (position == POS_SETTINGS) {
-            HomeFragment homeFragment = new HomeFragment();
-            transaction.replace(R.id.container, homeFragment);
+            DashBoardFragment dashBoardFragment = new DashBoardFragment();
+            transaction.replace(R.id.container, dashBoardFragment);
         } else if (position == POS_LOGOUT) {
             userManager.signOut();
             Intent intent = getIntent();
@@ -134,7 +124,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
 
 
         slidingRootNav.closeMenu();
-
         transaction.addToBackStack(null);
         transaction.commit();
     }

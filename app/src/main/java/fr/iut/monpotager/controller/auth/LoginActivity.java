@@ -4,8 +4,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
+import android.text.InputType;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -139,11 +138,11 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                     passwordInput.clearFocus();
                     Drawable right, left = getResources().getDrawable(R.drawable.ic_auth_password);
 
-                    if (passwordInput.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())) {
-                        passwordInput.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    if (passwordInput.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
+                        passwordInput.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
                         right = getResources().getDrawable(R.drawable.ic_auth_eye);
                     } else {
-                        passwordInput.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        passwordInput.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
                         right = getResources().getDrawable(R.drawable.ic_auth_eye_open);
                     }
 
