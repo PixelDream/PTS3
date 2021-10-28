@@ -1,12 +1,14 @@
 package fr.iut.monpotager.controller.auth;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.text.InputType;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,7 +50,6 @@ import java.util.List;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.MainActivity;
-import fr.iut.monpotager.controller.fragment.DashBoardFragment;
 
 public class LoginActivity extends AppCompatActivity implements Validator.ValidationListener {
 
@@ -57,6 +58,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
 
     private FirebaseAuth mAuth;
     private Validator validator;
+    private boolean isValid = false;
 
     @Email
     @NotEmpty
@@ -114,7 +116,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     }
 
     /**
-     *  Create listeners on buttons
+     * Create listeners on buttons
      */
 
     private void handleListener() {
@@ -123,13 +125,34 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
         googleButton.setOnClickListener(v -> loginGoogle());
         facebookButton.setOnClickListener(v -> facebook_btn.performClick());
         loginButton.setOnClickListener(view -> {
-
             String email = emailInput.getText().toString();
             String password = passwordInput.getText().toString();
 
             validator.validate();
 
-            if (validator.isValidating()) login(email, password);
+            if (isValid) login(email, password);
+        });
+        passwordInput.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_RIGHT = 2;
+
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (passwordInput.getRight() - passwordInput.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width() - 20)) {
+                    passwordInput.clearFocus();
+                    Drawable right, left = getResources().getDrawable(R.drawable.ic_auth_password);
+
+                    if (passwordInput.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())) {
+                        passwordInput.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        right = getResources().getDrawable(R.drawable.ic_auth_eye);
+                    } else {
+                        passwordInput.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        right = getResources().getDrawable(R.drawable.ic_auth_eye_open);
+                    }
+
+                    passwordInput.setCompoundDrawablesWithIntrinsicBounds(left, null, right, null);
+                    return true;
+                }
+            }
+            return false;
         });
     }
 
@@ -268,10 +291,13 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     }
 
     @Override
-    public void onValidationSucceeded() {}
+    public void onValidationSucceeded() {
+        isValid = true;
+    }
 
     @Override
     public void onValidationFailed(List<ValidationError> errors) {
+        isValid = false;
         for (ValidationError error : errors) {
             View view = error.getView();
             String message = error.getCollatedErrorMessage(this);

@@ -164,14 +164,16 @@
         <ImageButton
             android:id="@+id/googleButton"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_marginRight="10dp"
             android:layout_weight="50"
+            android:scaleType="centerCrop"
+            android:background="@color/white"
             android:src="@drawable/google_btn" />
 
         <FrameLayout
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_marginRight="10dp"
             android:layout_weight="50">
 
@@ -185,6 +187,8 @@
                 android:id="@+id/facebookButton"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
+                android:scaleType="centerCrop"
+                android:background="@color/white"
                 android:src="@drawable/facebook_btn" />
         </FrameLayout>
 

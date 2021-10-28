@@ -12,15 +12,13 @@ import fr.iut.monpotager.R;
 
 public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder> {
 
+    private final Drawable icon;
+    private final String title;
     private int selectedItemIconTint;
     private int selectedItemTextTint;
     private boolean selectedItemTextStyle;
-
     private int normalItemIconTint;
     private int normalItemTextTint;
-
-    private final Drawable icon;
-    private final String title;
 
     public SimpleItem(Drawable icon, String title) {
         this.icon = icon;

@@ -4,10 +4,7 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.WindowManager;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -19,10 +16,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
-import com.yarolegovich.slidingrootnav.callback.DragStateListener;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -38,35 +33,18 @@ import fr.iut.monpotager.controller.sidemenu.SpaceItem;
 import fr.iut.monpotager.manager.UserManager;
 
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
-    /*private static final int POS_CLOSE = 0;*/
-    //private static final int POS_PERSO = 0;
+    private static final int POS_PERSO = 0;
     private static final int POS_DASHBOARD = 1;
     private static final int POS_MY_PROFILE = 2;
     private static final int POS_NEARBY_RES = 3;
     private static final int POS_SETTINGS = 4;
     private static final int POS_LOGOUT = 6;
-    boolean inDrag;
-    TextView profil;
-
-    private final UserManager userManager = UserManager.getInstance();
-    private FirebaseAuth mAuth;
+    private UserManager userManager = UserManager.getInstance();
     private String[] screenTitles;
     private Drawable[] screenIcons;
+
     private SlidingRootNav slidingRootNav;
-    /*
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        if (slidingRootNav != null && slidingRootNav.isMenuOpened()) {
-            boolean menuTouched = findViewById(R.id.container).dispatchTouchEvent(ev) ;
-            if(menuTouched) {
-                slidingRootNav.closeMenu();
-            }
-            return true;
-        } else {
-            return super.dispatchTouchEvent(ev);
-        }
-    }
-    */
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,27 +66,16 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
                 .withRootViewElevation(25)
                 .withToolbarMenuToggle(toolbar)
                 .withMenuOpened(false)
-                .withContentClickableWhenMenuOpened(true)
+                .withContentClickableWhenMenuOpened(false)
                 .withSavedState(savedInstanceState)
                 .withMenuLayout(R.layout.drawer_menu)
-                .addDragStateListener(new DragStateListener() {
-                    @Override
-                    public void onDragStart() {
-                        inDrag = true;
-                    }
-
-                    @Override
-                    public void onDragEnd(boolean isMenuOpened) {
-                        inDrag = false;
-                    }
-                })
                 .inject();
 
         screenIcons = loadScreenIcons();
         screenTitles = loadScreenTitles();
 
         DrawerAdapter adapter = new DrawerAdapter(Arrays.asList(
-                new SpaceItem(100),
+                createItemFor(POS_PERSO),
                 createItemFor(POS_DASHBOARD).setChecked(true),
                 createItemFor(POS_MY_PROFILE),
                 createItemFor(POS_NEARBY_RES),
@@ -118,25 +85,19 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         ));
         adapter.setListener(this);
 
-
         RecyclerView list = findViewById(R.id.drawer_list);
         list.setNestedScrollingEnabled(false);
-
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(adapter);
 
         adapter.setSelected(POS_DASHBOARD);
 
-        FrameLayout container = findViewById(R.id.container);
-        container.setOnClickListener(view -> slidingRootNav.closeMenu());
-
-        ImageView image = findViewById(R.id.icon);
-        Log.d("+++++", userManager.getCurrentUser().getPhotoUrl().toString());
-        //image.setImageDrawable();
-        TextView profil = findViewById(R.id.nameUser);
-        profil.setText(userManager.getCurrentUser().getDisplayName());
-
+        if (userManager.isCurrentUserLogged()) {
+            TextView profile = findViewById(R.id.nameUser);
+            profile.setText(userManager.getCurrentUser().getDisplayName());
+        }
     }
+
 
     @Override
     public void onItemSelected(int position) {
@@ -167,7 +128,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         transaction.commit();
     }
 
-    @SuppressWarnings("rawtypes")
     private DrawerItem createItemFor(int position) {
         return new SimpleItem(screenIcons[position], screenTitles[position])
                 .withTextTint(color(R.color.black))
