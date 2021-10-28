@@ -64,7 +64,9 @@ public class CustomVegetableListAdapter extends BaseAdapter implements Filterabl
 
         ImageView imageVegetable = view.findViewById(R.id.imageVegetable);
 
-
+        TextView durationVegetable = view.findViewById(R.id.durationVegetable);
+        int numOfWeeks = Math.round(vegetable.getDuration() / 7);
+        durationVegetable.setText(numOfWeeks + " semaines");
         final int radius = 50;
         final int margin = 5;
         final Transformation transformation = new RoundedCornersTransformation(radius, margin, RoundedCornersTransformation.CornerType.TOP);

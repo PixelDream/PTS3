@@ -5,17 +5,40 @@ import java.io.Serializable;
 public class Vegetable implements Serializable {
 
     private String name;
-
     private int water;
+    private int[] sowingMonth;
+    private String[] adviseMaintenance;
+    private String[] adviseRecolt;
+    private int[] harvestMonth;
+    private boolean perpetual;
+    private int[] plantingMonth;
+    private int sunshine;
+    private String temperature;
+    private String[] tips;
+    private Vegetable[] vegetablesCompatibilities;
+    private String weather;
 
+
+    /**
+     * In Day
+     */
     private int duration;
-
     private String picture;
 
     public Vegetable(String name, int duration, String image) {
         this.name = name;
         this.duration = duration;
         this.picture = image;
+    }
+
+    @Override
+    public String toString() {
+        return "Vegetable{" +
+                "name='" + name + '\'' +
+                ", water=" + water +
+                ", duration=" + duration +
+                ", picture='" + picture + '\'' +
+                '}';
     }
 
     public String getName() {

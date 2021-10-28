@@ -10,7 +10,8 @@
     <ImageView
         android:id="@+id/imageVegetable"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
+        android:maxHeight="200dp"
         app:srcCompat="@drawable/tomatoes" />
 
     <TextView
@@ -20,7 +21,6 @@
         android:layout_gravity="start"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="-20dp"
         android:text="Tomate"
         android:textColor="#0C9869"
         android:textSize="20dp"
@@ -52,11 +52,11 @@
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="start"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="30dp"
-        android:layout_gravity="start"
         android:orientation="horizontal">
 
         <ImageView
@@ -68,28 +68,25 @@
 
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/durationVegetable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="9dp"
             android:layout_marginLeft="-10dp"
             android:text="6 semaines"
             android:textColor="@color/black"
-            android:textStyle="bold"
-             />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="135dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginLeft="140dp"
             app:srcCompat="@drawable/arrow_right_circle" />
     </LinearLayout>
 
 
-
-
-
-    </LinearLayout>
+</LinearLayout>
 
 

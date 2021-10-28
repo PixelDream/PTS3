@@ -17,13 +17,19 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.concurrent.Executor;
 
 import fr.iut.monpotager.R;
+import fr.iut.monpotager.controller.MainActivity;
 import fr.iut.monpotager.controller.fragment.search.adapter.CustomVegetableListAdapter;
 import fr.iut.monpotager.model.Vegetable;
 
@@ -31,9 +37,13 @@ public class SearchFragment extends Fragment {
 
 
     private ArrayList origList;
+    private ArrayList<Vegetable> vegetableListFirebase;
+    private CollectionReference vegetables;
     private EditText searchVegetable;
     private ListView listView;
     private FirebaseFirestore mDatabase;
+    private CustomVegetableListAdapter adapter;
+    private ViewGroup root;
 
     /**
      * Create app
@@ -43,24 +53,39 @@ public class SearchFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.search_page, container, false);
+        root = (ViewGroup) inflater.inflate(R.layout.search_page, container, false);
+        vegetableListFirebase = new ArrayList();
+
+
         mDatabase = FirebaseFirestore.getInstance();
 
-       CollectionReference vegetables =      mDatabase.collection("vegetables");
 
-        Vegetable vegetable1 = new Vegetable("Tomate",5,"https://img.passeportsante.net/1000x526/2021-05-03/i102192-tomate-nu.jpg");
-        Vegetable vegetable2 = new Vegetable("Poire",5,"https://img.passeportsante.net/1000x526/2021-05-03/i102192-tomate-nu.jpg");
-        Vegetable vegetable3 = new Vegetable("Pomme",5,"https://img.passeportsante.net/1000x526/2021-05-03/i102192-tomate-nu.jpg");
-        Vegetable vegetable4 = new Vegetable("Cerise",5,"https://img.passeportsante.net/1000x526/2021-05-03/i102192-tomate-nu.jpg");
-        ArrayList<Vegetable> vegetableArrayList = new ArrayList<>();
-        vegetableArrayList.add(vegetable1);
-        vegetableArrayList.add(vegetable2);
-        vegetableArrayList.add(vegetable3);
-        vegetableArrayList.add(vegetable4);
 
-        origList = (ArrayList) vegetableArrayList.clone();
+        vegetables = mDatabase.collection("vegetables");
 
-        CustomVegetableListAdapter adapter = new CustomVegetableListAdapter(getContext(), vegetableArrayList);
+        vegetables.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                    for (DocumentSnapshot document : queryDocumentSnapshots) {
+                        String name = document.get("name").toString();
+                        int duration = Integer.parseInt(document.get("duration").toString());
+                        String picture = document.get("picture").toString();
+                        vegetableListFirebase.add(new Vegetable(name, duration, picture));
+                    }
+
+                    onSuccessData();
+
+            }
+        });
+
+
+        return root;
+    }
+
+    public void onSuccessData(){
+        origList = (ArrayList) vegetableListFirebase.clone();
+
+        adapter = new CustomVegetableListAdapter(getContext(), vegetableListFirebase);
         searchVegetable = root.findViewById(R.id.searchVegetable);
         listView = root.findViewById(R.id.search_list);
         listView.setAdapter(adapter);
@@ -83,9 +108,6 @@ public class SearchFragment extends Fragment {
 
             }
         });
-
-
-        return root;
     }
 
 
