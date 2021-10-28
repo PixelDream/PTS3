@@ -19,8 +19,8 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder> {
     private int normalItemIconTint;
     private int normalItemTextTint;
 
-    private Drawable icon;
-    private String title;
+    private final Drawable icon;
+    private final String title;
 
     public SimpleItem(Drawable icon, String title) {
         this.icon = icon;
@@ -39,6 +39,8 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder> {
         holder.title.setText(title);
         if (selectedItemTextStyle && isChecked) {
             holder.title.setTypeface(Typeface.DEFAULT_BOLD);
+        } else {
+            holder.title.setTypeface(Typeface.DEFAULT);
         }
         holder.icon.setImageDrawable(icon);
 
@@ -74,13 +76,13 @@ public class SimpleItem extends DrawerItem<SimpleItem.ViewHolder> {
 
     static class ViewHolder extends DrawerAdapter.ViewHolder {
 
-        private ImageView icon;
-        private TextView title;
+        private final ImageView icon;
+        private final TextView title;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            icon = (ImageView) itemView.findViewById(R.id.icon);
-            title = (TextView) itemView.findViewById(R.id.title);
+            icon = itemView.findViewById(R.id.icon);
+            title = itemView.findViewById(R.id.title);
         }
     }
 }

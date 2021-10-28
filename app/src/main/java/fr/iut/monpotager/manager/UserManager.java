@@ -7,7 +7,7 @@ import fr.iut.monpotager.repository.UserRepository;
 public class UserManager {
 
     private static volatile UserManager instance;
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     private UserManager() {
         userRepository = UserRepository.getInstance();
@@ -18,7 +18,7 @@ public class UserManager {
         if (result != null) {
             return result;
         }
-        synchronized(UserRepository.class) {
+        synchronized (UserRepository.class) {
             if (instance == null) {
                 instance = new UserManager();
             }
@@ -26,11 +26,11 @@ public class UserManager {
         }
     }
 
-    public FirebaseUser getCurrentUser(){
+    public FirebaseUser getCurrentUser() {
         return userRepository.getCurrentUser();
     }
 
-    public Boolean isCurrentUserLogged(){
+    public Boolean isCurrentUserLogged() {
         return (this.getCurrentUser() != null);
     }
 
