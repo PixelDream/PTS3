@@ -24,11 +24,10 @@ public class CustomVegetableListAdapter extends BaseAdapter implements Filterabl
 
     private List<Vegetable> listData;
     private LayoutInflater layoutInflater;
-    private Context context;
 
     public CustomVegetableListAdapter(Context context, List<Vegetable> listData) {
+        super();
         this.listData = listData;
-        this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
     }
 

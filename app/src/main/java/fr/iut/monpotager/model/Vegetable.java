@@ -25,20 +25,11 @@ public class Vegetable implements Serializable {
     private int duration;
     private String picture;
 
-    public Vegetable(String name, int duration, String image) {
+    public Vegetable(String name, int duration, String image, String temperature) {
         this.name = name;
         this.duration = duration;
         this.picture = image;
-    }
-
-    @Override
-    public String toString() {
-        return "Vegetable{" +
-                "name='" + name + '\'' +
-                ", water=" + water +
-                ", duration=" + duration +
-                ", picture='" + picture + '\'' +
-                '}';
+        this.temperature = temperature;
     }
 
     public String getName() {
@@ -53,23 +44,16 @@ public class Vegetable implements Serializable {
         return water;
     }
 
-    public void setWater(int water) {
-        this.water = water;
-    }
 
     public int getDuration() {
         return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
     }
 
     public String getPicture() {
         return picture;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public String getTemperature() {
+        return temperature;
     }
 }
