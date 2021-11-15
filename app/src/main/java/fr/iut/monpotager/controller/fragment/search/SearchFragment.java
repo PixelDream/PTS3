@@ -66,12 +66,25 @@ public class SearchFragment extends Fragment {
         vegetables.get().addOnSuccessListener(queryDocumentSnapshots -> {
 
             for (DocumentSnapshot document : queryDocumentSnapshots) {
-                String name = document.get("name").toString();
-                int duration = Integer.parseInt(document.get("duration").toString());
-                String picture = document.get("picture").toString();
-                String temperature = document.get("temperature").toString();
-
-                vegetableListFirebase.add(new Vegetable(name, duration, picture, temperature));
+                try {
+                    Vegetable v = new Vegetable();
+                    v.setName(document.get("name").toString());
+                    v.setDuration(Integer.parseInt(document.get("duration").toString()));
+                    v.setPicture(document.get("picture").toString());
+                    v.setTemperature(document.get("temperature").toString());
+                    v.setSunshine(Integer.parseInt(document.get("sunshine").toString()));
+                    //TODO: v.setAdviseMaintenance(document.get("advise_maintenance").toString());
+                    //TODO: v.getAdviseRecolt(document.get("advise_recolt").toString());
+                    //TODO: v.setHarvestMonth(document.get("harvest_month").toString());
+                    v.setPerpetual(Boolean.parseBoolean(document.get("perpetual").toString()));
+                    //TODO: v.setPlantingMonth();
+                    //TODO: v.setSowingMonth();
+                    v.setWater(Integer.parseInt(document.get("water").toString()));
+                    v.setWeather(document.get("weather").toString());
+                    vegetableListFirebase.add(v);
+                } catch (Exception e){
+                    Log.e("load-vege-search", e.getMessage());
+                }
             }
 
             onSuccessData();

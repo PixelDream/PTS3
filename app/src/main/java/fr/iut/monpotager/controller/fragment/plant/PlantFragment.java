@@ -16,6 +16,8 @@ import android.widget.ViewFlipper;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -31,7 +33,6 @@ public class PlantFragment extends Fragment {
     private static final String DESCRIBABLE_KEY = "vegetable";
     private List<Button> btnList;
 
-//    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_plant, container, false);
@@ -52,7 +53,8 @@ public class PlantFragment extends Fragment {
 
         btnList = new ArrayList(Arrays.asList(infoBtn, entertainBtn, harvestBtn));
 
-        //updateGraph(root.findViewById(R.id.calendarGraphImg1), Period.AOUT);
+        ImageView plantImage = root.findViewById(R.id.plantImage);
+        Picasso.get().load(vegetable.getPicture()).into(plantImage);
 
         return root;
     }
@@ -86,7 +88,7 @@ public class PlantFragment extends Fragment {
         final TextView humidity = container.findViewById(R.id.humidity);
         humidity.setText(vegetable.getWater() +"%");
         final TextView sun = container.findViewById(R.id.sunText);
-        sun.setText("10 %"); //TODO: SUN
+        sun.setText(vegetable.getSunshine());
         final TextView lifeTime = container.findViewById(R.id.lifeTime);
         lifeTime.setText(Math.round(vegetable.getDuration() / 7) + " semaines");
         final TextView climate = container.findViewById(R.id.climateText);

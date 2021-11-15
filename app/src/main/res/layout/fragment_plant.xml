@@ -31,6 +31,32 @@
         android:layout_marginTop="100dp"
         android:src="@drawable/tomate" />
 
+    <Button
+        android:id="@+id/likeBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="205dp"
+        android:background="@drawable/input"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:text="@string/white_heart"
+        android:textSize="24sp"
+        app:backgroundTint="@color/white" />
+
+    <Button
+        android:id="@+id/addToGarden"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="315dp"
+        android:layout_marginTop="205dp"
+        android:background="@drawable/input"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:text="➕"
+        android:textSize="18sp"
+        app:backgroundTint="@color/white" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,6 +75,7 @@
             android:clickable="false"
             android:padding="2dp"
             android:text="Infos"
+            android:textColor="@color/white"
             android:textSize="12sp"
             android:background="@drawable/input" />
 
@@ -61,6 +88,7 @@
             android:layout_weight="1"
             android:padding="2dp"
             android:text="Entretenir"
+            android:textColor="@color/white"
             android:textSize="12sp"
             android:background="@drawable/input_light" />
 
@@ -73,6 +101,7 @@
             android:layout_weight="1"
             android:padding="2dp"
             android:text="Recolter"
+            android:textColor="@color/white"
             android:textSize="12sp"
             android:background="@drawable/input_light" />
     </LinearLayout>
