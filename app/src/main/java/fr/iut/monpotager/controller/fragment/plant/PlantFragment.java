@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import androidx.annotation.RequiresApi;
+import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 
 import com.squareup.picasso.Picasso;
@@ -24,6 +25,7 @@ import java.util.List;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.fragment.search.SearchFragment;
+import fr.iut.monpotager.controller.fragment.search.adapter.RoundedCornersTransformation;
 import fr.iut.monpotager.manager.UserManager;
 import fr.iut.monpotager.model.Period;
 import fr.iut.monpotager.model.Plant;
@@ -32,6 +34,7 @@ import fr.iut.monpotager.model.Vegetable;
 public class PlantFragment extends Fragment {
     private static final String DESCRIBABLE_KEY = "vegetable";
     private List<Button> btnList;
+    private boolean liked = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -54,7 +57,10 @@ public class PlantFragment extends Fragment {
         btnList = new ArrayList(Arrays.asList(infoBtn, entertainBtn, harvestBtn));
 
         ImageView plantImage = root.findViewById(R.id.plantImage);
-        Picasso.get().load(vegetable.getPicture()).into(plantImage);
+        Picasso.get().load(vegetable.getPicture()).transform(new RoundedCornersTransformation(128,5)).resize(2048,2048).centerCrop().into(plantImage);
+
+        Button likeBtn = root.findViewById(R.id.likeBtn);
+        likeBtn.setOnClickListener(v -> changeHeart(likeBtn));
 
         return root;
     }
@@ -82,13 +88,22 @@ public class PlantFragment extends Fragment {
         }
     }
 
+    public void changeHeart(Button btn){
+        if(liked){
+            btn.setText(R.string.white_heart);
+        } else {
+            btn.setText(R.string.red_heart);
+        }
+        liked=!liked;
+    }
+
     public void insertPlantSpec(ViewGroup container, Vegetable vegetable){
         final TextView plantName = container.findViewById(R.id.plantName);
         plantName.setText(vegetable.getName());
         final TextView humidity = container.findViewById(R.id.humidity);
         humidity.setText(vegetable.getWater() +"%");
         final TextView sun = container.findViewById(R.id.sunText);
-        sun.setText(vegetable.getSunshine());
+        sun.setText(Integer.toString(vegetable.getSunshine()));
         final TextView lifeTime = container.findViewById(R.id.lifeTime);
         lifeTime.setText(Math.round(vegetable.getDuration() / 7) + " semaines");
         final TextView climate = container.findViewById(R.id.climateText);
