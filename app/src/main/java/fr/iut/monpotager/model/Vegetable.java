@@ -2,12 +2,12 @@ package fr.iut.monpotager.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class Vegetable implements Serializable {
 
-    private String id;
     private String name;
     private int water;
     private List<Long> sowingMonth;
@@ -30,26 +30,24 @@ public class Vegetable implements Serializable {
     private String picture;
 
     public Vegetable() {
-        this.id = "";
         this.name = "";
         this.water = 0;
-        this.sowingMonth = new ArrayList<>(Collections.singletonList(1L));
-        this.plantingMonth = new ArrayList<>(Collections.singletonList(1L));
-        this.harvestMonth = new ArrayList<>(Collections.singletonList(1L));
-        this.adviseMaintenance = new ArrayList<>(Collections.singletonList(""));
-        this.adviseRecolt = new ArrayList<>(Collections.singletonList(""));
+        this.sowingMonth = new ArrayList<Long>(Collections.singletonList(1L));
+        this.plantingMonth = new ArrayList<Long>(Collections.singletonList(1L));
+        this.harvestMonth = new ArrayList<Long>(Collections.singletonList(1L));
+        this.adviseMaintenance = new ArrayList<String>(Collections.singletonList(""));
+        this.adviseRecolt = new ArrayList<String>(Collections.singletonList(""));
         this.perpetual = false;
         this.sunshine = 0;
         this.temperature = "";
-        this.tips = new ArrayList<>(Collections.singletonList(""));
-        this.vegetablesCompatibilities = new ArrayList<>(Collections.singletonList(null));
+        this.tips = new ArrayList<String>(Collections.singletonList(""));
+        this.vegetablesCompatibilities =  new ArrayList<Vegetable>(Collections.singletonList(null));
         this.weather = "";
         this.duration = 0;
         this.picture = "";
     }
 
-    public Vegetable(String id, String name, int duration, String image, String temperature) {
-        this.id = id;
+    public Vegetable(String name, int duration, String image, String temperature) {
         this.name = name;
         this.duration = duration;
         this.picture = image;
@@ -68,32 +66,21 @@ public class Vegetable implements Serializable {
         return water;
     }
 
-    public void setWater(int water) {
-        this.water = water;
-    }
 
     public int getDuration() {
         return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
     }
 
     public String getPicture() {
         return picture;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
-    }
-
     public String getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(String temperature) {
-        this.temperature = temperature;
+    public void setWater(int water) {
+        this.water = water;
     }
 
     public List<Long> getSowingMonth() {
@@ -104,28 +91,28 @@ public class Vegetable implements Serializable {
         this.sowingMonth = sowingMonth;
     }
 
-    public List<Long> getHarvestMonth() {
-        return harvestMonth;
-    }
-
     public void setHarvestMonth(List<Long> harvestMonth) {
         this.harvestMonth = harvestMonth;
-    }
-
-    public List<Long> getPlantingMonth() {
-        return plantingMonth;
     }
 
     public void setPlantingMonth(List<Long> plantingMonth) {
         this.plantingMonth = plantingMonth;
     }
 
-    public List<Vegetable> getVegetablesCompatibilities() {
-        return vegetablesCompatibilities;
-    }
-
     public void setVegetablesCompatibilities(List<Vegetable> vegetablesCompatibilities) {
         this.vegetablesCompatibilities = vegetablesCompatibilities;
+    }
+
+    public List<Long> getHarvestMonth() {
+        return harvestMonth;
+    }
+
+    public List<Long> getPlantingMonth() {
+        return plantingMonth;
+    }
+
+    public List<Vegetable> getVegetablesCompatibilities() {
+        return vegetablesCompatibilities;
     }
 
     public List<String> getAdviseMaintenance() {
@@ -160,6 +147,10 @@ public class Vegetable implements Serializable {
         this.sunshine = sunshine;
     }
 
+    public void setTemperature(String temperature) {
+        this.temperature = temperature;
+    }
+
     public List<String> getTips() {
         return tips;
     }
@@ -176,12 +167,11 @@ public class Vegetable implements Serializable {
         this.weather = weather;
     }
 
-    public String getId() {
-        return id;
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
-
 }
