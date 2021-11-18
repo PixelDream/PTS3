@@ -189,6 +189,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="350dp">
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="175dp"
@@ -199,118 +200,118 @@
             <!-- Mois -->
 
             <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="5dp">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp">
 
                 <TextView
-                        android:id="@+id/textViewJan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="J"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                    android:id="@+id/textViewJan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="J"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/textViewF"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="F"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                    android:id="@+id/textViewF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="F"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/textViewMar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="M"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                    android:id="@+id/textViewMar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="M"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/textViewAvr"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="A"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                    android:id="@+id/textViewAvr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="A"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/textViewMai"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="M"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                    android:id="@+id/textViewMai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="M"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/textViewJn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="J"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                    android:id="@+id/textViewJn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="J"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/textViewJl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="J"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                    android:id="@+id/textViewJl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="J"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/textViewAo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="A"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                    android:id="@+id/textViewAo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="A"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/textViewS"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="S"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                    android:id="@+id/textViewS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="S"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/textViewO"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="O"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                    android:id="@+id/textViewO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="O"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/textViewN"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="N"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                    android:id="@+id/textViewN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="N"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/textViewD"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="D"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
+                    android:id="@+id/textViewD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="D"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
             </TableRow>
 
             <!-- Ligne 1 -->
@@ -321,133 +322,137 @@
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="20dp">
+
                 <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="10dp" app:srcCompat="@drawable/input"
-                        android:id="@+id/firstLine"
-                        android:src="@drawable/input_light_tight"
-                        app:tint="#F44336"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_column="2"
-                        android:layout_span="3"/>
+                    android:id="@+id/firstLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_column="2"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_span="3"
+                    android:src="@drawable/input_light_tight"
+                    app:srcCompat="@drawable/input"
+                    app:tint="#F44336" />
             </TableRow>
 
             <!-- Ligne 2 -->
 
 
             <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="20dp">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="20dp">
 
                 <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="10dp" app:srcCompat="@drawable/input"
-                        android:id="@+id/secondeLine"
-                        android:src="@drawable/input_light_tight"
-                        app:tint="#FFEB3B"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_column="4"
-                        android:layout_span="3"/>
+                    android:id="@+id/secondeLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_column="4"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_span="3"
+                    android:src="@drawable/input_light_tight"
+                    app:srcCompat="@drawable/input"
+                    app:tint="#FFEB3B" />
             </TableRow>
 
             <!-- Ligne 3 -->
 
             <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="20dp">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="20dp">
 
                 <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="10dp" app:srcCompat="@drawable/input"
-                        android:id="@+id/thirdLine"
-                        android:src="@drawable/input_light_tight"
-                        app:tint="@color/purple_500"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_column="6"
-                        android:layout_span="3"/>
+                    android:id="@+id/thirdLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_column="6"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_span="3"
+                    android:src="@drawable/input_light_tight"
+                    app:srcCompat="@drawable/input"
+                    app:tint="@color/purple_500" />
             </TableRow>
 
             <!-- Légende -->
             <TableRow
-                    android:id="@+id/calendarLegend"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="30dp">
+                android:id="@+id/calendarLegend"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="30dp">
 
                 <ImageView
-                        android:id="@+id/calendarLegend1"
-                        android:layout_width="0dp"
-                        android:layout_height="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:paddingRight="5dp"
-                        android:src="@drawable/input_light_tight"
-                        app:tint="#F44336"
-                        android:layout_column="0"
-                        android:layout_span="2"/>
+                    android:id="@+id/calendarLegend1"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_column="0"
+                    android:layout_gravity="center_vertical"
+                    android:layout_span="2"
+                    android:paddingRight="5dp"
+                    android:src="@drawable/input_light_tight"
+                    app:tint="#F44336" />
 
                 <TextView
-                        android:id="@+id/calendarLegendText1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="Machin"
-                        android:textColor="@color/white"
-                        android:textSize="11sp"
-                        android:textStyle="bold"
-                        android:layout_column="2"
-                        android:layout_span="2"/>
+                    android:id="@+id/calendarLegendText1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_span="1"
+                    android:text="Semi"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
 
                 <ImageView
-                        android:id="@+id/calendarLegend2"
-                        android:layout_width="0dp"
-                        android:layout_height="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:paddingRight="5dp"
-                        android:src="@drawable/input_light_tight"
-                        app:tint="#FFEB3B"
-                        android:layout_column="4"
-                        android:layout_span="2"/>
+                    android:id="@+id/calendarLegend2"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_column="3"
+                    android:layout_gravity="center_vertical"
+                    android:layout_span="2"
+                    android:paddingRight="5dp"
+                    android:src="@drawable/input_light_tight"
+                    app:tint="#FFEB3B" />
 
                 <TextView
-                        android:id="@+id/calendarLegendText2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="10dp"
-                        android:text="Truc"
-                        android:textColor="@color/white"
-                        android:textSize="11sp"
-                        android:textStyle="bold"
-                        android:layout_column="6"
-                        android:layout_span="2"/>
+                    android:id="@+id/calendarLegendText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="5"
+                    android:layout_span="3"
+                    android:paddingRight="10dp"
+                    android:text="Plantation"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
 
                 <ImageView
-                        android:id="@+id/calendarLegend3"
-                        android:layout_width="0dp"
-                        android:layout_height="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:paddingRight="5dp"
-                        android:src="@drawable/input_light_tight"
-                        app:tint="@color/purple_500"
-                        android:layout_column="8"
-                        android:layout_span="2"/>
+                    android:id="@+id/calendarLegend3"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_column="8"
+                    android:layout_gravity="center_vertical"
+                    android:layout_span="2"
+                    android:paddingRight="5dp"
+                    android:src="@drawable/input_light_tight"
+                    app:tint="@color/purple_500" />
 
                 <TextView
-                        android:id="@+id/calendarLegendText3"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="Bidule"
-                        android:textColor="@color/white"
-                        android:textSize="11sp"
-                        android:textStyle="bold"
-                        android:layout_column="10"
-                        android:layout_span="2"/>
+                    android:id="@+id/calendarLegendText3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="10"
+                    android:layout_span="2"
+                    android:text="Recolte"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
             </TableRow>
         </TableLayout>
     </RelativeLayout>

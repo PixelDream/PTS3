@@ -1,21 +1,25 @@
 package fr.iut.monpotager.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Vegetable implements Serializable {
 
     private String name;
     private int water;
-    private int[] sowingMonth;
-    private String[] adviseMaintenance;
-    private String[] adviseRecolt;
-    private int[] harvestMonth;
+    private List<Long> sowingMonth;
+    private List<String> adviseMaintenance;
+    private List<String> adviseRecolt;
+    private List<Long> harvestMonth;
     private boolean perpetual;
-    private int[] plantingMonth;
+    private List<Long> plantingMonth;
     private int sunshine;
     private String temperature;
-    private String[] tips;
-    private Vegetable[] vegetablesCompatibilities;
+    private List<String> tips;
+    private List<Vegetable> vegetablesCompatibilities;
     private String weather;
 
 
@@ -28,16 +32,16 @@ public class Vegetable implements Serializable {
     public Vegetable() {
         this.name = "";
         this.water = 0;
-        this.sowingMonth = new int[0];
-        this.adviseMaintenance = new String[0];
-        this.adviseRecolt = new String[0];
-        this.harvestMonth = new int[0];
+        this.sowingMonth = new ArrayList<Long>(Collections.singletonList(1L));
+        this.plantingMonth = new ArrayList<Long>(Collections.singletonList(1L));
+        this.harvestMonth = new ArrayList<Long>(Collections.singletonList(1L));
+        this.adviseMaintenance = new ArrayList<String>(Collections.singletonList(""));
+        this.adviseRecolt = new ArrayList<String>(Collections.singletonList(""));
         this.perpetual = false;
-        this.plantingMonth = new int[0];
         this.sunshine = 0;
         this.temperature = "";
-        this.tips = new String[0];
-        this.vegetablesCompatibilities = new Vegetable[0];
+        this.tips = new ArrayList<String>(Collections.singletonList(""));
+        this.vegetablesCompatibilities =  new ArrayList<Vegetable>(Collections.singletonList(null));
         this.weather = "";
         this.duration = 0;
         this.picture = "";
@@ -79,36 +83,52 @@ public class Vegetable implements Serializable {
         this.water = water;
     }
 
-    public int[] getSowingMonth() {
+    public List<Long> getSowingMonth() {
         return sowingMonth;
     }
 
-    public void setSowingMonth(int[] sowingMonth) {
+    public void setSowingMonth(List<Long> sowingMonth) {
         this.sowingMonth = sowingMonth;
     }
 
-    public String[] getAdviseMaintenance() {
-        return adviseMaintenance;
+    public void setHarvestMonth(List<Long> harvestMonth) {
+        this.harvestMonth = harvestMonth;
     }
 
-    public void setAdviseMaintenance(String[] adviseMaintenance) {
-        this.adviseMaintenance = adviseMaintenance;
+    public void setPlantingMonth(List<Long> plantingMonth) {
+        this.plantingMonth = plantingMonth;
     }
 
-    public String[] getAdviseRecolt() {
-        return adviseRecolt;
+    public void setVegetablesCompatibilities(List<Vegetable> vegetablesCompatibilities) {
+        this.vegetablesCompatibilities = vegetablesCompatibilities;
     }
 
-    public void setAdviseRecolt(String[] adviseRecolt) {
-        this.adviseRecolt = adviseRecolt;
-    }
-
-    public int[] getHarvestMonth() {
+    public List<Long> getHarvestMonth() {
         return harvestMonth;
     }
 
-    public void setHarvestMonth(int[] harvestMonth) {
-        this.harvestMonth = harvestMonth;
+    public List<Long> getPlantingMonth() {
+        return plantingMonth;
+    }
+
+    public List<Vegetable> getVegetablesCompatibilities() {
+        return vegetablesCompatibilities;
+    }
+
+    public List<String> getAdviseMaintenance() {
+        return adviseMaintenance;
+    }
+
+    public void setAdviseMaintenance(List<String> adviseMaintenance) {
+        this.adviseMaintenance = adviseMaintenance;
+    }
+
+    public List<String> getAdviseRecolt() {
+        return adviseRecolt;
+    }
+
+    public void setAdviseRecolt(List<String> adviseRecolt) {
+        this.adviseRecolt = adviseRecolt;
     }
 
     public boolean isPerpetual() {
@@ -117,14 +137,6 @@ public class Vegetable implements Serializable {
 
     public void setPerpetual(boolean perpetual) {
         this.perpetual = perpetual;
-    }
-
-    public int[] getPlantingMonth() {
-        return plantingMonth;
-    }
-
-    public void setPlantingMonth(int[] plantingMonth) {
-        this.plantingMonth = plantingMonth;
     }
 
     public int getSunshine() {
@@ -139,20 +151,12 @@ public class Vegetable implements Serializable {
         this.temperature = temperature;
     }
 
-    public String[] getTips() {
+    public List<String> getTips() {
         return tips;
     }
 
-    public void setTips(String[] tips) {
+    public void setTips(List<String> tips) {
         this.tips = tips;
-    }
-
-    public Vegetable[] getVegetablesCompatibilities() {
-        return vegetablesCompatibilities;
-    }
-
-    public void setVegetablesCompatibilities(Vegetable[] vegetablesCompatibilities) {
-        this.vegetablesCompatibilities = vegetablesCompatibilities;
     }
 
     public String getWeather() {

@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
@@ -22,6 +23,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.fragment.search.SearchFragment;
@@ -62,6 +64,8 @@ public class PlantFragment extends Fragment {
         Button likeBtn = root.findViewById(R.id.likeBtn);
         likeBtn.setOnClickListener(v -> changeHeart(likeBtn));
 
+        updateGraph(root.findViewById(R.id.firstLine), root.findViewById(R.id.secondeLine), root.findViewById(R.id.thirdLine), vegetable);
+
         return root;
     }
 
@@ -88,6 +92,40 @@ public class PlantFragment extends Fragment {
         }
     }
 
+    public void updateGraph(ImageView firstLine, ImageView secondLine, ImageView thirdLine, Vegetable vegetable){
+
+        // Firstline of the graph => Sowing Month
+
+        int mSize = vegetable.getSowingMonth().size();
+        int firstM = vegetable.getSowingMonth().get(0).intValue();
+
+        TableRow.LayoutParams params = (TableRow.LayoutParams)firstLine.getLayoutParams();
+        params.span = (firstM==-1)? 0 : mSize;
+        params.column = firstM-1;
+        firstLine.setLayoutParams(params);
+
+        // Seconde line of the graph => Planting Month
+
+        mSize = vegetable.getPlantingMonth().size();
+        firstM = vegetable.getPlantingMonth().get(0).intValue();
+
+        params = (TableRow.LayoutParams)secondLine.getLayoutParams();
+        params.span = (firstM==-1)? 0 : mSize;
+        params.column = firstM-1;
+        secondLine.setLayoutParams(params);
+
+        // Third line of the graph => Harvest Month
+
+        mSize = vegetable.getHarvestMonth().size();
+        firstM = vegetable.getHarvestMonth().get(0).intValue();
+
+        params = (TableRow.LayoutParams)thirdLine.getLayoutParams();
+        params.span = (firstM==-1)? 0 : mSize;
+        params.column = firstM-1;
+        thirdLine.setLayoutParams(params);
+
+    }
+
     public void changeHeart(Button btn){
         if(liked){
             btn.setText(R.string.white_heart);
@@ -108,10 +146,5 @@ public class PlantFragment extends Fragment {
         lifeTime.setText(Math.round(vegetable.getDuration() / 7) + " semaines");
         final TextView climate = container.findViewById(R.id.climateText);
         climate.setText(vegetable.getTemperature() + "°C");
-    }
-
-    public void updateGraph(ImageView g, Period p){
-        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) g.getLayoutParams();
-        params.setMargins(60,0,60,0);
     }
 }
