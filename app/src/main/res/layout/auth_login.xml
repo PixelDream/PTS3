@@ -41,19 +41,8 @@
         android:width="250dp"
         android:background="@drawable/input_light"
         android:drawableLeft="@drawable/ic_auth_email"
-<<<<<<< HEAD
-<<<<<<< HEAD
-        android:drawableTint="@color/white"
-        android:drawablePadding="10dp"
-        android:paddingHorizontal="15dp"
-=======
         android:drawablePadding="10dp"
         android:drawableTint="@color/white"
->>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
-=======
-        android:drawablePadding="10dp"
-        android:drawableTint="@color/white"
->>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:paddingHorizontal="15dp"
@@ -72,22 +61,9 @@
         android:width="250dp"
         android:background="@drawable/input_light"
         android:drawableLeft="@drawable/ic_auth_password"
-<<<<<<< HEAD
-<<<<<<< HEAD
-        android:drawableTint="@color/white"
-        android:drawableRight="@drawable/ic_auth_eye"
-        android:drawablePadding="10dp"
-        android:paddingHorizontal="15dp"
-=======
         android:drawableRight="@drawable/ic_auth_eye"
         android:drawablePadding="10dp"
         android:drawableTint="@color/white"
->>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
-=======
-        android:drawableRight="@drawable/ic_auth_eye"
-        android:drawablePadding="10dp"
-        android:drawableTint="@color/white"
->>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         android:hint="Mot de passe"
         android:inputType="textPassword"
         android:paddingHorizontal="15dp"
@@ -130,18 +106,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/loginButton"
         android:layout_alignParentLeft="true"
-<<<<<<< HEAD
-<<<<<<< HEAD
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="15dp"
-=======
         android:layout_marginLeft="15dp"
         android:layout_marginTop="25dp"
->>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
-=======
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="25dp"
->>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         android:text="Créer un compte"
         android:textAllCaps="false"
         android:textColor="@color/green"

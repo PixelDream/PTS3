@@ -1,9 +1,6 @@
 package fr.iut.monpotager.model;
 
 import android.os.Parcel;
-import android.os.Parcelable;
-
-import java.util.Date;
 
 public class Plant {
     private String name;

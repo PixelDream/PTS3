@@ -18,15 +18,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
-<<<<<<< HEAD
-<<<<<<< HEAD
-import com.mobsandgeeks.saripaar.annotation.Max;
-=======
->>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
-import com.mobsandgeeks.saripaar.annotation.Min;
-=======
 import com.mobsandgeeks.saripaar.annotation.Length;
->>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Password;
 
@@ -42,27 +34,10 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
     private Validator validator;
     private boolean isValid = false;
 
-<<<<<<< HEAD
-    @NotEmpty
-<<<<<<< HEAD
-    @Min(2)
-    private EditText firstNameInput;
-
-    @NotEmpty
-    @Min(2)
-=======
-    @Min(3)
-    private EditText firstNameInput;
-
-    @NotEmpty
-    @Min(3)
->>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
-=======
     @Length(min = 3)
     private EditText firstNameInput;
 
     @Length(min = 3)
->>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     private EditText lastNameInput;
 
     @NotEmpty
@@ -101,27 +76,11 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
             String email = emailInput.getText().toString().trim();
             String password = passwordInput.getText().toString().trim();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            validator.validate();
-            if (validator.isValidating()) signup(firtName, lastName, email, password);
-=======
-            if (TextUtils.isEmpty(firtName)) {
-                Toast.makeText(getApplicationContext(), "Enter firstName!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (TextUtils.isEmpty(lastName)) {
-                Toast.makeText(getApplicationContext(), "Enter lastName!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-=======
             validator.validate();
             if (isValid) signup(firtName, lastName, email, password);
         });
         passwordInput.setOnTouchListener((v, event) -> {
             final int DRAWABLE_RIGHT = 2;
->>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
             if (event.getAction() == MotionEvent.ACTION_UP) {
                 if (event.getRawX() >= (passwordInput.getRight() - passwordInput.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width() - 20)) {
@@ -141,13 +100,7 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
                     return true;
                 }
             }
-<<<<<<< HEAD
-
-            signup(firtName, lastName, email, password);
->>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
-=======
             return false;
->>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         });
     }
 
@@ -174,19 +127,9 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
 
 
     @Override
-<<<<<<< HEAD
-<<<<<<< HEAD
-    public void onValidationSucceeded() {}
-=======
-=======
->>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     public void onValidationSucceeded() {
         isValid = true;
     }
-<<<<<<< HEAD
->>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
-=======
->>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
     @Override
     public void onValidationFailed(List<ValidationError> errors) {

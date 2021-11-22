@@ -67,7 +67,7 @@ public class CustomVegetableListAdapter extends BaseAdapter implements Filterabl
         durationVegetable.setText(numOfWeeks + " semaines");
 
         final Transformation transformation = new RoundedCornersTransformation(50, 5, RoundedCornersTransformation.CornerType.TOP);
-        Picasso.get().load(vegetable.getPicture()).transform(transformation).resize(2048,900).centerCrop().into(imageVegetable);
+        Picasso.get().load(vegetable.getPicture()).transform(transformation).resize(2048, 900).centerCrop().into(imageVegetable);
 
 
         return view;

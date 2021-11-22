@@ -5,7 +5,7 @@ public enum Season {
 
     private String name;
 
-    Season (String name){
+    Season(String name) {
         this.name = name;
     }
 
@@ -13,8 +13,8 @@ public enum Season {
         return name;
     }
 
-    public Season toSeason(String str){
-        switch(str){
+    public Season toSeason(String str) {
+        switch (str) {
             case "PRINTEMPS":
                 return PRINTEMPS;
             case "ETE":

@@ -2,7 +2,6 @@ package fr.iut.monpotager.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -41,7 +40,7 @@ public class Vegetable implements Serializable {
         this.sunshine = 0;
         this.temperature = "";
         this.tips = new ArrayList<String>(Collections.singletonList(""));
-        this.vegetablesCompatibilities =  new ArrayList<Vegetable>(Collections.singletonList(null));
+        this.vegetablesCompatibilities = new ArrayList<Vegetable>(Collections.singletonList(null));
         this.weather = "";
         this.duration = 0;
         this.picture = "";
@@ -66,21 +65,32 @@ public class Vegetable implements Serializable {
         return water;
     }
 
+    public void setWater(int water) {
+        this.water = water;
+    }
 
     public int getDuration() {
         return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
     public String getPicture() {
         return picture;
     }
 
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
     public String getTemperature() {
         return temperature;
     }
 
-    public void setWater(int water) {
-        this.water = water;
+    public void setTemperature(String temperature) {
+        this.temperature = temperature;
     }
 
     public List<Long> getSowingMonth() {
@@ -91,28 +101,28 @@ public class Vegetable implements Serializable {
         this.sowingMonth = sowingMonth;
     }
 
-    public void setHarvestMonth(List<Long> harvestMonth) {
-        this.harvestMonth = harvestMonth;
-    }
-
-    public void setPlantingMonth(List<Long> plantingMonth) {
-        this.plantingMonth = plantingMonth;
-    }
-
-    public void setVegetablesCompatibilities(List<Vegetable> vegetablesCompatibilities) {
-        this.vegetablesCompatibilities = vegetablesCompatibilities;
-    }
-
     public List<Long> getHarvestMonth() {
         return harvestMonth;
+    }
+
+    public void setHarvestMonth(List<Long> harvestMonth) {
+        this.harvestMonth = harvestMonth;
     }
 
     public List<Long> getPlantingMonth() {
         return plantingMonth;
     }
 
+    public void setPlantingMonth(List<Long> plantingMonth) {
+        this.plantingMonth = plantingMonth;
+    }
+
     public List<Vegetable> getVegetablesCompatibilities() {
         return vegetablesCompatibilities;
+    }
+
+    public void setVegetablesCompatibilities(List<Vegetable> vegetablesCompatibilities) {
+        this.vegetablesCompatibilities = vegetablesCompatibilities;
     }
 
     public List<String> getAdviseMaintenance() {
@@ -147,10 +157,6 @@ public class Vegetable implements Serializable {
         this.sunshine = sunshine;
     }
 
-    public void setTemperature(String temperature) {
-        this.temperature = temperature;
-    }
-
     public List<String> getTips() {
         return tips;
     }
@@ -165,13 +171,5 @@ public class Vegetable implements Serializable {
 
     public void setWeather(String weather) {
         this.weather = weather;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
     }
 }

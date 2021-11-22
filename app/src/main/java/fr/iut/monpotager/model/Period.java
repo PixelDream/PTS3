@@ -5,7 +5,7 @@ public enum Period {
 
     private String name;
 
-    Period (String name){
+    Period(String name) {
         this.name = name;
     }
 
@@ -13,8 +13,8 @@ public enum Period {
         return name;
     }
 
-    public Period toPeriod(String str){
-        switch(str){
+    public Period toPeriod(String str) {
+        switch (str) {
             case "JANVIER":
                 return JANVIER;
             case "FEVRIER":

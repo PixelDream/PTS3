@@ -2,21 +2,11 @@
     <!-- Base application theme. -->
     <style name="Theme.MonPotager" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         <item name="colorPrimary">@color/green</item>
         <item name="colorPrimaryVariant">@color/green_40</item>
         <item name="colorOnPrimary">@color/green</item>
-=======
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_200</item>
-        <item name="colorOnPrimary">@color/white</item>
->>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
-=======
-        <item name="colorPrimary">@color/green</item>
-        <item name="colorPrimaryVariant">@color/green_40</item>
-        <item name="colorOnPrimary">@color/green</item>
->>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
+
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/green_light</item>
         <item name="colorSecondaryVariant">@color/green_light</item>

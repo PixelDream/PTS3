@@ -71,19 +71,9 @@ public class PasswordActivity extends AppCompatActivity implements Validator.Val
 
 
     @Override
-<<<<<<< HEAD
-<<<<<<< HEAD
-    public void onValidationSucceeded() {}
-=======
-=======
->>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     public void onValidationSucceeded() {
         isValid = true;
     }
-<<<<<<< HEAD
->>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
-=======
->>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
     @Override
     public void onValidationFailed(List<ValidationError> errors) {
