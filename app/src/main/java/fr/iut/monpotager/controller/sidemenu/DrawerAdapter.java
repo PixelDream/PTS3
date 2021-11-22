@@ -7,6 +7,13 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,9 +21,21 @@ import java.util.Map;
 @SuppressWarnings({"rawtypes", "ConstantConditions"})
 public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder> {
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+    private List<DrawerItem> items;
+    private Map<Class<? extends DrawerItem>, Integer> viewTypes;
+    private SparseArray<DrawerItem> holderFactories;
+=======
     private final List<DrawerItem> items;
     private final Map<Class<? extends DrawerItem>, Integer> viewTypes;
     private final SparseArray<DrawerItem> holderFactories;
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+    private final List<DrawerItem> items;
+    private final Map<Class<? extends DrawerItem>, Integer> viewTypes;
+    private final SparseArray<DrawerItem> holderFactories;
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
     private OnItemSelectedListener listener;
 
@@ -24,6 +43,15 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         this.items = items;
         this.viewTypes = new HashMap<>();
         this.holderFactories = new SparseArray<>();
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+        processViewTypes();
+    }
+
+=======
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         processViewTypes();
     }
 
@@ -38,15 +66,34 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         }
     }
 
+<<<<<<< HEAD
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ViewHolder holder = holderFactories.get(viewType).createViewHolder(parent);
+<<<<<<< HEAD
+<<<<<<< HEAD
+        holder.adapter = this;
+=======
         holder.drawerAdapter = this;
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+        holder.drawerAdapter = this;
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         return holder;
     }
 
     @Override
+<<<<<<< HEAD
+<<<<<<< HEAD
+    @SuppressWarnings("unchecked")
+=======
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         items.get(position).bindViewHolder(holder);
     }
@@ -61,6 +108,23 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         return viewTypes.get(items.get(position).getClass());
     }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+    private void processViewTypes() {
+        int type = 0;
+        for (DrawerItem item : items) {
+            if (!viewTypes.containsKey(item.getClass())) {
+                viewTypes.put(item.getClass(), type);
+                holderFactories.put(type, item);
+                type++;
+            }
+        }
+    }
+
+=======
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     public void setSelected(int position) {
         DrawerItem newChecked = items.get(position);
         if (!newChecked.isSelectable()) {
@@ -69,7 +133,14 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
 
         for (int i = 0; i < items.size(); i++) {
             DrawerItem item = items.get(i);
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
             if (item.isChecked()) {
                 item.setChecked(false);
                 notifyItemChanged(i);
@@ -89,6 +160,16 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         this.listener = listener;
     }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+    static abstract class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        private DrawerAdapter adapter;
+
+        public ViewHolder(View itemView) {
+=======
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
     public interface OnItemSelectedListener {
         void onItemSelected(int position);
@@ -98,13 +179,34 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         private DrawerAdapter drawerAdapter;
 
         public ViewHolder(@NonNull View itemView) {
+<<<<<<< HEAD
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
             super(itemView);
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
+<<<<<<< HEAD
+<<<<<<< HEAD
+            adapter.setSelected(getAdapterPosition());
+        }
+    }
+
+    public interface OnItemSelectedListener {
+        void onItemSelected(int position);
+    }
+}
+=======
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
             drawerAdapter.setSelected(getAdapterPosition());
         }
     }
 }
+<<<<<<< HEAD
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3

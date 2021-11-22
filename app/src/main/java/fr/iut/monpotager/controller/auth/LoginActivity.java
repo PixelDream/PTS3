@@ -115,7 +115,15 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     }
 
     /**
+<<<<<<< HEAD
+<<<<<<< HEAD
+     *  Create listeners on buttons
+=======
      * Create listeners on buttons
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+     * Create listeners on buttons
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
      */
 
     private void handleListener() {
@@ -124,6 +132,13 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
         googleButton.setOnClickListener(v -> loginGoogle());
         facebookButton.setOnClickListener(v -> facebook_btn.performClick());
         loginButton.setOnClickListener(view -> {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
             String email = emailInput.getText().toString();
             String password = passwordInput.getText().toString();
 
@@ -290,9 +305,19 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     }
 
     @Override
+<<<<<<< HEAD
+<<<<<<< HEAD
+    public void onValidationSucceeded() {}
+=======
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     public void onValidationSucceeded() {
         isValid = true;
     }
+<<<<<<< HEAD
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
     @Override
     public void onValidationFailed(List<ValidationError> errors) {

@@ -189,12 +189,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="350dp">
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="175dp"
-            android:layout_marginHorizontal="30dp"
+            android:layout_marginHorizontal="15dp"
             android:background="@drawable/input_light_tight"
             android:stretchColumns="0,1,2,3,4,5,6,7,8,9,10,11">
+
+            <!-- Mois -->
 
             <TableRow
                 android:layout_width="match_parent"
@@ -310,130 +313,143 @@
                     android:textColor="@color/white"
                     android:textStyle="bold" />
             </TableRow>
-        </TableLayout>
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:layout_marginHorizontal="40dp"
-            android:stretchColumns="0,1,2,3,4,5,6,7,8,9,10,11">
+            <!-- Ligne 1 -->
+
 
             <TableRow
-                android:id="@+id/calendarGraph1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="50dp">
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="20dp">
 
                 <ImageView
-                    android:id="@+id/calendarGraphImg1"
-                    android:layout_width="0dp"
+                    android:id="@+id/firstLine"
+                    android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="2"
+                    android:layout_column="2"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_span="3"
                     android:src="@drawable/input_light_tight"
+                    app:srcCompat="@drawable/input"
                     app:tint="#F44336" />
             </TableRow>
+
+            <!-- Ligne 2 -->
+
+
             <TableRow
-                android:id="@+id/calendarGraph2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="10dp"
+                android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="20dp">
 
                 <ImageView
-                    android:id="@+id/calendarGraphImg2"
-                    android:layout_width="0dp"
+                    android:id="@+id/secondeLine"
+                    android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="2"
+                    android:layout_column="4"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_span="3"
                     android:src="@drawable/input_light_tight"
-                    app:tint="#FFEB3B"/>
+                    app:srcCompat="@drawable/input"
+                    app:tint="#FFEB3B" />
             </TableRow>
 
+            <!-- Ligne 3 -->
+
             <TableRow
-                android:id="@+id/calendarGraph3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="10dp"
+                android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="20dp">
 
                 <ImageView
-                    android:id="@+id/calendarGraphImg3"
-                    android:layout_width="0dp"
+                    android:id="@+id/thirdLine"
+                    android:layout_width="wrap_content"
                     android:layout_height="10dp"
-                    android:layout_weight="2"
+                    android:layout_column="6"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_span="3"
                     android:src="@drawable/input_light_tight"
+                    app:srcCompat="@drawable/input"
                     app:tint="@color/purple_500" />
             </TableRow>
-        </TableLayout>
 
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:layout_marginHorizontal="40dp"
-            android:stretchColumns="0,1,2,3,4,5,6,7,8,9,10,11">
-
+            <!-- Légende -->
             <TableRow
                 android:id="@+id/calendarLegend"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="5dp"
-                android:layout_marginTop="150dp">
+                android:layout_marginTop="30dp">
 
                 <ImageView
                     android:id="@+id/calendarLegend1"
-                    android:layout_width="30dp"
+                    android:layout_width="0dp"
                     android:layout_height="10dp"
+                    android:layout_column="0"
                     android:layout_gravity="center_vertical"
-                    android:layout_weight="2"
+                    android:layout_span="2"
                     android:paddingRight="5dp"
                     android:src="@drawable/input_light_tight"
                     app:tint="#F44336" />
 
                 <TextView
                     android:id="@+id/calendarLegendText1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Machin"
+                    android:layout_column="2"
+                    android:layout_span="1"
+                    android:text="Semi"
                     android:textColor="@color/white"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/calendarLegend2"
-                    android:layout_width="30dp"
+                    android:layout_width="0dp"
                     android:layout_height="10dp"
+                    android:layout_column="3"
                     android:layout_gravity="center_vertical"
-                    android:layout_weight="2"
+                    android:layout_span="2"
                     android:paddingRight="5dp"
                     android:src="@drawable/input_light_tight"
                     app:tint="#FFEB3B" />
 
                 <TextView
                     android:id="@+id/calendarLegendText2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_column="5"
+                    android:layout_span="3"
                     android:paddingRight="10dp"
-                    android:text="Truc"
+                    android:text="Plantation"
                     android:textColor="@color/white"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/calendarLegend3"
-                    android:layout_width="30dp"
+                    android:layout_width="0dp"
                     android:layout_height="10dp"
+                    android:layout_column="8"
                     android:layout_gravity="center_vertical"
-                    android:layout_weight="2"
+                    android:layout_span="2"
                     android:paddingRight="5dp"
                     android:src="@drawable/input_light_tight"
                     app:tint="@color/purple_500" />
 
                 <TextView
                     android:id="@+id/calendarLegendText3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Bidule"
+                    android:layout_column="10"
+                    android:layout_span="2"
+                    android:text="Recolte"
                     android:textColor="@color/white"
                     android:textSize="11sp"
                     android:textStyle="bold" />

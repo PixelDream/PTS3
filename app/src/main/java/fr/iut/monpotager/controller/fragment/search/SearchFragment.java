@@ -22,6 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.fragment.HomeFragment;
@@ -54,6 +55,8 @@ public class SearchFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        //TODO: Migrer la partie du code suivante dans un PlantRepository comme pour UserRepository
+
         root = (ViewGroup) inflater.inflate(R.layout.search_page, container, false);
         vegetableListFirebase = new ArrayList();
 
@@ -66,12 +69,25 @@ public class SearchFragment extends Fragment {
         vegetables.get().addOnSuccessListener(queryDocumentSnapshots -> {
 
             for (DocumentSnapshot document : queryDocumentSnapshots) {
-                String name = document.get("name").toString();
-                int duration = Integer.parseInt(document.get("duration").toString());
-                String picture = document.get("picture").toString();
-                String temperature = document.get("temperature").toString();
-
-                vegetableListFirebase.add(new Vegetable(name, duration, picture, temperature));
+                try {
+                    Vegetable v = new Vegetable();
+                    v.setName(document.get("name").toString());
+                    v.setDuration(Integer.parseInt(document.get("duration").toString()));
+                    v.setPicture(document.get("picture").toString());
+                    v.setTemperature(document.get("temperature").toString());
+                    v.setSunshine(Integer.parseInt(document.get("sunshine").toString()));
+                    v.setAdviseMaintenance((List<String>) document.get("advise_maintenance"));
+                    v.setAdviseRecolt((List<String>) document.get("advise_recolt"));
+                    v.setHarvestMonth((List<Long>) document.get("harvest_month"));
+                    v.setPerpetual(Boolean.parseBoolean(document.get("perpetual").toString()));
+                    v.setPlantingMonth((List<Long>) document.get("planting_month"));
+                    v.setSowingMonth((List<Long>) document.get("sowing_month"));
+                    v.setWater(Integer.parseInt(document.get("water").toString()));
+                    v.setWeather(document.get("weather").toString());
+                    vegetableListFirebase.add(v);
+                } catch (Exception e){
+                    Log.e("load-vege-search", e.getMessage());
+                }
             }
 
             onSuccessData();

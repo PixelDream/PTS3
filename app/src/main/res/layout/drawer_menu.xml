@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
+<<<<<<< HEAD
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/myprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+<!--    <Space-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="0dp" />-->
+=======
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer"
     android:layout_width="match_parent"
@@ -17,10 +35,25 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp" />
     -->
+<<<<<<< HEAD
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/drawer_list"
         android:layout_width="240dp"
+<<<<<<< HEAD
+<<<<<<< HEAD
+        android:layout_height="wrap_content" />
+
+<!--    <Space-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="0dp" />-->
+
+=======
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         android:layout_height="wrap_content"
         android:overScrollMode="never" />
     <!--
@@ -28,4 +61,8 @@
        android:layout_width="wrap_content"
        android:layout_height="0dp" />
      -->
+<<<<<<< HEAD
+>>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 </LinearLayout>
