@@ -59,7 +59,9 @@
         android:divider="@null"
         android:dividerHeight="20dp"
         android:foregroundGravity="center"
-        android:scrollbars="none" />
+        android:scrollbars="none"
+        android:clipToPadding="false"
+        />
     />
 
 
