@@ -54,6 +54,7 @@ public class CustomVegetableListAdapter extends BaseAdapter implements Filterabl
 
         if (view == null) {
             view = layoutInflater.inflate(R.layout.adapter_item_search_list, null);
+
         }
 
         TextView vegetableName = view.findViewById(R.id.nameVegetable);
@@ -67,6 +68,7 @@ public class CustomVegetableListAdapter extends BaseAdapter implements Filterabl
 
         final Transformation transformation = new RoundedCornersTransformation(50, 5, RoundedCornersTransformation.CornerType.TOP);
         Picasso.get().load(vegetable.getPicture()).transform(transformation).resize(2048, 900).centerCrop().into(imageVegetable);
+
 
         return view;
     }
