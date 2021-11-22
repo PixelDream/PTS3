@@ -1,8 +1,10 @@
 package fr.iut.monpotager.controller.auth;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.text.InputType;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,10 +19,14 @@ import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.mobsandgeeks.saripaar.annotation.Max;
 =======
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
 import com.mobsandgeeks.saripaar.annotation.Min;
+=======
+import com.mobsandgeeks.saripaar.annotation.Length;
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Password;
 
@@ -34,7 +40,9 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
 
     private FirebaseAuth mAuth;
     private Validator validator;
+    private boolean isValid = false;
 
+<<<<<<< HEAD
     @NotEmpty
 <<<<<<< HEAD
     @Min(2)
@@ -49,6 +57,12 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
     @NotEmpty
     @Min(3)
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+    @Length(min = 3)
+    private EditText firstNameInput;
+
+    @Length(min = 3)
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     private EditText lastNameInput;
 
     @NotEmpty
@@ -82,12 +96,12 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
 
     private void handleListener() {
         signupButton.setOnClickListener(view -> {
-
             String firtName = firstNameInput.getText().toString().trim();
             String lastName = lastNameInput.getText().toString().trim();
             String email = emailInput.getText().toString().trim();
             String password = passwordInput.getText().toString().trim();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
             validator.validate();
             if (validator.isValidating()) signup(firtName, lastName, email, password);
@@ -101,24 +115,39 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
                 Toast.makeText(getApplicationContext(), "Enter lastName!", Toast.LENGTH_SHORT).show();
                 return;
             }
+=======
+            validator.validate();
+            if (isValid) signup(firtName, lastName, email, password);
+        });
+        passwordInput.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_RIGHT = 2;
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
-            if (TextUtils.isEmpty(email)) {
-                Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
-                return;
-            }
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (passwordInput.getRight() - passwordInput.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width() - 20)) {
+                    passwordInput.clearFocus();
+                    Drawable right;
 
-            if (TextUtils.isEmpty(password)) {
-                Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
-                return;
-            }
+                    if (passwordInput.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
+                        passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                        right = getResources().getDrawable(R.drawable.ic_auth_eye);
+                    } else {
+                        passwordInput.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                        right = getResources().getDrawable(R.drawable.ic_auth_eye_open);
+                    }
 
-            if (password.length() < 6) {
-                Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
-                return;
+                    passwordInput.setCompoundDrawablesWithIntrinsicBounds(null, null, right, null);
+                    passwordInput.setTypeface(emailInput.getTypeface());
+                    return true;
+                }
             }
+<<<<<<< HEAD
 
             signup(firtName, lastName, email, password);
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+            return false;
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         });
     }
 
@@ -146,14 +175,22 @@ public class SignupActivity extends AppCompatActivity implements Validator.Valid
 
     @Override
 <<<<<<< HEAD
+<<<<<<< HEAD
     public void onValidationSucceeded() {}
 =======
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     public void onValidationSucceeded() {
+        isValid = true;
     }
+<<<<<<< HEAD
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
     @Override
     public void onValidationFailed(List<ValidationError> errors) {
+        isValid = false;
         for (ValidationError error : errors) {
             View view = error.getView();
             String message = error.getCollatedErrorMessage(this);

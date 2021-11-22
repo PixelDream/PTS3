@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.view.WindowManager;
 import android.widget.EditText;
 =======
@@ -14,6 +15,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+import android.view.WindowManager;
+import android.widget.TextView;
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
@@ -24,6 +29,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
@@ -35,7 +43,6 @@ import java.util.Arrays;
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.auth.LoginActivity;
 import fr.iut.monpotager.controller.fragment.HomeFragment;
-import fr.iut.monpotager.controller.fragment.search.SearchFragment;
 import fr.iut.monpotager.controller.sidemenu.DrawerAdapter;
 import fr.iut.monpotager.controller.sidemenu.DrawerItem;
 import fr.iut.monpotager.controller.sidemenu.SimpleItem;
@@ -43,20 +50,18 @@ import fr.iut.monpotager.controller.sidemenu.SpaceItem;
 import fr.iut.monpotager.manager.UserManager;
 
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
-    private UserManager userManager = UserManager.getInstance();
-
-    /*private static final int POS_CLOSE = 0;*/
     private static final int POS_PERSO = 0;
     private static final int POS_DASHBOARD = 1;
     private static final int POS_MY_PROFILE = 2;
     private static final int POS_NEARBY_RES = 3;
     private static final int POS_SETTINGS = 4;
     private static final int POS_LOGOUT = 6;
-
+    private UserManager userManager = UserManager.getInstance();
     private String[] screenTitles;
     private Drawable[] screenIcons;
 
     private SlidingRootNav slidingRootNav;
+<<<<<<< HEAD
 =======
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -112,6 +117,10 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     */
     @Override
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+
+    @Override
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -121,25 +130,33 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 =======
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         slidingRootNav = new SlidingRootNavBuilder(this)
                 .withDragDistance(180)
                 .withRootViewScale(0.75f)
                 .withRootViewElevation(25)
                 .withToolbarMenuToggle(toolbar)
                 .withMenuOpened(false)
+<<<<<<< HEAD
 <<<<<<< HEAD
                 .withContentClickableWhenMenuOpened(false)
                 .withSavedState(savedInstanceState)
@@ -160,6 +177,11 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
                     }
                 })
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+                .withContentClickableWhenMenuOpened(false)
+                .withSavedState(savedInstanceState)
+                .withMenuLayout(R.layout.drawer_menu)
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
                 .inject();
 
         screenIcons = loadScreenIcons();
@@ -167,10 +189,14 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
 
         DrawerAdapter adapter = new DrawerAdapter(Arrays.asList(
 <<<<<<< HEAD
+<<<<<<< HEAD
                 createItemFor(POS_PERSO),
 =======
                 new SpaceItem(100),
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+                createItemFor(POS_PERSO),
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
                 createItemFor(POS_DASHBOARD).setChecked(true),
                 createItemFor(POS_MY_PROFILE),
                 createItemFor(POS_NEARBY_RES),
@@ -181,6 +207,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         adapter.setListener(this);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         RecyclerView list = findViewById(R.id.drawer_list);
         list.setNestedScrollingEnabled(false);
 =======
@@ -189,10 +216,15 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         list.setNestedScrollingEnabled(false);
 
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+        RecyclerView list = findViewById(R.id.drawer_list);
+        list.setNestedScrollingEnabled(false);
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(adapter);
 
         adapter.setSelected(POS_DASHBOARD);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -206,13 +238,22 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         profil.setText(userManager.getCurrentUser().getDisplayName());
 
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+
+        if (userManager.isCurrentUserLogged()) {
+            TextView profile = findViewById(R.id.nameUser);
+            profile.setText(userManager.getCurrentUser().getDisplayName());
+        }
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     }
+
 
     @Override
     public void onItemSelected(int position) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
         if (position == POS_DASHBOARD) {
+<<<<<<< HEAD
 <<<<<<< HEAD
             HomeFragment homeFragment = new HomeFragment();
             transaction.replace(R.id.container, homeFragment);
@@ -228,13 +269,25 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         } else if (position == POS_MY_PROFILE) {
             DashBoardFragment dashBoardFragment = new DashBoardFragment();
             transaction.replace(R.id.container, dashBoardFragment);
+=======
+            HomeFragment homeFragment = new HomeFragment();
+            transaction.replace(R.id.container, homeFragment);
+        } else if (position == POS_MY_PROFILE) {
+            HomeFragment homeFragment = new HomeFragment();
+            transaction.replace(R.id.container, homeFragment);
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         } else if (position == POS_NEARBY_RES) {
-            DashBoardFragment dashBoardFragment = new DashBoardFragment();
-            transaction.replace(R.id.container, dashBoardFragment);
+            HomeFragment homeFragment = new HomeFragment();
+            transaction.replace(R.id.container, homeFragment);
         } else if (position == POS_SETTINGS) {
+<<<<<<< HEAD
             DashBoardFragment dashBoardFragment = new DashBoardFragment();
             transaction.replace(R.id.container, dashBoardFragment);
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+            HomeFragment homeFragment = new HomeFragment();
+            transaction.replace(R.id.container, homeFragment);
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         } else if (position == POS_LOGOUT) {
             userManager.signOut();
             Intent intent = getIntent();
@@ -243,18 +296,25 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         slidingRootNav.closeMenu();
         transaction.addToBackStack(null);
         transaction.commit();
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     @SuppressWarnings("rawtypes")
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     private DrawerItem createItemFor(int position) {
         return new SimpleItem(screenIcons[position], screenTitles[position])
                 .withTextTint(color(R.color.black))

@@ -14,11 +14,9 @@ import fr.iut.monpotager.controller.fragment.search.SearchFragment;
 import fr.iut.monpotager.manager.UserManager;
 
 public class HomeFragment extends Fragment {
-    private UserManager userManager = UserManager.getInstance();
-
     EditText searchBar;
     TextView helloUser;
-
+    private UserManager userManager = UserManager.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

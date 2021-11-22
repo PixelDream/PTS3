@@ -8,7 +8,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,18 +20,16 @@ import java.util.List;
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.model.Vegetable;
 
-public class CustomVegetableListAdapter extends BaseAdapter implements Filterable{
+public class CustomVegetableListAdapter extends BaseAdapter implements Filterable {
 
     private List<Vegetable> listData;
     private LayoutInflater layoutInflater;
-    private Context context;
 
-    public CustomVegetableListAdapter(Context context,List<Vegetable> listData) {
+    public CustomVegetableListAdapter(Context context, List<Vegetable> listData) {
+        super();
         this.listData = listData;
-        this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
     }
-
 
 
     @Override
@@ -51,12 +53,22 @@ public class CustomVegetableListAdapter extends BaseAdapter implements Filterabl
         Vegetable vegetable = getItem(i);
 
         if (view == null) {
-            view = layoutInflater.inflate(R.layout.adapter_item_search_list,null);
+            view = layoutInflater.inflate(R.layout.adapter_item_search_list, null);
 
         }
 
         TextView vegetableName = view.findViewById(R.id.nameVegetable);
         vegetableName.setText(vegetable.getName());
+
+        ImageView imageVegetable = view.findViewById(R.id.imageVegetable);
+
+        TextView durationVegetable = view.findViewById(R.id.durationVegetable);
+        int numOfWeeks = Math.round(vegetable.getDuration() / 7);
+        durationVegetable.setText(numOfWeeks + " semaines");
+        final int radius = 50;
+        final int margin = 5;
+        final Transformation transformation = new RoundedCornersTransformation(radius, margin, RoundedCornersTransformation.CornerType.TOP);
+        Picasso.get().load(vegetable.getPicture()).transform(transformation).into(imageVegetable);
 
 
         return view;
@@ -87,7 +99,7 @@ public class CustomVegetableListAdapter extends BaseAdapter implements Filterabl
                 constraint = constraint.toString().toLowerCase();
                 for (int i = 0; i < listData.size(); i++) {
                     Vegetable dataNames = listData.get(i);
-                    if (dataNames.getName().toLowerCase().startsWith(constraint.toString()))  {
+                    if (dataNames.getName().toLowerCase().startsWith(constraint.toString())) {
                         FilteredArrayNames.add(dataNames);
                     }
                 }

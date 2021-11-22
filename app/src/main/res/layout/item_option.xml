@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
 =======
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     android:layout_width="match_parent"
     android:layout_height="56dp"
     android:orientation="horizontal"
@@ -14,6 +18,7 @@
 
     <ImageView
         android:id="@+id/icon"
+<<<<<<< HEAD
 <<<<<<< HEAD
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -24,21 +29,31 @@
         android:layout_width="30sp"
         android:layout_height="30sp" />
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+        android:layout_width="30sp"
+        android:layout_height="30sp" />
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:textSize="20dp"
         android:layout_marginTop="2dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"/>
 =======
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         android:layout_marginLeft="16dp"
         android:layout_marginTop="2dp"
         android:layout_marginRight="16dp"
         android:textSize="20dp" />
+<<<<<<< HEAD
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
 </LinearLayout>

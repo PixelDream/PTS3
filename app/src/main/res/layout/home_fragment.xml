@@ -70,7 +70,7 @@
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageVegetable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="320dp"
@@ -129,23 +129,23 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-<!--    <TextView
-        android:id="@+id/title2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/flsaison"
-        android:layout_marginLeft="20dp"
-        android:text="Ce que vous avez planté l'an dernier"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+    <!--    <TextView
+            android:id="@+id/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/flsaison"
+            android:layout_marginLeft="20dp"
+            android:text="Ce que vous avez planté l'an dernier"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@id/title2"
-        android:scrollbars="none">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/title2"
+            android:scrollbars="none">
 
 
-    </ScrollView>-->
+        </ScrollView>-->
 </RelativeLayout>

@@ -5,53 +5,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 <<<<<<< HEAD
+<<<<<<< HEAD
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".controller.MainActivity"
     >
 =======
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     android:background="@color/white"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context=".controller.MainActivity">
+<<<<<<< HEAD
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
         android:background="@color/green"
         app:title=""
-        app:titleTextColor="@color/green"
-        >
+        app:titleTextColor="@color/green">
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            app:srcCompat="@drawable/heart"
             android:layout_gravity="right"
+            android:layout_marginTop="15dp"
             android:paddingEnd="20dp"
-            android:paddingRight="20dp" />
+            android:paddingRight="20dp"
+            app:srcCompat="@drawable/heart" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            app:srcCompat="@drawable/bell"
             android:layout_gravity="right"
+            android:layout_marginTop="15dp"
             android:paddingEnd="10dp"
             android:paddingRight="10dp"
-            />
+            app:srcCompat="@drawable/bell" />
     </androidx.appcompat.widget.Toolbar>
 
+<<<<<<< HEAD
 =======
         android:background="#fff"
         app:titleTextColor="@color/white" />
 
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"

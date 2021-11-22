@@ -24,6 +24,7 @@ public class PasswordActivity extends AppCompatActivity implements Validator.Val
 
     private FirebaseAuth mAuth;
     private Validator validator;
+    private boolean isValid = false;
 
     @NotEmpty
     @Email
@@ -54,7 +55,7 @@ public class PasswordActivity extends AppCompatActivity implements Validator.Val
 
             validator.validate();
 
-            if (validator.isValidating()) resetPassword(email);
+            if (isValid) resetPassword(email);
         });
     }
 
@@ -71,14 +72,22 @@ public class PasswordActivity extends AppCompatActivity implements Validator.Val
 
     @Override
 <<<<<<< HEAD
+<<<<<<< HEAD
     public void onValidationSucceeded() {}
 =======
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
     public void onValidationSucceeded() {
+        isValid = true;
     }
+<<<<<<< HEAD
 >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
+=======
+>>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
 
     @Override
     public void onValidationFailed(List<ValidationError> errors) {
+        isValid = false;
         for (ValidationError error : errors) {
             View view = error.getView();
             String message = error.getCollatedErrorMessage(this);
