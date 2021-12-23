@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ajouter dans mon potager"
+        android:text="Ajouter dans mon jardin"
         android:textColor="@color/green"
         android:textSize="25sp"
         android:layout_marginTop="8dp"
@@ -16,67 +16,36 @@
         android:layout_gravity="center"
         />
 
-    <TextView
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="4dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date de plantation/semi"/>
-
     <EditText
         android:id="@+id/choiceDate"
         android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
         android:textColorHint="@color/green"
         android:textColor="@color/green"
-        android:hint="Date de plantation"/>
+        android:hint="Date de plantation"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
 
-    <TextView
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Qunatité plantée selon l'unitée donnée"/>
-
-    <LinearLayout
+    <EditText
+        android:id="@+id/choiceQuantity"
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        >
-
-        <EditText
-            android:id="@+id/choiceQuantity"
-            android:inputType="number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColorHint="@color/green"
-            android:layout_marginRight="10dp"
-            android:textColor="@color/green"
-            android:hint="Quantité planté"
-            android:layout_weight="0.9"
-            />
-
-        <Spinner
-            android:id="@+id/choiceUnit"
-            android:spinnerMode="dropdown"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:hint="m²"
-            android:textAlignment="center"
-            android:gravity="center_horizontal"
-            android:layout_weight="0.1"
-            />
-
-
-    </LinearLayout>
+        android:layout_marginBottom="16dp"
+        android:textColorHint="@color/green"
+        android:textColor="@color/green"
+        android:hint="Quantité planté"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        />
 
     <Button
         android:id="@+id/addToGarden"

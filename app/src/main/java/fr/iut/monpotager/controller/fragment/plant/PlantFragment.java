@@ -10,6 +10,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import com.squareup.picasso.Picasso;
@@ -26,6 +27,8 @@ public class PlantFragment extends Fragment {
     private static final String DESCRIBABLE_KEY = "vegetable";
     private List<Button> btnList;
     private boolean liked = false;
+
+    private Button likeBtn, addToGarden;
 
     public static PlantFragment newInstance(Vegetable vegetable) {
         PlantFragment fragment = new PlantFragment();
@@ -59,15 +62,17 @@ public class PlantFragment extends Fragment {
         ImageView plantImage = root.findViewById(R.id.plantImage);
         Picasso.get().load(vegetable.getPicture()).transform(new RoundedCornersTransformation(128, 5)).resize(2048, 2048).centerCrop().into(plantImage);
 
-        Button likeBtn = root.findViewById(R.id.likeBtn);
-        likeBtn.setOnClickListener(v -> changeHeart(likeBtn));
+        likeBtn = root.findViewById(R.id.likeBtn);
+        likeBtn.setOnClickListener(v -> changeHeart());
+
+        addToGarden = root.findViewById(R.id.addToGarden);
+        addToGarden.setOnClickListener(v -> addToGarden(vegetable));
 
         updateGraph(root.findViewById(R.id.firstLine), root.findViewById(R.id.secondeLine), root.findViewById(R.id.thirdLine), vegetable);
 
         return root;
     }
 
-    //    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void changePlantView(ViewGroup container, int viewNb, Button btn) {
         ViewFlipper vf = container.findViewById(R.id.vf);
         vf.setDisplayedChild(viewNb);
@@ -115,13 +120,22 @@ public class PlantFragment extends Fragment {
 
     }
 
-    public void changeHeart(Button btn) {
+    public void changeHeart() {
         if (liked) {
-            btn.setText(R.string.white_heart);
+            likeBtn.setText(R.string.white_heart);
         } else {
-            btn.setText(R.string.red_heart);
+            likeBtn.setText(R.string.red_heart);
         }
         liked = !liked;
+    }
+
+    private void addToGarden(Vegetable vegetable) {
+        DialogFragment dialogFragment = new AddToGardenDialog();
+        Bundle bundle = new Bundle();
+        bundle.putString("plantUid", vegetable.getId());
+
+        dialogFragment.setArguments(bundle);
+        dialogFragment.show(getParentFragmentManager(), "addToGarden");
     }
 
     public void insertPlantSpec(ViewGroup container, Vegetable vegetable) {
