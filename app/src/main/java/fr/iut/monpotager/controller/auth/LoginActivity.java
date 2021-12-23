@@ -115,15 +115,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     }
 
     /**
-     * <<<<<<< HEAD
-     * <<<<<<< HEAD
      * Create listeners on buttons
-     * =======
-     * Create listeners on buttons
-     * >>>>>>> b3be88e904fcae5c31c99d018fd5db3bb87e95c1
-     * =======
-     * Create listeners on buttons
-     * >>>>>>> b52d76051c649a8620a1fa436c5faab797ef93f3
      */
 
     private void handleListener() {

@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Vegetable implements Serializable {
 
+    private String id;
     private String name;
     private int water;
     private List<Long> sowingMonth;
@@ -29,6 +30,7 @@ public class Vegetable implements Serializable {
     private String picture;
 
     public Vegetable() {
+        this.id = "";
         this.name = "";
         this.water = 0;
         this.sowingMonth = new ArrayList<Long>(Collections.singletonList(1L));
@@ -46,7 +48,8 @@ public class Vegetable implements Serializable {
         this.picture = "";
     }
 
-    public Vegetable(String name, int duration, String image, String temperature) {
+    public Vegetable(String id, String name, int duration, String image, String temperature) {
+        this.id = id;
         this.name = name;
         this.duration = duration;
         this.picture = image;
@@ -172,4 +175,13 @@ public class Vegetable implements Serializable {
     public void setWeather(String weather) {
         this.weather = weather;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 }
