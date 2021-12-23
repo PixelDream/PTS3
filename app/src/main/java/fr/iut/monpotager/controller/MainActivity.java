@@ -26,6 +26,7 @@ import java.util.Arrays;
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.auth.LoginActivity;
 import fr.iut.monpotager.controller.fragment.HomeFragment;
+import fr.iut.monpotager.controller.fragment.garden.GardenFragment;
 import fr.iut.monpotager.controller.sidemenu.DrawerAdapter;
 import fr.iut.monpotager.controller.sidemenu.DrawerItem;
 import fr.iut.monpotager.controller.sidemenu.SimpleItem;
@@ -35,8 +36,8 @@ import fr.iut.monpotager.manager.UserManager;
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
     private static final int POS_PERSO = 0;
     private static final int POS_DASHBOARD = 1;
-    private static final int POS_MY_PROFILE = 2;
-    private static final int POS_NEARBY_RES = 3;
+    private static final int POS_GARDEN = 2;
+    private static final int POS_MY_PROFILE = 3;
     private static final int POS_SETTINGS = 4;
     private static final int POS_LOGOUT = 6;
     private UserManager userManager = UserManager.getInstance();
@@ -77,8 +78,8 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         DrawerAdapter adapter = new DrawerAdapter(Arrays.asList(
                 createItemFor(POS_PERSO),
                 createItemFor(POS_DASHBOARD).setChecked(true),
+                createItemFor(POS_GARDEN),
                 createItemFor(POS_MY_PROFILE),
-                createItemFor(POS_NEARBY_RES),
                 createItemFor(POS_SETTINGS),
                 new SpaceItem(260),
                 createItemFor(POS_LOGOUT)
@@ -109,9 +110,9 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         } else if (position == POS_MY_PROFILE) {
             HomeFragment homeFragment = new HomeFragment();
             transaction.replace(R.id.container, homeFragment);
-        } else if (position == POS_NEARBY_RES) {
-            HomeFragment homeFragment = new HomeFragment();
-            transaction.replace(R.id.container, homeFragment);
+        } else if (position == POS_GARDEN) {
+            GardenFragment gardenFragment = new GardenFragment();
+            transaction.replace(R.id.container, gardenFragment);
         } else if (position == POS_SETTINGS) {
             HomeFragment homeFragment = new HomeFragment();
             transaction.replace(R.id.container, homeFragment);
