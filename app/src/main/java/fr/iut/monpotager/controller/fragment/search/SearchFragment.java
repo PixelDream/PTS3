@@ -62,6 +62,7 @@ public class SearchFragment extends Fragment {
             for (DocumentSnapshot document : queryDocumentSnapshots) {
                 try {
                     Vegetable v = new Vegetable();
+                    v.setId(document.getId());
                     v.setName(document.get("name").toString());
                     v.setDuration(Integer.parseInt(document.get("duration").toString()));
                     v.setPicture(document.get("picture").toString());
