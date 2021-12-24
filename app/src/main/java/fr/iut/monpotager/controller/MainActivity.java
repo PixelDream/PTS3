@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -16,6 +17,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
@@ -25,7 +28,9 @@ import java.util.Arrays;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.auth.LoginActivity;
-import fr.iut.monpotager.controller.fragment.DashBoardFragment;
+import fr.iut.monpotager.controller.fragment.HomeFragment;
+import fr.iut.monpotager.controller.fragment.SettingFragment;
+import fr.iut.monpotager.controller.fragment.search.adapter.RoundedCornersTransformation;
 import fr.iut.monpotager.controller.sidemenu.DrawerAdapter;
 import fr.iut.monpotager.controller.sidemenu.DrawerItem;
 import fr.iut.monpotager.controller.sidemenu.SimpleItem;
@@ -95,6 +100,9 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         if (userManager.isCurrentUserLogged()) {
             TextView profile = findViewById(R.id.nameUser);
             profile.setText(userManager.getCurrentUser().getDisplayName());
+
+            ImageView aImageprofie = findViewById(R.id.avatar);
+            userManager.imageProfileIntoImage(aImageprofie, true);
         }
     }
 
@@ -104,17 +112,17 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
         if (position == POS_DASHBOARD) {
-            DashBoardFragment dashBoardFragment = new DashBoardFragment();
-            transaction.replace(R.id.container, dashBoardFragment);
+            HomeFragment homeFragment = new HomeFragment();
+            transaction.replace(R.id.container, homeFragment);
         } else if (position == POS_MY_PROFILE) {
-            DashBoardFragment dashBoardFragment = new DashBoardFragment();
-            transaction.replace(R.id.container, dashBoardFragment);
+            HomeFragment homeFragment = new HomeFragment();
+            transaction.replace(R.id.container, homeFragment);
         } else if (position == POS_NEARBY_RES) {
-            DashBoardFragment dashBoardFragment = new DashBoardFragment();
-            transaction.replace(R.id.container, dashBoardFragment);
+            HomeFragment homeFragment = new HomeFragment();
+            transaction.replace(R.id.container, homeFragment);
         } else if (position == POS_SETTINGS) {
-            DashBoardFragment dashBoardFragment = new DashBoardFragment();
-            transaction.replace(R.id.container, dashBoardFragment);
+            SettingFragment settingFragment = new SettingFragment();
+            transaction.replace(R.id.container, settingFragment);
         } else if (position == POS_LOGOUT) {
             userManager.signOut();
             Intent intent = getIntent();

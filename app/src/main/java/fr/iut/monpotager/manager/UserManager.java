@@ -1,6 +1,12 @@
 package fr.iut.monpotager.manager;
 
+import android.net.Uri;
+import android.widget.ImageView;
+
 import com.google.firebase.auth.FirebaseUser;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 
 import fr.iut.monpotager.repository.UserRepository;
 
@@ -34,7 +40,17 @@ public class UserManager {
         String firstName = userRepository.getCurrentUser().getDisplayName().split(" ")[0];
         return firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
     }
+    public void changeName(String name){
+        userRepository.changeName(name);
+    }
 
+    public void changeEmail(String eMail, String eMailActual, String pw){
+        userRepository.changeEmail(eMail, eMailActual, pw);
+    }
+
+    public void changePassword(String pass, String eMailActual, String pw){
+        userRepository.changePass(pass, eMailActual, pw);
+    }
 
     public Boolean isCurrentUserLogged() {
         return (this.getCurrentUser() != null);
@@ -44,5 +60,11 @@ public class UserManager {
         userRepository.signOut();
     }
 
+    public void uploadImageProfile(Uri url){
+        userRepository.uploadImageProfile(url);
+    }
 
+    public void imageProfileIntoImage(ImageView imageView, boolean rounded) {
+        userRepository.getImage(imageView, rounded);
+    }
 }

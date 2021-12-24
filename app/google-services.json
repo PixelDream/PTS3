@@ -15,7 +15,31 @@
       },
       "oauth_client": [
         {
-          "client_id": "11076885930625-3goij6409r4b7ljpk3jp0r52qtqnbo2n.apps.googleusercontent.com",
+          "client_id": "1076885930625-3goij6409r4b7ljpk3jp0r52qtqnbo2n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.iut.monpotager",
+            "certificate_hash": "a23b4fc04438a938c14316b6a543c02c35e03186"
+          }
+        },
+        {
+          "client_id": "1076885930625-iad22smi39etisg3jdi4cea9bg50mbbj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.iut.monpotager",
+            "certificate_hash": "8f73f60712ec572eef09ad2722a5347adf16d64a"
+          }
+        },
+        {
+          "client_id": "1076885930625-s8t6k2gqnhaeql5pjh8bhn5kn78uso1j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.iut.monpotager",
+            "certificate_hash": "ddab31d1bf5ab2e21a270ce843a9120e1144d2f8"
+          }
+        },
+        {
+          "client_id": "1076885930625-7cpdu4fbp0niq5ida0fgjcvtal3u8ef7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
