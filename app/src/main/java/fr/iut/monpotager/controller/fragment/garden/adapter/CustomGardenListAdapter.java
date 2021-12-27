@@ -15,12 +15,18 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import fr.iut.monpotager.R;
+import fr.iut.monpotager.controller.fragment.search.adapter.CustomVegetableListAdapter;
 import fr.iut.monpotager.controller.fragment.search.adapter.RoundedCornersTransformation;
 import fr.iut.monpotager.model.Garden;
+import fr.iut.monpotager.model.Vegetable;
 
 public class CustomGardenListAdapter extends BaseAdapter implements Filterable {
 
@@ -63,13 +69,13 @@ public class CustomGardenListAdapter extends BaseAdapter implements Filterable {
 
         ImageView imageVegetable = view.findViewById(R.id.imageVegetable);
 
-        TextView gardenDate = view.findViewById(R.id.gardenDate);
+        TextView GardenDate = view.findViewById(R.id.GardenDate);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            gardenDate.setText(garden.getDayLeft() + " jours avant récolte");
+            GardenDate.setText(garden.getDayLeft() + " jours avant récolte");
         }
 
-        TextView gardenQuantity = view.findViewById(R.id.gardenQuantity);
-        gardenQuantity.setText(garden.getQuantity() + " " + garden.getUnit());
+        TextView GardenQuantity = view.findViewById(R.id.GardenQuantity);
+        GardenQuantity.setText(garden.getQuantity() + " " + garden.getUnit());
 
         final Transformation transformation = new RoundedCornersTransformation(50, 5, RoundedCornersTransformation.CornerType.TOP);
         Picasso.get().load(garden.getVegetable().getPicture()).transform(transformation).resize(2048, 550).centerCrop().into(imageVegetable);

@@ -1,18 +1,13 @@
 package fr.iut.monpotager.controller;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
-import android.widget.EditText;
-
-import android.util.Log;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -53,25 +48,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private Drawable[] screenIcons;
 
     private SlidingRootNav slidingRootNav;
-    TextView profil;
 
-
-    /*
-    @Override
-<<<<<<< HEAD
-=======
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        if (slidingRootNav != null && slidingRootNav.isMenuOpened()) {
-            boolean menuTouched = findViewById(R.id.container).dispatchTouchEvent(ev) ;
-            if(menuTouched) {
-                slidingRootNav.closeMenu();
-            }
-            return true;
-        } else {
-            return super.dispatchTouchEvent(ev);
-        }
-    }
-    */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -140,8 +117,8 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
             GardenFragment gardenFragment = new GardenFragment();
             transaction.replace(R.id.container, gardenFragment);
         } else if (position == POS_SETTINGS) {
-            SettingFragment settingFragment = new SettingFragment();
-            transaction.replace(R.id.container, settingFragment);
+            HomeFragment homeFragment = new HomeFragment();
+            transaction.replace(R.id.container, homeFragment);
         } else if (position == POS_LOGOUT) {
             userManager.signOut();
             Intent intent = getIntent();
@@ -149,12 +126,12 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
             startActivity(intent);
         }
 
+
         slidingRootNav.closeMenu();
         transaction.addToBackStack(null);
         transaction.commit();
     }
 
-    @SuppressWarnings("rawtypes")
     private DrawerItem createItemFor(int position) {
         return new SimpleItem(screenIcons[position], screenTitles[position])
                 .withTextTint(color(R.color.black))
