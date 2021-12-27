@@ -27,6 +27,7 @@
             android:layout_gravity="start"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="30dp"
+            android:inputType="textCapSentences"
             android:text="Tomate"
             android:textColor="#0C9869"
             android:textSize="20dp"

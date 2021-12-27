@@ -18,4 +18,11 @@
         <item>0</item>
         <item>@drawable/ic_sidebar_logout</item>
     </array>
+    <string-array name="unit_array">
+        <item>plants</item>
+        <item>m²</item>
+        <item>parcelles</item>
+        <item>mètres</item>
+        <item>rangées</item>
+    </string-array>
 </resources>

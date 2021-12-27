@@ -1,10 +1,13 @@
 package fr.iut.monpotager.controller;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -103,6 +106,12 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     @Override
     public void onItemSelected(int position) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        View view = this.getCurrentFocus();
+
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
 
         if (position == POS_DASHBOARD) {
             HomeFragment homeFragment = new HomeFragment();
@@ -125,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
 
 
         slidingRootNav.closeMenu();
+
         transaction.addToBackStack(null);
         transaction.commit();
     }
