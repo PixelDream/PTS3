@@ -10,8 +10,11 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.fragment.app.DialogFragment;
@@ -50,6 +53,7 @@ public class AddToGardenDialog extends DialogFragment  implements Validator.Vali
     @Min(value = 1)
     private EditText choiceQuantity;
     private Button addToGarden;
+    private Spinner spinnerUnit;
 
 
     public AddToGardenDialog() {
@@ -78,11 +82,16 @@ public class AddToGardenDialog extends DialogFragment  implements Validator.Vali
 
         choiceQuantity = view.findViewById(R.id.choiceQuantity);
 
-        String plantUid = getArguments().getString("plantUid");
+        spinnerUnit = view.findViewById(R.id.choiceUnit);
+        ArrayAdapter<String> spinnerUnitAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_item, getResources().getStringArray(R.array.unit_array));
+        spinnerUnit.setAdapter(spinnerUnitAdapter);
+
+
+        Vegetable vegetable = (Vegetable) getArguments().getSerializable("vegetable");
         addToGarden = view.findViewById(R.id.addToGarden);
         addToGarden.setOnClickListener(v -> {
             validator.validate();
-            if (isValid) addToGarden(plantUid, requireActivity().findViewById(R.id.fragment_plant));
+            if (isValid) addToGarden(vegetable, requireActivity().findViewById(R.id.fragment_plant));
         });
 
 
@@ -98,9 +107,9 @@ public class AddToGardenDialog extends DialogFragment  implements Validator.Vali
         return dialog;
     }
 
-    private void addToGarden(String uid, View v) {
+    private void addToGarden(Vegetable vegetable, View v) {
         try {
-            gardenManager.addVegetableToGarden(uid, Integer.parseInt(choiceQuantity.getText().toString()), dateFormat.parse(choiceDate.getText().toString()), () -> {
+            gardenManager.addVegetableToGarden(vegetable, Integer.parseInt(choiceQuantity.getText().toString()), dateFormat.parse(choiceDate.getText().toString()), spinnerUnit.getSelectedItem().toString(), () -> {
                 Snackbar success = Snackbar.make(v, "ajouté au potager !", Snackbar.LENGTH_SHORT);
                 success.show();
             });

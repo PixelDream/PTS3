@@ -1,10 +1,13 @@
 package fr.iut.monpotager.manager;
 
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.Query;
 
 import java.util.Date;
 
+import fr.iut.monpotager.controller.utils.Callback;
 import fr.iut.monpotager.model.Garden;
+import fr.iut.monpotager.model.Vegetable;
 import fr.iut.monpotager.repository.GardenRepository;
 import fr.iut.monpotager.repository.UserRepository;
 
@@ -36,8 +39,12 @@ public class GardenManager {
         }
     }
 
-    public void addVegetableToGarden(String vegetableId, int quantity, Date date, Runnable callback) {
-        gardenRepository.addVegetableToGarden(vegetableId, quantity, date, callback);
+    public void addVegetableToGarden(Vegetable vegetable, int quantity, Date date, String unit, Runnable callback) {
+        gardenRepository.addVegetableToGarden(vegetable, quantity, date, unit, callback);
+    }
+
+    public void getCurrentGarden(Callback callback) {
+        gardenRepository.getCurrentGarden(callback);
     }
 
 

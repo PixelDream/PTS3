@@ -132,7 +132,7 @@ public class PlantFragment extends Fragment {
     private void addToGarden(Vegetable vegetable) {
         DialogFragment dialogFragment = new AddToGardenDialog();
         Bundle bundle = new Bundle();
-        bundle.putString("plantUid", vegetable.getId());
+        bundle.putSerializable("vegetable", vegetable);
 
         dialogFragment.setArguments(bundle);
         dialogFragment.show(getParentFragmentManager(), "addToGarden");
