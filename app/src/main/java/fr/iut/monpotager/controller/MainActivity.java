@@ -1,13 +1,11 @@
 package fr.iut.monpotager.controller;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -19,6 +17,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
@@ -29,7 +29,9 @@ import java.util.Arrays;
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.auth.LoginActivity;
 import fr.iut.monpotager.controller.fragment.HomeFragment;
+import fr.iut.monpotager.controller.fragment.SettingFragment;
 import fr.iut.monpotager.controller.fragment.garden.GardenFragment;
+import fr.iut.monpotager.controller.fragment.search.adapter.RoundedCornersTransformation;
 import fr.iut.monpotager.controller.sidemenu.DrawerAdapter;
 import fr.iut.monpotager.controller.sidemenu.DrawerItem;
 import fr.iut.monpotager.controller.sidemenu.SimpleItem;
@@ -41,8 +43,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private static final int POS_DASHBOARD = 1;
     private static final int POS_GARDEN = 2;
     private static final int POS_MY_PROFILE = 3;
-    private static final int POS_SETTINGS = 4;
-    private static final int POS_LOGOUT = 6;
+    private static final int POS_LOGOUT = 5;
     private UserManager userManager = UserManager.getInstance();
     private String[] screenTitles;
     private Drawable[] screenIcons;
@@ -83,7 +84,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
                 createItemFor(POS_DASHBOARD).setChecked(true),
                 createItemFor(POS_GARDEN),
                 createItemFor(POS_MY_PROFILE),
-                createItemFor(POS_SETTINGS),
                 new SpaceItem(260),
                 createItemFor(POS_LOGOUT)
         ));
@@ -99,6 +99,9 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         if (userManager.isCurrentUserLogged()) {
             TextView profile = findViewById(R.id.nameUser);
             profile.setText(userManager.getCurrentUser().getDisplayName());
+
+            ImageView aImageprofie = findViewById(R.id.avatar);
+            userManager.imageProfileIntoImage(aImageprofie, true);
         }
     }
 
@@ -110,15 +113,12 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         if (position == POS_DASHBOARD) {
             HomeFragment homeFragment = new HomeFragment();
             transaction.replace(R.id.container, homeFragment);
-        } else if (position == POS_MY_PROFILE) {
-            HomeFragment homeFragment = new HomeFragment();
-            transaction.replace(R.id.container, homeFragment);
         } else if (position == POS_GARDEN) {
             GardenFragment gardenFragment = new GardenFragment();
             transaction.replace(R.id.container, gardenFragment);
-        } else if (position == POS_SETTINGS) {
-            HomeFragment homeFragment = new HomeFragment();
-            transaction.replace(R.id.container, homeFragment);
+        } else if (position == POS_MY_PROFILE) {
+            SettingFragment settingFragment = new SettingFragment();
+            transaction.replace(R.id.container, settingFragment);
         } else if (position == POS_LOGOUT) {
             userManager.signOut();
             Intent intent = getIntent();

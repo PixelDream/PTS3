@@ -108,14 +108,14 @@ public final class UserRepository {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
 
-        mFirestore.collection("Users").document("sOl3TZVuH5cOouK5hDV53rOcKeB3").get().addOnCompleteListener(task -> {
+        mFirestore.collection("Users").document(getCurrentUser().getUid()).get().addOnCompleteListener(task -> {
 
             Transformation transform = new RoundedCornersTransformation(90, 5, RoundedCornersTransformation.CornerType.ALL);
 
             if (task.isSuccessful()) {
                 String img = task.getResult().get("image", String.class);
 
-                RequestCreator rq = Picasso.get().load(img);
+                RequestCreator rq = Picasso.get().load(img).resize(150, 150).centerCrop();
                 if (rounded) rq.transform(transform);
 
                 rq.into(imageView);
@@ -123,7 +123,7 @@ public final class UserRepository {
             } else {
                 String img = user.getPhotoUrl().toString();
 
-                RequestCreator rq = Picasso.get().load(img);
+                RequestCreator rq = Picasso.get().load(img).resize(150, 150).centerCrop();
                 if (rounded) rq.transform(transform);
 
                 rq.into(imageView);

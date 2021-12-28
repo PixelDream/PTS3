@@ -5,7 +5,6 @@
         <item>Accueil</item>
         <item>Mon Potager</item>
         <item>Mon Compte</item>
-        <item>Paramètre</item>
         <item/>
         <item>Déconnexion</item>
     </string-array>
@@ -14,7 +13,6 @@
         <item>@drawable/ic_sidebar_home</item>
         <item>@drawable/pelle</item>
         <item>@drawable/ic_sidebar_account</item>
-        <item>@drawable/ic_sidebar_settings</item>
         <item>0</item>
         <item>@drawable/ic_sidebar_logout</item>
     </array>
