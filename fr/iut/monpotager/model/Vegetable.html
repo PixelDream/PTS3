@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -47,8 +47,8 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li>Prev&nbsp;Class</li>
-<li>Next&nbsp;Class</li>
+<li><a href="../../../../fr/iut/monpotager/model/Tip.html" title="class in fr.iut.monpotager.model"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../fr/iut/monpotager/model/VegetablePlanted.html" title="class in fr.iut.monpotager.model"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?fr/iut/monpotager/model/Vegetable.html" target="_top">Frames</a></li>
@@ -136,9 +136,14 @@ implements java.io.Serializable</pre>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#Vegetable-java.lang.String-int-java.lang.String-">Vegetable</a></span>(java.lang.String&nbsp;name,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#Vegetable--">Vegetable</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#Vegetable-java.lang.String-java.lang.String-int-java.lang.String-java.lang.String-">Vegetable</a></span>(java.lang.String&nbsp;id,
+         java.lang.String&nbsp;name,
          int&nbsp;duration,
-         java.lang.String&nbsp;image)</code>&nbsp;</td>
+         java.lang.String&nbsp;image,
+         java.lang.String&nbsp;temperature)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -156,40 +161,132 @@ implements java.io.Serializable</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getAdviseMaintenance--">getAdviseMaintenance</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getAdviseRecolt--">getAdviseRecolt</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getDuration--">getDuration</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;java.lang.Long&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getHarvestMonth--">getHarvestMonth</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getId--">getId</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getName--">getName</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getPicture--">getPicture</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;java.lang.Long&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getPlantingMonth--">getPlantingMonth</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>java.util.List&lt;java.lang.Long&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getSowingMonth--">getSowingMonth</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getSunshine--">getSunshine</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getTemperature--">getTemperature</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getTips--">getTips</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="../../../../fr/iut/monpotager/model/Vegetable.html" title="class in fr.iut.monpotager.model">Vegetable</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getVegetablesCompatibilities--">getVegetablesCompatibilities</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getWater--">getWater</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#getWeather--">getWeather</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#isPerpetual--">isPerpetual</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setAdviseMaintenance-java.util.List-">setAdviseMaintenance</a></span>(java.util.List&lt;java.lang.String&gt;&nbsp;adviseMaintenance)</code>&nbsp;</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setAdviseRecolt-java.util.List-">setAdviseRecolt</a></span>(java.util.List&lt;java.lang.String&gt;&nbsp;adviseRecolt)</code>&nbsp;</td>
+</tr>
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setDuration-int-">setDuration</a></span>(int&nbsp;duration)</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setHarvestMonth-java.util.List-">setHarvestMonth</a></span>(java.util.List&lt;java.lang.Long&gt;&nbsp;harvestMonth)</code>&nbsp;</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setId-java.lang.String-">setId</a></span>(java.lang.String&nbsp;id)</code>&nbsp;</td>
+</tr>
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setName-java.lang.String-">setName</a></span>(java.lang.String&nbsp;name)</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setPerpetual-boolean-">setPerpetual</a></span>(boolean&nbsp;perpetual)</code>&nbsp;</td>
+</tr>
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setPicture-java.lang.String-">setPicture</a></span>(java.lang.String&nbsp;picture)</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setPlantingMonth-java.util.List-">setPlantingMonth</a></span>(java.util.List&lt;java.lang.Long&gt;&nbsp;plantingMonth)</code>&nbsp;</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setSowingMonth-java.util.List-">setSowingMonth</a></span>(java.util.List&lt;java.lang.Long&gt;&nbsp;sowingMonth)</code>&nbsp;</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setSunshine-int-">setSunshine</a></span>(int&nbsp;sunshine)</code>&nbsp;</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setTemperature-java.lang.String-">setTemperature</a></span>(java.lang.String&nbsp;temperature)</code>&nbsp;</td>
+</tr>
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setTips-java.util.List-">setTips</a></span>(java.util.List&lt;java.lang.String&gt;&nbsp;tips)</code>&nbsp;</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setVegetablesCompatibilities-java.util.List-">setVegetablesCompatibilities</a></span>(java.util.List&lt;<a href="../../../../fr/iut/monpotager/model/Vegetable.html" title="class in fr.iut.monpotager.model">Vegetable</a>&gt;&nbsp;vegetablesCompatibilities)</code>&nbsp;</td>
+</tr>
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setWater-int-">setWater</a></span>(int&nbsp;water)</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#toString--">toString</a></span>()</code>&nbsp;</td>
+<tr id="i31" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../fr/iut/monpotager/model/Vegetable.html#setWeather-java.lang.String-">setWeather</a></span>(java.lang.String&nbsp;weather)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -197,7 +294,7 @@ implements java.io.Serializable</pre>
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
+<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
 </ul>
 </li>
 </ul>
@@ -213,15 +310,26 @@ implements java.io.Serializable</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="Vegetable-java.lang.String-int-java.lang.String-">
+<a name="Vegetable--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Vegetable</h4>
+<pre>public&nbsp;Vegetable()</pre>
+</li>
+</ul>
+<a name="Vegetable-java.lang.String-java.lang.String-int-java.lang.String-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Vegetable</h4>
-<pre>public&nbsp;Vegetable(java.lang.String&nbsp;name,
+<pre>public&nbsp;Vegetable(java.lang.String&nbsp;id,
+                 java.lang.String&nbsp;name,
                  int&nbsp;duration,
-                 java.lang.String&nbsp;image)</pre>
+                 java.lang.String&nbsp;image,
+                 java.lang.String&nbsp;temperature)</pre>
 </li>
 </ul>
 </li>
@@ -232,19 +340,6 @@ implements java.io.Serializable</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="toString--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>toString</h4>
-<pre>public&nbsp;java.lang.String&nbsp;toString()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>toString</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
-</dl>
-</li>
-</ul>
 <a name="getName--">
 <!--   -->
 </a>
@@ -311,10 +406,226 @@ implements java.io.Serializable</pre>
 <a name="setPicture-java.lang.String-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setPicture</h4>
 <pre>public&nbsp;void&nbsp;setPicture(java.lang.String&nbsp;picture)</pre>
+</li>
+</ul>
+<a name="getTemperature--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTemperature</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getTemperature()</pre>
+</li>
+</ul>
+<a name="setTemperature-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTemperature</h4>
+<pre>public&nbsp;void&nbsp;setTemperature(java.lang.String&nbsp;temperature)</pre>
+</li>
+</ul>
+<a name="getSowingMonth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSowingMonth</h4>
+<pre>public&nbsp;java.util.List&lt;java.lang.Long&gt;&nbsp;getSowingMonth()</pre>
+</li>
+</ul>
+<a name="setSowingMonth-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSowingMonth</h4>
+<pre>public&nbsp;void&nbsp;setSowingMonth(java.util.List&lt;java.lang.Long&gt;&nbsp;sowingMonth)</pre>
+</li>
+</ul>
+<a name="getHarvestMonth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHarvestMonth</h4>
+<pre>public&nbsp;java.util.List&lt;java.lang.Long&gt;&nbsp;getHarvestMonth()</pre>
+</li>
+</ul>
+<a name="setHarvestMonth-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHarvestMonth</h4>
+<pre>public&nbsp;void&nbsp;setHarvestMonth(java.util.List&lt;java.lang.Long&gt;&nbsp;harvestMonth)</pre>
+</li>
+</ul>
+<a name="getPlantingMonth--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPlantingMonth</h4>
+<pre>public&nbsp;java.util.List&lt;java.lang.Long&gt;&nbsp;getPlantingMonth()</pre>
+</li>
+</ul>
+<a name="setPlantingMonth-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPlantingMonth</h4>
+<pre>public&nbsp;void&nbsp;setPlantingMonth(java.util.List&lt;java.lang.Long&gt;&nbsp;plantingMonth)</pre>
+</li>
+</ul>
+<a name="getVegetablesCompatibilities--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVegetablesCompatibilities</h4>
+<pre>public&nbsp;java.util.List&lt;<a href="../../../../fr/iut/monpotager/model/Vegetable.html" title="class in fr.iut.monpotager.model">Vegetable</a>&gt;&nbsp;getVegetablesCompatibilities()</pre>
+</li>
+</ul>
+<a name="setVegetablesCompatibilities-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVegetablesCompatibilities</h4>
+<pre>public&nbsp;void&nbsp;setVegetablesCompatibilities(java.util.List&lt;<a href="../../../../fr/iut/monpotager/model/Vegetable.html" title="class in fr.iut.monpotager.model">Vegetable</a>&gt;&nbsp;vegetablesCompatibilities)</pre>
+</li>
+</ul>
+<a name="getAdviseMaintenance--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAdviseMaintenance</h4>
+<pre>public&nbsp;java.util.List&lt;java.lang.String&gt;&nbsp;getAdviseMaintenance()</pre>
+</li>
+</ul>
+<a name="setAdviseMaintenance-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAdviseMaintenance</h4>
+<pre>public&nbsp;void&nbsp;setAdviseMaintenance(java.util.List&lt;java.lang.String&gt;&nbsp;adviseMaintenance)</pre>
+</li>
+</ul>
+<a name="getAdviseRecolt--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAdviseRecolt</h4>
+<pre>public&nbsp;java.util.List&lt;java.lang.String&gt;&nbsp;getAdviseRecolt()</pre>
+</li>
+</ul>
+<a name="setAdviseRecolt-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAdviseRecolt</h4>
+<pre>public&nbsp;void&nbsp;setAdviseRecolt(java.util.List&lt;java.lang.String&gt;&nbsp;adviseRecolt)</pre>
+</li>
+</ul>
+<a name="isPerpetual--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isPerpetual</h4>
+<pre>public&nbsp;boolean&nbsp;isPerpetual()</pre>
+</li>
+</ul>
+<a name="setPerpetual-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPerpetual</h4>
+<pre>public&nbsp;void&nbsp;setPerpetual(boolean&nbsp;perpetual)</pre>
+</li>
+</ul>
+<a name="getSunshine--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSunshine</h4>
+<pre>public&nbsp;int&nbsp;getSunshine()</pre>
+</li>
+</ul>
+<a name="setSunshine-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setSunshine</h4>
+<pre>public&nbsp;void&nbsp;setSunshine(int&nbsp;sunshine)</pre>
+</li>
+</ul>
+<a name="getTips--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTips</h4>
+<pre>public&nbsp;java.util.List&lt;java.lang.String&gt;&nbsp;getTips()</pre>
+</li>
+</ul>
+<a name="setTips-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTips</h4>
+<pre>public&nbsp;void&nbsp;setTips(java.util.List&lt;java.lang.String&gt;&nbsp;tips)</pre>
+</li>
+</ul>
+<a name="getWeather--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWeather</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getWeather()</pre>
+</li>
+</ul>
+<a name="setWeather-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setWeather</h4>
+<pre>public&nbsp;void&nbsp;setWeather(java.lang.String&nbsp;weather)</pre>
+</li>
+</ul>
+<a name="getId--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getId</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getId()</pre>
+</li>
+</ul>
+<a name="setId-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setId</h4>
+<pre>public&nbsp;void&nbsp;setId(java.lang.String&nbsp;id)</pre>
 </li>
 </ul>
 </li>
@@ -344,8 +655,8 @@ implements java.io.Serializable</pre>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li>Prev&nbsp;Class</li>
-<li>Next&nbsp;Class</li>
+<li><a href="../../../../fr/iut/monpotager/model/Tip.html" title="class in fr.iut.monpotager.model"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../fr/iut/monpotager/model/VegetablePlanted.html" title="class in fr.iut.monpotager.model"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?fr/iut/monpotager/model/Vegetable.html" target="_top">Frames</a></li>

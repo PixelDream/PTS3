@@ -74,9 +74,13 @@
 <li><a href="fr/iut/monpotager/controller/package-tree.html">fr.iut.monpotager.controller</a>, </li>
 <li><a href="fr/iut/monpotager/controller/auth/package-tree.html">fr.iut.monpotager.controller.auth</a>, </li>
 <li><a href="fr/iut/monpotager/controller/fragment/package-tree.html">fr.iut.monpotager.controller.fragment</a>, </li>
+<li><a href="fr/iut/monpotager/controller/fragment/garden/package-tree.html">fr.iut.monpotager.controller.fragment.garden</a>, </li>
+<li><a href="fr/iut/monpotager/controller/fragment/garden/adapter/package-tree.html">fr.iut.monpotager.controller.fragment.garden.adapter</a>, </li>
+<li><a href="fr/iut/monpotager/controller/fragment/plant/package-tree.html">fr.iut.monpotager.controller.fragment.plant</a>, </li>
 <li><a href="fr/iut/monpotager/controller/fragment/search/package-tree.html">fr.iut.monpotager.controller.fragment.search</a>, </li>
 <li><a href="fr/iut/monpotager/controller/fragment/search/adapter/package-tree.html">fr.iut.monpotager.controller.fragment.search.adapter</a>, </li>
 <li><a href="fr/iut/monpotager/controller/sidemenu/package-tree.html">fr.iut.monpotager.controller.sidemenu</a>, </li>
+<li><a href="fr/iut/monpotager/controller/utils/package-tree.html">fr.iut.monpotager.controller.utils</a>, </li>
 <li><a href="fr/iut/monpotager/manager/package-tree.html">fr.iut.monpotager.manager</a>, </li>
 <li><a href="fr/iut/monpotager/model/package-tree.html">fr.iut.monpotager.model</a>, </li>
 <li><a href="fr/iut/monpotager/repository/package-tree.html">fr.iut.monpotager.repository</a></li>
@@ -94,7 +98,7 @@
 </li>
 <li type="circle">AppCompatActivity
 <ul>
-<li type="circle">fr.iut.monpotager.controller.<a href="fr/iut/monpotager/controller/MainActivity.html" title="class in fr.iut.monpotager.controller"><span class="typeNameLink">MainActivity</span></a> (implements fr.iut.monpotager.controller.sidemenu.<a href="fr/iut/monpotager/controller/sidemenu/DrawerAdapter.OnItemSelectedListener.html" title="interface in fr.iut.monpotager.controller.sidemenu">DrawerAdapter.OnItemSelectedListener</a>)</li>
+<li type="circle">fr.iut.monpotager.controller.auth.<a href="fr/iut/monpotager/controller/auth/LoginActivity.html" title="class in fr.iut.monpotager.controller.auth"><span class="typeNameLink">LoginActivity</span></a></li>
 </ul>
 </li>
 <li type="circle">AppCompatActivity
@@ -109,19 +113,36 @@
 </li>
 <li type="circle">AppCompatActivity
 <ul>
-<li type="circle">fr.iut.monpotager.controller.auth.<a href="fr/iut/monpotager/controller/auth/LoginActivity.html" title="class in fr.iut.monpotager.controller.auth"><span class="typeNameLink">LoginActivity</span></a></li>
+<li type="circle">fr.iut.monpotager.controller.<a href="fr/iut/monpotager/controller/MainActivity.html" title="class in fr.iut.monpotager.controller"><span class="typeNameLink">MainActivity</span></a> (implements fr.iut.monpotager.controller.sidemenu.<a href="fr/iut/monpotager/controller/sidemenu/DrawerAdapter.OnItemSelectedListener.html" title="interface in fr.iut.monpotager.controller.sidemenu">DrawerAdapter.OnItemSelectedListener</a>)</li>
 </ul>
 </li>
 <li type="circle">android.widget.BaseAdapter (implements android.widget.ListAdapter, android.widget.SpinnerAdapter)
 <ul>
+<li type="circle">fr.iut.monpotager.controller.fragment.garden.adapter.<a href="fr/iut/monpotager/controller/fragment/garden/adapter/CustomGardenListAdapter.html" title="class in fr.iut.monpotager.controller.fragment.garden.adapter"><span class="typeNameLink">CustomGardenListAdapter</span></a> (implements android.widget.Filterable)</li>
 <li type="circle">fr.iut.monpotager.controller.fragment.search.adapter.<a href="fr/iut/monpotager/controller/fragment/search/adapter/CustomVegetableListAdapter.html" title="class in fr.iut.monpotager.controller.fragment.search.adapter"><span class="typeNameLink">CustomVegetableListAdapter</span></a> (implements android.widget.Filterable)</li>
 </ul>
 </li>
 <li type="circle">fr.iut.monpotager.controller.fragment.search.adapter.<a href="fr/iut/monpotager/controller/fragment/search/adapter/CircleTransform.html" title="class in fr.iut.monpotager.controller.fragment.search.adapter"><span class="typeNameLink">CircleTransform</span></a></li>
+<li type="circle">fr.iut.monpotager.controller.fragment.plant.<a href="fr/iut/monpotager/controller/fragment/plant/DateInputMask.html" title="class in fr.iut.monpotager.controller.fragment.plant"><span class="typeNameLink">DateInputMask</span></a> (implements android.text.TextWatcher)</li>
+<li type="circle">DialogFragment
+<ul>
+<li type="circle">fr.iut.monpotager.controller.fragment.plant.<a href="fr/iut/monpotager/controller/fragment/plant/AddToGardenDialog.html" title="class in fr.iut.monpotager.controller.fragment.plant"><span class="typeNameLink">AddToGardenDialog</span></a></li>
+</ul>
+</li>
 <li type="circle">fr.iut.monpotager.controller.sidemenu.<a href="fr/iut/monpotager/controller/sidemenu/DrawerItem.html" title="class in fr.iut.monpotager.controller.sidemenu"><span class="typeNameLink">DrawerItem</span></a>&lt;T&gt;
 <ul>
 <li type="circle">fr.iut.monpotager.controller.sidemenu.<a href="fr/iut/monpotager/controller/sidemenu/SimpleItem.html" title="class in fr.iut.monpotager.controller.sidemenu"><span class="typeNameLink">SimpleItem</span></a></li>
 <li type="circle">fr.iut.monpotager.controller.sidemenu.<a href="fr/iut/monpotager/controller/sidemenu/SpaceItem.html" title="class in fr.iut.monpotager.controller.sidemenu"><span class="typeNameLink">SpaceItem</span></a></li>
+</ul>
+</li>
+<li type="circle">Fragment
+<ul>
+<li type="circle">fr.iut.monpotager.controller.fragment.garden.<a href="fr/iut/monpotager/controller/fragment/garden/GardenFragment.html" title="class in fr.iut.monpotager.controller.fragment.garden"><span class="typeNameLink">GardenFragment</span></a></li>
+</ul>
+</li>
+<li type="circle">Fragment
+<ul>
+<li type="circle">fr.iut.monpotager.controller.fragment.garden.<a href="fr/iut/monpotager/controller/fragment/garden/CharacteristicFragment.html" title="class in fr.iut.monpotager.controller.fragment.garden"><span class="typeNameLink">CharacteristicFragment</span></a></li>
 </ul>
 </li>
 <li type="circle">Fragment
@@ -134,10 +155,30 @@
 <li type="circle">fr.iut.monpotager.controller.fragment.search.<a href="fr/iut/monpotager/controller/fragment/search/SearchFragment.html" title="class in fr.iut.monpotager.controller.fragment.search"><span class="typeNameLink">SearchFragment</span></a></li>
 </ul>
 </li>
+<li type="circle">Fragment
+<ul>
+<li type="circle">fr.iut.monpotager.controller.fragment.plant.<a href="fr/iut/monpotager/controller/fragment/plant/PlantFragment.html" title="class in fr.iut.monpotager.controller.fragment.plant"><span class="typeNameLink">PlantFragment</span></a></li>
+</ul>
+</li>
+<li type="circle">Fragment
+<ul>
+<li type="circle">fr.iut.monpotager.controller.fragment.<a href="fr/iut/monpotager/controller/fragment/SettingFragment.html" title="class in fr.iut.monpotager.controller.fragment"><span class="typeNameLink">SettingFragment</span></a></li>
+</ul>
+</li>
+<li type="circle">fr.iut.monpotager.model.<a href="fr/iut/monpotager/model/Garden.html" title="class in fr.iut.monpotager.model"><span class="typeNameLink">Garden</span></a> (implements java.io.Serializable)</li>
+<li type="circle">fr.iut.monpotager.manager.<a href="fr/iut/monpotager/manager/GardenManager.html" title="class in fr.iut.monpotager.manager"><span class="typeNameLink">GardenManager</span></a></li>
+<li type="circle">fr.iut.monpotager.repository.<a href="fr/iut/monpotager/repository/GardenRepository.html" title="class in fr.iut.monpotager.repository"><span class="typeNameLink">GardenRepository</span></a></li>
+<li type="circle">fr.iut.monpotager.model.<a href="fr/iut/monpotager/model/Plant.html" title="class in fr.iut.monpotager.model"><span class="typeNameLink">Plant</span></a></li>
 <li type="circle">fr.iut.monpotager.controller.fragment.search.adapter.<a href="fr/iut/monpotager/controller/fragment/search/adapter/RoundedCornersTransformation.html" title="class in fr.iut.monpotager.controller.fragment.search.adapter"><span class="typeNameLink">RoundedCornersTransformation</span></a></li>
+<li type="circle">fr.iut.monpotager.model.<a href="fr/iut/monpotager/model/Tip.html" title="class in fr.iut.monpotager.model"><span class="typeNameLink">Tip</span></a> (implements java.io.Serializable)</li>
+<li type="circle">fr.iut.monpotager.manager.<a href="fr/iut/monpotager/manager/TipManager.html" title="class in fr.iut.monpotager.manager"><span class="typeNameLink">TipManager</span></a></li>
+<li type="circle">fr.iut.monpotager.repository.<a href="fr/iut/monpotager/repository/TipRepository.html" title="class in fr.iut.monpotager.repository"><span class="typeNameLink">TipRepository</span></a></li>
 <li type="circle">fr.iut.monpotager.manager.<a href="fr/iut/monpotager/manager/UserManager.html" title="class in fr.iut.monpotager.manager"><span class="typeNameLink">UserManager</span></a></li>
 <li type="circle">fr.iut.monpotager.repository.<a href="fr/iut/monpotager/repository/UserRepository.html" title="class in fr.iut.monpotager.repository"><span class="typeNameLink">UserRepository</span></a></li>
 <li type="circle">fr.iut.monpotager.model.<a href="fr/iut/monpotager/model/Vegetable.html" title="class in fr.iut.monpotager.model"><span class="typeNameLink">Vegetable</span></a> (implements java.io.Serializable)</li>
+<li type="circle">fr.iut.monpotager.manager.<a href="fr/iut/monpotager/manager/VegetableManager.html" title="class in fr.iut.monpotager.manager"><span class="typeNameLink">VegetableManager</span></a></li>
+<li type="circle">fr.iut.monpotager.model.<a href="fr/iut/monpotager/model/VegetablePlanted.html" title="class in fr.iut.monpotager.model"><span class="typeNameLink">VegetablePlanted</span></a></li>
+<li type="circle">fr.iut.monpotager.repository.<a href="fr/iut/monpotager/repository/VegetableRepository.html" title="class in fr.iut.monpotager.repository"><span class="typeNameLink">VegetableRepository</span></a></li>
 <li type="circle">RecyclerView.ViewHolder
 <ul>
 <li type="circle">fr.iut.monpotager.controller.sidemenu.<a href="fr/iut/monpotager/controller/sidemenu/SpaceItem.ViewHolder.html" title="class in fr.iut.monpotager.controller.sidemenu"><span class="typeNameLink">SpaceItem.ViewHolder</span></a></li>
@@ -148,6 +189,7 @@
 </ul>
 <h2 title="Interface Hierarchy">Interface Hierarchy</h2>
 <ul>
+<li type="circle">fr.iut.monpotager.controller.utils.<a href="fr/iut/monpotager/controller/utils/Callback.html" title="interface in fr.iut.monpotager.controller.utils"><span class="typeNameLink">Callback</span></a></li>
 <li type="circle">fr.iut.monpotager.controller.sidemenu.<a href="fr/iut/monpotager/controller/sidemenu/DrawerAdapter.OnItemSelectedListener.html" title="interface in fr.iut.monpotager.controller.sidemenu"><span class="typeNameLink">DrawerAdapter.OnItemSelectedListener</span></a></li>
 </ul>
 <h2 title="Enum Hierarchy">Enum Hierarchy</h2>
@@ -156,6 +198,9 @@
 <ul>
 <li type="circle">java.lang.Enum&lt;E&gt; (implements java.lang.Comparable&lt;T&gt;, java.io.Serializable)
 <ul>
+<li type="circle">fr.iut.monpotager.model.<a href="fr/iut/monpotager/model/Species.html" title="enum in fr.iut.monpotager.model"><span class="typeNameLink">Species</span></a></li>
+<li type="circle">fr.iut.monpotager.model.<a href="fr/iut/monpotager/model/Season.html" title="enum in fr.iut.monpotager.model"><span class="typeNameLink">Season</span></a></li>
+<li type="circle">fr.iut.monpotager.model.<a href="fr/iut/monpotager/model/Period.html" title="enum in fr.iut.monpotager.model"><span class="typeNameLink">Period</span></a></li>
 <li type="circle">fr.iut.monpotager.controller.fragment.search.adapter.<a href="fr/iut/monpotager/controller/fragment/search/adapter/RoundedCornersTransformation.CornerType.html" title="enum in fr.iut.monpotager.controller.fragment.search.adapter"><span class="typeNameLink">RoundedCornersTransformation.CornerType</span></a></li>
 </ul>
 </li>
