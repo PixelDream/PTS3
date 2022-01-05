@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="id_activityScreenTitles">
+        <item></item>
+        <item>Accueil</item>
+        <item>Mon Potager</item>
+        <item>Mon Compte</item>
+        <item/>
+        <item>Déconnexion</item>
+    </string-array>
+    <array name="id_activityScreenIcon">
+        <item></item>
+        <item>@drawable/ic_sidebar_home</item>
+        <item>@drawable/pelle</item>
+        <item>@drawable/ic_sidebar_account</item>
+        <item>0</item>
+        <item>@drawable/ic_sidebar_logout</item>
+    </array>
+    <string-array name="unit_array">
+        <item>plants</item>
+        <item>m²</item>
+        <item>parcelles</item>
+        <item>mètres</item>
+        <item>rangées</item>
+    </string-array>
+</resources>
