@@ -1,1 +1,13 @@
 fr.iut.monpotager.controller
+fr.iut.monpotager.controller.auth
+fr.iut.monpotager.controller.fragment
+fr.iut.monpotager.controller.fragment.garden
+fr.iut.monpotager.controller.fragment.garden.adapter
+fr.iut.monpotager.controller.fragment.plant
+fr.iut.monpotager.controller.fragment.search
+fr.iut.monpotager.controller.fragment.search.adapter
+fr.iut.monpotager.controller.sidemenu
+fr.iut.monpotager.controller.utils
+fr.iut.monpotager.manager
+fr.iut.monpotager.model
+fr.iut.monpotager.repository
