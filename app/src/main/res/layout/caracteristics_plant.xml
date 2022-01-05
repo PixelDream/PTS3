@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_plant"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/RelativeLayout"
-        tools:ignore="MissingConstraints">
 
     <View
         android:id="@+id/header"
@@ -42,209 +36,211 @@
         android:src="@drawable/tomate"/>
 
 
-        <ImageButton
-            android:id="@+id/addToGarden"
-            android:layout_width="49dp"
-            android:layout_height="51dp"
-            android:layout_marginLeft="350dp"
-            android:layout_marginTop="205dp"
-            android:background="@drawable/edit">
+    <ImageButton
+        android:id="@+id/edit"
+        android:layout_width="49dp"
+        android:layout_height="51dp"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/edit"/>
 
-        </ImageButton>
-
-
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Caractéristiques"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RelativeLayout" />
+        android:layout_marginTop="300dp"
+        android:layout_marginHorizontal="20dp">
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="33dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/calendar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-    </ImageView>
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="planté le 35 mars 2048 "
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-    </TextView>
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="19dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/surface"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6">
-
-    </ImageView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="6 m2"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView8">
-
-    </TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Tâches"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.031"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7">
-
-    </TextView>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="384dp"
-        android:layout_height="164dp"
-        android:layout_marginTop="180dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RelativeLayout">
-
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/card_light">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/task1"
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Planter dans 2 jours"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                android:textStyle="bold">
+                android:layout_marginTop="12dp"
+                android:text="Caractéristiques"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.041"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/RelativeLayout" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                >
+
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="33dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/calendar"
+                    />
+
+                <TextView
+                    android:id="@+id/gardenDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="planté le 5 mars 2020 "
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="10dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/size"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6 m2"
+                    android:id="@+id/gardenQuantity"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="8dp"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Tâches"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/imageView7">
 
             </TextView>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="164dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.465"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/RelativeLayout">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/card_light">
+
+                    <TextView
+                        android:id="@+id/task1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Planter dans 2 jours"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/calendarImage1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@id/task1"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/calendar_pic">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="25dp"
+                        android:text="02/02/2012"
+                        android:textColor="@color/white"
+                        android:textSize="10dp">
+
+
+                    </TextView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/card_light">
+
+                    <TextView
+                        android:id="@+id/task2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Récolter dans 20 jours"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@id/task2"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/calendar_pic">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="25dp"
+                        android:text="02/02/2012"
+                        android:textColor="@color/white"
+                        android:textSize="10dp">
+
+
+                    </TextView>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/calendarImage1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/task1"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/calenderwhite">
-
-            </ImageView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="25dp"
-                android:textSize="10dp"
-                android:text="02/02/2012"
-                android:textColor="@color/white">
+                android:layout_width="400dp"
+                android:layout_height="200dp"
+                android:src="@drawable/ic_entertain_pic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        </LinearLayout>
+    </ScrollView>
 
 
-            </TextView>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/card_light">
-
-            <TextView
-                android:id="@+id/task2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Récolter dans 20 jours"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                android:textStyle="bold">
-
-            </TextView>
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/task2"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/calenderwhite">
-
-            </ImageView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="25dp"
-                android:text="02/02/2012"
-                android:textSize="10dp"
-                android:textColor="@color/white">
 
 
-            </TextView>
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="200dp"
-        android:src="@drawable/ic_entertain_pic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-
-    </ImageView>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

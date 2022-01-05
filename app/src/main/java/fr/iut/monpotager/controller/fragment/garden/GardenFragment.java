@@ -10,21 +10,13 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.common.collect.Lists;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.ArrayList;
-import java.util.List;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.fragment.garden.adapter.CustomGardenListAdapter;
-import fr.iut.monpotager.controller.fragment.plant.PlantFragment;
-import fr.iut.monpotager.controller.fragment.search.adapter.CustomVegetableListAdapter;
 import fr.iut.monpotager.controller.utils.Callback;
 import fr.iut.monpotager.manager.GardenManager;
 import fr.iut.monpotager.model.Garden;
-import fr.iut.monpotager.model.Vegetable;
 
 public class GardenFragment extends Fragment {
 
@@ -56,12 +48,12 @@ public class GardenFragment extends Fragment {
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
-            Vegetable vegetable = (Vegetable) parent.getItemAtPosition(position);
+            Garden garden = (Garden) parent.getItemAtPosition(position);
 
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-            PlantFragment plantFragment = PlantFragment.newInstance(vegetable);
+            CharacteristicFragment characteristicFragment = CharacteristicFragment.newInstance(garden);
 
-            transaction.replace(R.id.container, plantFragment);
+            transaction.replace(R.id.container, characteristicFragment);
             transaction.commit();
         });
 
@@ -79,8 +71,6 @@ public class GardenFragment extends Fragment {
             }
         });
 
-
-        //origList = (ArrayList) vegetableListFirebase.clone();
 
         return root;
     }

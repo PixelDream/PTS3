@@ -24,6 +24,7 @@
             android:layout_marginTop="15dp"
             android:paddingEnd="20dp"
             android:paddingRight="20dp"
+            android:visibility="invisible"
             app:srcCompat="@drawable/heart" />
 
         <ImageView
@@ -34,6 +35,7 @@
             android:layout_marginTop="15dp"
             android:paddingEnd="10dp"
             android:paddingRight="10dp"
+            android:visibility="invisible"
             app:srcCompat="@drawable/bell" />
     </androidx.appcompat.widget.Toolbar>
 
