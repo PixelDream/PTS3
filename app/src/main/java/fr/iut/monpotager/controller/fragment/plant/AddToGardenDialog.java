@@ -10,7 +10,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,9 +32,7 @@ import java.util.List;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.manager.GardenManager;
-import fr.iut.monpotager.model.Garden;
 import fr.iut.monpotager.model.Vegetable;
-import fr.iut.monpotager.repository.GardenRepository;
 
 public class AddToGardenDialog extends DialogFragment  implements Validator.ValidationListener {
 

@@ -3,54 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
-        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/dashboard_fragment.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/drawer_menu.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/item_option.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/menuderoulant.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/profile_fragment.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/ludov/AndroidStudioProjects/PTS3/app/src/main/res/layout/side_menu.xml" value="0.1" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/drawable/dialog_bg.xml" value="0.4588541666666667" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/activity_main.xml" value="0.29635416666666664" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/activity_plant.xml" value="0.24791666666666667" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/adapter_item_search_list.xml" value="0.3828571428571429" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/auth_login.xml" value="0.18697916666666667" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/auth_password.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/auth_signup.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/dashboard_fragment.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/dialog_add_to_garden.xml" value="0.4427083333333333" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/drawer_menu.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/fragment_plant.xml" value="0.24791666666666667" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/home.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/home_fragment.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/item_option.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/layout.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/myprofil.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/myprofile.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/plant_spec.xml" value="0.24791666666666667" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/plant_spec_entertain.xml" value="0.24791666666666667" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/plant_spec_harvest.xml" value="0.24791666666666667" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/plant_spec_info.xml" value="0.24791666666666667" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/profile_fragment.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/search_page.xml" value="0.26927083333333335" />
+        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/drawable/background_image.xml" value="0.4588541666666667" />
+        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/drawable/input.xml" value="0.4588541666666667" />
+        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/activity_main.xml" value="0.14235055724417425" />
+        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/caracteristics_plant.xml" value="0.25677083333333334" />
+        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/dashboard_fragment.xml" value="0.14235055724417425" />
+        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/drawer_menu.xml" value="0.14235055724417425" />
+        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/fragment_plant.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/myprofil.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/plant_spec_entertain.xml" value="0.297554347826087" />
+        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/plant_spec_info.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/yanna/Desktop/MonPotager/app/src/main/res/layout/search_page.xml" value="0.14235055724417425" />
       </map>
     </option>
   </component>
-  <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/javadoc" />
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.18857142857142858" />
-      </ProjectState>
-    </option>
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

@@ -73,7 +73,7 @@
 
 
             <TextView
-                android:id="@+id/GardenDate"
+                android:id="@+id/gardenDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="9dp"
@@ -102,7 +102,7 @@
 
 
             <TextView
-                android:id="@+id/GardenQuantity"
+                android:id="@+id/gardenQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="9dp"
