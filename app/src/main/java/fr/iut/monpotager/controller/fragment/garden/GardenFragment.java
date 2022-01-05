@@ -56,12 +56,12 @@ public class GardenFragment extends Fragment {
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
-            Vegetable vegetable = (Vegetable) parent.getItemAtPosition(position);
+            Garden garden = (Garden) parent.getItemAtPosition(position);
 
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-            PlantFragment plantFragment = PlantFragment.newInstance(vegetable);
+            CharacteristicFragment characteristicFragment = CharacteristicFragment.newInstance(garden);
 
-            transaction.replace(R.id.container, plantFragment);
+            transaction.replace(R.id.container, characteristicFragment);
             transaction.commit();
         });
 

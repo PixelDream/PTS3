@@ -7,13 +7,14 @@ import androidx.annotation.RequiresApi;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.Exclude;
 
+import java.io.Serializable;
 import java.time.Duration;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Garden {
+public class Garden implements Serializable {
 
     private String id;
     private Vegetable vegetable;
