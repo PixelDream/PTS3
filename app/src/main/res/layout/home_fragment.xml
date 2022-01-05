@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -42,30 +40,38 @@
 
     <RelativeLayout
         android:layout_width="340dp"
-        android:layout_height="70dp"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
         android:background="@drawable/card_light">
 
-
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/titleTip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
+            android:maxWidth="290dp"
+            android:maxLines="2"
+            android:paddingLeft="5dp"
             android:text="Tips"
             android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingLeft="10dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius tortor a libero "
-            android:textColor="@color/white"
-            android:textSize="15dp" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/titleTip"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/textTip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius tortor a libero "
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+        </ScrollView>
 
     </RelativeLayout>
 
@@ -82,18 +88,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="330dp"
         android:text="Fruits et légumes de saison"
         android:textSize="20dp"
-        android:textStyle="bold">
-
-    </TextView>
+        android:textStyle="bold" />
 
     <HorizontalScrollView
         android:id="@+id/flsaison"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginTop="340dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="370dp"
         android:layout_marginBottom="10dp"
         android:scrollbars="none">
 

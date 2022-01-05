@@ -179,6 +179,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/email2"
                 app:layout_constraintStart_toStartOf="@+id/email2"
                 tools:ignore="MissingConstraints" />
+
             <EditText
                 android:id="@+id/email2"
                 android:layout_width="wrap_content"
@@ -232,7 +233,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints" />
-
 
 
             <TextView

@@ -3,18 +3,18 @@ package fr.iut.monpotager.model;
 import android.os.Parcel;
 
 public class Plant {
-    private String name;
-    private int sunNeed;
-    private Period plantationPeriod;
-    private Period sowingPeriod;
-    private int idealTemp;
-    private int waterNeed;
-    private int fruitingTime;
-    private String maintenanceInstructions;
-    private Season preferSeason;
-    private Period floweringDate;
-    private Species species;
-    private int lifeTime;
+    private final String name;
+    private final int sunNeed;
+    private final Period plantationPeriod;
+    private final Period sowingPeriod;
+    private final int idealTemp;
+    private final int waterNeed;
+    private final int fruitingTime;
+    private final String maintenanceInstructions;
+    private final Season preferSeason;
+    private final Period floweringDate;
+    private final Species species;
+    private final int lifeTime;
 
     public Plant(String name, int sunNeed, Period plantationPeriod, Period sowingPeriod, int idealTemp, int waterNeed, int fruitingTime, String maintenanceInstructions, Season preferSeason, Period floweringDate, Species species, int lifeTime) {
         this.name = name;

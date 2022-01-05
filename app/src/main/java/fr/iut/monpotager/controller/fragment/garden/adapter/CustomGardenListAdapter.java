@@ -15,23 +15,17 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import fr.iut.monpotager.R;
-import fr.iut.monpotager.controller.fragment.search.adapter.CustomVegetableListAdapter;
 import fr.iut.monpotager.controller.fragment.search.adapter.RoundedCornersTransformation;
 import fr.iut.monpotager.model.Garden;
-import fr.iut.monpotager.model.Vegetable;
 
 public class CustomGardenListAdapter extends BaseAdapter implements Filterable {
 
     private List<Garden> listData;
-    private LayoutInflater layoutInflater;
+    private final LayoutInflater layoutInflater;
 
     public CustomGardenListAdapter(Context context, List<Garden> listData) {
         super();

@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_plant"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -28,27 +27,27 @@
     <ImageView
         android:id="@+id/plantImage"
         android:layout_width="180dp"
-        android:minWidth="180dp"
         android:layout_height="180dp"
-        android:minHeight="180dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:src="@drawable/tomate"/>
+        android:minWidth="180dp"
+        android:minHeight="180dp"
+        android:src="@drawable/tomate" />
 
 
     <ImageButton
         android:id="@+id/edit"
-        android:layout_width="49dp"
-        android:layout_height="51dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="320dp"
         android:layout_marginTop="200dp"
-        android:background="@drawable/edit"/>
+        android:background="@drawable/edit" />
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:layout_marginHorizontal="20dp">
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="300dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,58 +71,53 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
                 android:layout_marginTop="8dp"
-                >
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
 
                 <ImageView
                     android:id="@+id/imageView6"
-                    android:layout_width="33dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/calendar"
-                    />
+                    android:layout_width="20dp"
+                    android:layout_height="23dp"
+                    android:src="@drawable/calendar_pic" />
 
                 <TextView
                     android:id="@+id/gardenDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="planté le 5 mars 2020 "
-                    android:textColor="@color/black"
                     android:layout_marginLeft="10dp"
-                    />
+                    android:text="planté le 5 mars 2020 "
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
                 android:layout_marginTop="10dp"
-                >
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="19dp"
-                    android:layout_height="18dp"
-                    android:src="@drawable/size"/>
+                    android:layout_width="20dp"
+                    android:layout_height="23dp"
+                    android:src="@drawable/size" />
 
                 <TextView
+                    android:id="@+id/gardenQuantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="6 m2"
-                    android:id="@+id/gardenQuantity"
-                    android:textColor="@color/black"
                     android:layout_marginLeft="8dp"
-                    />
+                    android:text="6 m2"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="20dp"
                 android:text="Tâches"
                 android:textColor="@color/black"
                 android:textSize="20dp"
@@ -164,18 +158,18 @@
 
                     <ImageView
                         android:id="@+id/calendarImage1"
-                        android:layout_width="50dp"
+                        android:layout_width="20dp"
                         android:layout_height="50dp"
                         android:layout_below="@id/task1"
                         android:layout_marginLeft="10dp"
-                        android:src="@drawable/calendar_pic">
+                        android:src="@drawable/calendar_pic_white">
 
                     </ImageView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="25dp"
                         android:text="02/02/2012"
                         android:textColor="@color/white"
@@ -204,18 +198,18 @@
                     </TextView>
 
                     <ImageView
-                        android:layout_width="50dp"
+                        android:layout_width="20dp"
                         android:layout_height="50dp"
                         android:layout_below="@id/task2"
                         android:layout_marginLeft="10dp"
-                        android:src="@drawable/calendar_pic">
+                        android:src="@drawable/calendar_pic_white">
 
                     </ImageView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="25dp"
                         android:text="02/02/2012"
                         android:textColor="@color/white"
@@ -239,8 +233,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
         </LinearLayout>
     </ScrollView>
-
-
 
 
 </RelativeLayout>

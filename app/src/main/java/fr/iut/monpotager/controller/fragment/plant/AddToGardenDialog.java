@@ -10,7 +10,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,16 +32,14 @@ import java.util.List;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.manager.GardenManager;
-import fr.iut.monpotager.model.Garden;
 import fr.iut.monpotager.model.Vegetable;
-import fr.iut.monpotager.repository.GardenRepository;
 
-public class AddToGardenDialog extends DialogFragment  implements Validator.ValidationListener {
+public class AddToGardenDialog extends DialogFragment implements Validator.ValidationListener {
 
     private static final String TAG = "AddToGardenDialog";
     final private DateFormat dateFormat;
 
-    private GardenManager gardenManager;
+    private final GardenManager gardenManager;
 
     private Validator validator;
     private boolean isValid = false;
@@ -91,15 +88,16 @@ public class AddToGardenDialog extends DialogFragment  implements Validator.Vali
         addToGarden = view.findViewById(R.id.addToGarden);
         addToGarden.setOnClickListener(v -> {
             validator.validate();
-            if (isValid) addToGarden(vegetable, requireActivity().findViewById(R.id.fragment_plant));
+            if (isValid)
+                addToGarden(vegetable, requireActivity().findViewById(R.id.fragment_plant));
         });
 
 
         builder.setView(view);
 
-        Dialog dialog =  builder.create();
+        Dialog dialog = builder.create();
 
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);

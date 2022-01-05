@@ -1,9 +1,6 @@
 package fr.iut.monpotager.manager;
 
-import java.util.Date;
-
 import fr.iut.monpotager.controller.utils.Callback;
-import fr.iut.monpotager.repository.GardenRepository;
 import fr.iut.monpotager.repository.UserRepository;
 import fr.iut.monpotager.repository.VegetableRepository;
 
@@ -19,7 +16,7 @@ public class VegetableManager {
     private VegetableRepository vegetableRepository;
 
     private VegetableManager() {
-        vegetableRepository = vegetableRepository.getInstance();
+        vegetableRepository = VegetableRepository.getInstance();
     }
 
     public static VegetableManager getInstance() {
@@ -37,6 +34,10 @@ public class VegetableManager {
 
     public void getVegetableById(String uid, Callback callback) {
         vegetableRepository.getVegetableById(uid, callback);
+    }
+
+    public void getVegetables(Callback callback) {
+        vegetableRepository.getVegetables(callback);
     }
 
 }

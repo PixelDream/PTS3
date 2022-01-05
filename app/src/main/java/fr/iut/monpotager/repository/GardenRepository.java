@@ -4,14 +4,10 @@ import android.util.Log;
 
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import fr.iut.monpotager.controller.utils.Callback;
 import fr.iut.monpotager.manager.UserManager;
@@ -27,11 +23,9 @@ public final class GardenRepository {
 
     private static final String TAG = "GardenRepository";
     private static final String GARDEN_COLLECTION = "Garden";
-
-    private UserManager userManager;
-    private VegetableManager vegetableManager;
-
     private static volatile GardenRepository instance;
+    private final UserManager userManager;
+    private final VegetableManager vegetableManager;
 
     private GardenRepository() {
         this.userManager = UserManager.getInstance();

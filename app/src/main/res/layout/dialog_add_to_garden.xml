@@ -1,79 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dialog_bg">
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
         android:text="Ajouter dans mon potager"
         android:textColor="@color/green"
         android:textSize="25sp"
-        android:layout_marginTop="8dp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        />
+        android:textStyle="bold" />
 
     <TextView
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Date de plantation/semi"/>
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="32dp"
+        android:text="Date de plantation/semi" />
 
     <EditText
         android:id="@+id/choiceDate"
-        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
-        android:textColorHint="@color/green"
+        android:hint="Date de plantation"
+        android:inputType="number"
         android:textColor="@color/green"
-        android:hint="Date de plantation"/>
+        android:textColorHint="@color/green" />
 
     <TextView
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Qunatité plantée selon l'unitée donnée"/>
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="16dp"
+        android:text="Qunatité plantée selon l'unitée donnée" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="4dp"
         android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
         android:layout_marginRight="4dp"
-        >
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/choiceQuantity"
-            android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/green"
             android:layout_marginRight="10dp"
-            android:textColor="@color/green"
-            android:hint="Quantité planté"
             android:layout_weight="0.9"
-            />
+            android:hint="Quantité planté"
+            android:inputType="number"
+            android:textColor="@color/green"
+            android:textColorHint="@color/green" />
 
         <Spinner
             android:id="@+id/choiceUnit"
-            android:spinnerMode="dropdown"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:hint="m²"
-            android:textAlignment="center"
-            android:gravity="center_horizontal"
             android:layout_weight="0.1"
-            />
+            android:gravity="center_horizontal"
+            android:hint="m²"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
 
 
     </LinearLayout>
@@ -82,17 +78,16 @@
         android:id="@+id/addToGarden"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginLeft="4dp"
+        android:layout_marginTop="32dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="16dp"
+        android:elevation="10dp"
+        android:text="Ajouter"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:text="Ajouter"
-        android:elevation="10dp"
-        android:translationZ="1dp"
         android:translationY="1dp"
-        />
+        android:translationZ="1dp" />
 
 
 </LinearLayout>

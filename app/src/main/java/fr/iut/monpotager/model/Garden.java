@@ -4,7 +4,6 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.Exclude;
 
 import java.io.Serializable;
@@ -31,10 +30,7 @@ public class Garden implements Serializable {
         this.unit = unit;
     }
 
-    public Garden() {}
-
-    public void setId(String id) {
-        this.id = id;
+    public Garden() {
     }
 
     public String getUserId() {
@@ -63,6 +59,10 @@ public class Garden implements Serializable {
 
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Vegetable getVegetable() {

@@ -61,13 +61,10 @@ public final class UserRepository {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                 .setDisplayName(name).build();
-        user.updateProfile(profileUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    Log.d("Display name: ", FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
-                    FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
-                }
+        user.updateProfile(profileUpdates).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Log.d("Display name: ", FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
+                FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
             }
         });
 
@@ -171,23 +168,17 @@ public final class UserRepository {
 
 // Prompt the user to re-provide their sign-in credentials
         user.reauthenticate(credential)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            user.updatePassword(pass).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Log.d("pw", "Password updated");
-                                    } else {
-                                        Log.d("pw", "Error password not updated");
-                                    }
-                                }
-                            });
-                        } else {
-                            Log.d("pw", "Error auth failed");
-                        }
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        user.updatePassword(pass).addOnCompleteListener(task1 -> {
+                            if (task1.isSuccessful()) {
+                                Log.d("pw", "Password updated");
+                            } else {
+                                Log.d("pw", "Error password not updated");
+                            }
+                        });
+                    } else {
+                        Log.d("pw", "Error auth failed");
                     }
                 });
     }

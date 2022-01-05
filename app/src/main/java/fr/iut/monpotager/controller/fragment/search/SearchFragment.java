@@ -3,7 +3,6 @@ package fr.iut.monpotager.controller.fragment.search;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,27 +12,24 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.fragment.plant.PlantFragment;
 import fr.iut.monpotager.controller.fragment.search.adapter.CustomVegetableListAdapter;
+import fr.iut.monpotager.controller.utils.Callback;
+import fr.iut.monpotager.manager.VegetableManager;
 import fr.iut.monpotager.model.Vegetable;
 
 public class SearchFragment extends Fragment {
 
+    private final VegetableManager vegetableManager = VegetableManager.getInstance();
 
     private ArrayList origList;
     private ArrayList<Vegetable> vegetableListFirebase;
-    private CollectionReference vegetables;
     private EditText searchVegetable;
     private ListView listView;
-    private FirebaseFirestore mDatabase;
     private CustomVegetableListAdapter adapter;
     private ViewGroup root;
 
@@ -45,44 +41,21 @@ public class SearchFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        //TODO: Migrer la partie du code suivante dans un PlantRepository comme pour UserRepository
+        vegetableListFirebase = new ArrayList<>();
 
         root = (ViewGroup) inflater.inflate(R.layout.search_page, container, false);
-        vegetableListFirebase = new ArrayList();
 
-
-        mDatabase = FirebaseFirestore.getInstance();
-
-
-        vegetables = mDatabase.collection("vegetables");
-
-        vegetables.get().addOnSuccessListener(queryDocumentSnapshots -> {
-
-            for (DocumentSnapshot document : queryDocumentSnapshots) {
-                try {
-                    Vegetable v = new Vegetable();
-                    v.setId(document.getId());
-                    v.setName(document.get("name").toString());
-                    v.setDuration(Integer.parseInt(document.get("duration").toString()));
-                    v.setPicture(document.get("picture").toString());
-                    v.setTemperature(document.get("temperature").toString());
-                    v.setSunshine(Integer.parseInt(document.get("sunshine").toString()));
-                    v.setAdviseMaintenance((List<String>) document.get("advise_maintenance"));
-                    v.setAdviseRecolt((List<String>) document.get("advise_recolt"));
-                    v.setHarvestMonth((List<Long>) document.get("harvest_month"));
-                    v.setPerpetual(Boolean.parseBoolean(document.get("perpetual").toString()));
-                    v.setPlantingMonth((List<Long>) document.get("planting_month"));
-                    v.setSowingMonth((List<Long>) document.get("sowing_month"));
-                    v.setWater(Integer.parseInt(document.get("water").toString()));
-                    v.setWeather(document.get("weather").toString());
-                    vegetableListFirebase.add(v);
-                } catch (Exception e) {
-                    Log.e("load-vege-search", e.getMessage());
-                }
+        vegetableManager.getVegetables(new Callback() {
+            @Override
+            public void onSuccessResult(Object result) {
+                vegetableListFirebase.addAll((List<Vegetable>) result);
+                onSuccessData();
             }
 
-            onSuccessData();
+            @Override
+            public void onErrorResult(Exception e) {
+                // Todo: Manage Errors
+            }
         });
 
 
@@ -119,7 +92,6 @@ public class SearchFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 adapter.getFilter().filter(charSequence);
-
             }
 
             @Override

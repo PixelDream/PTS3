@@ -5,15 +5,11 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.model.Document;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import fr.iut.monpotager.controller.utils.Callback;
-import fr.iut.monpotager.manager.UserManager;
-import fr.iut.monpotager.model.Garden;
 import fr.iut.monpotager.model.Vegetable;
 
 /**
@@ -25,12 +21,10 @@ public final class VegetableRepository {
     private static final String TAG = "VegetableRepository";
     private static final String GARDEN_COLLECTION = "vegetables";
 
-    private UserManager userManager;
 
     private static volatile VegetableRepository instance;
 
     private VegetableRepository() {
-        this.userManager = UserManager.getInstance();
     }
 
     public static VegetableRepository getInstance() {
@@ -56,6 +50,23 @@ public final class VegetableRepository {
         return this.getVegetableCollection().document(uid);
     }
 
+    public void getVegetables(Callback callback) {
+        getVegetableCollection().get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                List<Vegetable> vegetables = new ArrayList<>();
+
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    Vegetable v = convertDocument(document);
+                    vegetables.add(v);
+                }
+
+                callback.onSuccessResult(vegetables);
+            } else {
+                callback.onErrorResult(task.getException());
+            }
+        });
+    }
+
 //    public void addVegetable(String vegetableId, int quantity, Date date, Runnable callback) {
 //        DocumentReference gardenRef = getGardenCollection().document();
 //        Garden garden = new Garden(vegetableId, quantity, date, userManager.getCurrentUser().getUid());
@@ -71,30 +82,35 @@ public final class VegetableRepository {
 
         getVegetableDocument(uid).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-
                 DocumentSnapshot document = task.getResult();
-
-                Vegetable v = new Vegetable();
-                v.setId(document.getId());
-                v.setName(document.getString("name"));
-                v.setDuration(document.get("duration", Integer.class));
-                v.setPicture(document.getString("picture"));
-                v.setTemperature(document.getString("temperature"));
-                v.setSunshine(document.get("sunshine", Integer.class));
-                v.setAdviseMaintenance((List<String>) document.get("advise_maintenance"));
-                v.setAdviseRecolt((List<String>) document.get("advise_recolt"));
-                v.setHarvestMonth((List<Long>) document.get("harvest_month"));
-                v.setPerpetual(document.getBoolean("perpetual"));
-                v.setPlantingMonth((List<Long>) document.get("planting_month"));
-                v.setSowingMonth((List<Long>) document.get("sowing_month"));
-                v.setWater(document.get("water", Integer.class));
-                v.setWeather(document.getString("weather"));
+                Vegetable v = convertDocument(document);
 
                 callback.onSuccessResult(v);
             } else {
                 callback.onErrorResult(task.getException());
             }
         });
+    }
+
+    private Vegetable convertDocument(DocumentSnapshot document) {
+        Vegetable v = new Vegetable();
+
+        v.setId(document.getId());
+        v.setName(document.getString("name"));
+        v.setDuration(document.get("duration", Integer.class));
+        v.setPicture(document.getString("picture"));
+        v.setTemperature(document.getString("temperature"));
+        v.setSunshine(document.get("sunshine", Integer.class));
+        v.setAdviseMaintenance((List<String>) document.get("advise_maintenance"));
+        v.setAdviseRecolt((List<String>) document.get("advise_recolt"));
+        v.setHarvestMonth((List<Long>) document.get("harvest_month"));
+        v.setPerpetual(document.getBoolean("perpetual"));
+        v.setPlantingMonth((List<Long>) document.get("planting_month"));
+        v.setSowingMonth((List<Long>) document.get("sowing_month"));
+        v.setWater(document.get("water", Integer.class));
+        v.setWeather(document.getString("weather"));
+
+        return v;
     }
 
 }

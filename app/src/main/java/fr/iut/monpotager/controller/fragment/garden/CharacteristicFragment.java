@@ -28,6 +28,15 @@ public class CharacteristicFragment extends Fragment {
     private TextView plantName, gardenDate, gardenQuantity;
     private ImageView plantImage;
 
+    public static CharacteristicFragment newInstance(Garden garden) {
+        CharacteristicFragment fragment = new CharacteristicFragment();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(DESCRIBABLE_KEY, garden);
+        fragment.setArguments(bundle);
+
+        return fragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         gardenManager = GardenManager.getInstance();
@@ -52,15 +61,6 @@ public class CharacteristicFragment extends Fragment {
 
 
         return root;
-    }
-
-    public static CharacteristicFragment newInstance(Garden garden) {
-        CharacteristicFragment fragment = new CharacteristicFragment();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(DESCRIBABLE_KEY, garden);
-        fragment.setArguments(bundle);
-
-        return fragment;
     }
 
 }

@@ -3,7 +3,7 @@ package fr.iut.monpotager.model;
 public enum Season {
     PRINTEMPS("Printemps"), ETE("Ete"), AUTOMNE("Automne"), HIVER("Hiver");
 
-    private String name;
+    private final String name;
 
     Season(String name) {
         this.name = name;

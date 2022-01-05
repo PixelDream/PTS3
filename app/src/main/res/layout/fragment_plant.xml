@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_plant"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -27,12 +26,12 @@
     <ImageView
         android:id="@+id/plantImage"
         android:layout_width="180dp"
-        android:minWidth="180dp"
         android:layout_height="180dp"
-        android:minHeight="180dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:src="@drawable/tomate"/>
+        android:minWidth="180dp"
+        android:minHeight="180dp"
+        android:src="@drawable/tomate" />
 
     <Button
         android:id="@+id/likeBtn"
@@ -75,12 +74,12 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
+            android:background="@drawable/input"
             android:clickable="false"
             android:padding="2dp"
             android:text="Infos"
             android:textColor="@color/white"
-            android:textSize="12sp"
-            android:background="@drawable/input" />
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/entertainBtn"
@@ -89,11 +88,11 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
+            android:background="@drawable/input_light"
             android:padding="2dp"
             android:text="Entretenir"
             android:textColor="@color/white"
-            android:textSize="12sp"
-            android:background="@drawable/input_light" />
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/harvestBtn"
@@ -102,11 +101,11 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
+            android:background="@drawable/input_light"
             android:padding="2dp"
             android:text="Recolter"
             android:textColor="@color/white"
-            android:textSize="12sp"
-            android:background="@drawable/input_light" />
+            android:textSize="12sp" />
     </LinearLayout>
 
     <ViewFlipper
@@ -120,7 +119,7 @@
             android:id="@+id/scroll1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none" >
+            android:scrollbars="none">
 
             <include
                 android:id="@+id/innerLayout"
@@ -128,11 +127,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </ScrollView>
+
         <ScrollView
             android:id="@+id/scroll2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none" >
+            android:scrollbars="none">
+
             <include
                 android:id="@+id/innerLayout"
                 layout="@layout/plant_spec_entertain"
@@ -144,7 +145,8 @@
             android:id="@+id/scroll3"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none" >
+            android:scrollbars="none">
+
             <include
                 android:id="@+id/innerLayout"
                 layout="@layout/plant_spec_harvest"

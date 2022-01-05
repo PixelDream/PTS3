@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -9,8 +7,8 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comment entretenir ?"
         android:layout_marginHorizontal="20dp"
+        android:text="Comment entretenir ?"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -19,9 +17,9 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper quis lectus nulla at. Viverra ipsum nunc aliquet bibendum enim. Ut eu sem integer vitae. Lacus vestibulum sed arcu non odio euismod lacinia. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Egestas sed tempus urna et. Est ullamcorper eget nulla facilisi etiam dignissim diam quis enim. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Vitae proin sagittis nisl rhoncus mattis rhoncus. Elementum sagittis vitae et leo duis. Phasellus egesta"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:text="             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper quis lectus nulla at. Viverra ipsum nunc aliquet bibendum enim. Ut eu sem integer vitae. Lacus vestibulum sed arcu non odio euismod lacinia. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Egestas sed tempus urna et. Est ullamcorper eget nulla facilisi etiam dignissim diam quis enim. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Vitae proin sagittis nisl rhoncus mattis rhoncus. Elementum sagittis vitae et leo duis. Phasellus egesta" />
 
     <ImageView
         android:id="@+id/imageView2"

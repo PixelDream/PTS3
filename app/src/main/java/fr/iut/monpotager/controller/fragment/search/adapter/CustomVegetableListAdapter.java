@@ -23,7 +23,7 @@ import fr.iut.monpotager.model.Vegetable;
 public class CustomVegetableListAdapter extends BaseAdapter implements Filterable {
 
     private List<Vegetable> listData;
-    private LayoutInflater layoutInflater;
+    private final LayoutInflater layoutInflater;
 
     public CustomVegetableListAdapter(Context context, List<Vegetable> listData) {
         super();
@@ -89,7 +89,7 @@ public class CustomVegetableListAdapter extends BaseAdapter implements Filterabl
             protected FilterResults performFiltering(CharSequence constraint) {
 
                 FilterResults results = new FilterResults();
-                ArrayList<Vegetable> FilteredArrayNames = new ArrayList<Vegetable>();
+                ArrayList<Vegetable> FilteredArrayNames = new ArrayList<>();
 
                 // perform your search here using the searchConstraint String.
 

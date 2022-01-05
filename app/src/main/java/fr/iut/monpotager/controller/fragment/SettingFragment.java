@@ -37,29 +37,24 @@ import fr.iut.monpotager.manager.UserManager;
 public class SettingFragment extends Fragment implements Validator.ValidationListener {
     private static final String TAG = "Setting";
     private static final int REQUEST = 1;
+    private final UserManager userManager = UserManager.getInstance();
     private ImageView profile;
     private TextView firstName;
     private TextView lastName;
     private Validator validator;
     private boolean isValid = false;
     private String nameUser;
-
     @NotEmpty
     @Email
     private TextView eMail;
-
     @Password(scheme = Password.Scheme.ALPHA_NUMERIC_MIXED_CASE_SYMBOLS)
     private TextView passWord;
-
     @Password(scheme = Password.Scheme.ALPHA_NUMERIC_MIXED_CASE_SYMBOLS)
     private TextView pwActual;
-
     @NotEmpty
     @Email
     private TextView eMailActual;
-
     private Button validate;
-    private final UserManager userManager = UserManager.getInstance();
     private ActivityResultLauncher<Intent> mLauncher;
 
     @Override
@@ -78,7 +73,6 @@ public class SettingFragment extends Fragment implements Validator.ValidationLis
         lastName.setText(userManager.getCurrentUser().getDisplayName().split(" ")[1]);
         eMail = root.findViewById(R.id.email2);
         passWord = root.findViewById(R.id.mdp2);
-
 
 
         profile.setOnClickListener(view -> {
@@ -133,32 +127,31 @@ public class SettingFragment extends Fragment implements Validator.ValidationLis
 
 //            validator.validate();
 //            if (isValid){
-                if (!(firstName.getText().length() == 0)) {
-                    nameUser = firstName.getText() + " " + lastName.getText();
-                    userManager.changeName(nameUser);
-                }
-                if (eMailActual.getText().length() != 0 && pwActual.getText().length() != 0) {
-                    if (eMail.getText().length() != 0) {
-                        if (!Patterns.EMAIL_ADDRESS.matcher(eMail.getText().toString()).matches()) {
-                            eMail.setError(getResources().getString(R.string.error_invalid_email));
-                        }
-                        else{
-                            userManager.changeEmail(eMail.getText().toString(), eMailActual.getText().toString(), pwActual.getText().toString());
-                        }
-                    }
-                    if (passWord.getText().length() != 0) {
-                        userManager.changePassword(passWord.getText().toString(), eMailActual.getText().toString(), pwActual.getText().toString());
-                    }
-                } else {
-                    if (eMail.getText().length() != 0 || passWord.getText().length() != 0) {
-                        Toast.makeText(getContext(), "Erreur: impossible de modifier email ou mot de passe sans email et le mot de passe actuel", Toast.LENGTH_SHORT).show();
+            if (!(firstName.getText().length() == 0)) {
+                nameUser = firstName.getText() + " " + lastName.getText();
+                userManager.changeName(nameUser);
+            }
+            if (eMailActual.getText().length() != 0 && pwActual.getText().length() != 0) {
+                if (eMail.getText().length() != 0) {
+                    if (!Patterns.EMAIL_ADDRESS.matcher(eMail.getText().toString()).matches()) {
+                        eMail.setError(getResources().getString(R.string.error_invalid_email));
+                    } else {
+                        userManager.changeEmail(eMail.getText().toString(), eMailActual.getText().toString(), pwActual.getText().toString());
                     }
                 }
-                Toast.makeText(getContext(), "Les modifications se feront après le relancement de l'application", Toast.LENGTH_SHORT).show();
-                this.getActivity().finish();
-                this.getActivity().overridePendingTransition(0, 0);
-                this.getActivity().startActivity(this.getActivity().getIntent());
-                this.getActivity().overridePendingTransition(0, 0);
+                if (passWord.getText().length() != 0) {
+                    userManager.changePassword(passWord.getText().toString(), eMailActual.getText().toString(), pwActual.getText().toString());
+                }
+            } else {
+                if (eMail.getText().length() != 0 || passWord.getText().length() != 0) {
+                    Toast.makeText(getContext(), "Erreur: impossible de modifier email ou mot de passe sans email et le mot de passe actuel", Toast.LENGTH_SHORT).show();
+                }
+            }
+            Toast.makeText(getContext(), "Les modifications se feront après le relancement de l'application", Toast.LENGTH_SHORT).show();
+            this.getActivity().finish();
+            this.getActivity().overridePendingTransition(0, 0);
+            this.getActivity().startActivity(this.getActivity().getIntent());
+            this.getActivity().overridePendingTransition(0, 0);
             //}
         });
 
@@ -212,6 +205,7 @@ public class SettingFragment extends Fragment implements Validator.ValidationLis
         });
 
     }
+
     private void choosePicture() {
         Intent intent = new Intent();
         intent.setType("image/*");

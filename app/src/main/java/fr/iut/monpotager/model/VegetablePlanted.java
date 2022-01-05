@@ -2,8 +2,7 @@ package fr.iut.monpotager.model;
 
 import com.google.type.DateTime;
 
-public class VegetablePlanted
-{
+public class VegetablePlanted {
 
     private Vegetable vegetable;
     private DateTime plantedDate;

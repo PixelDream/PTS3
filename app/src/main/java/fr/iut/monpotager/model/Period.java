@@ -3,7 +3,7 @@ package fr.iut.monpotager.model;
 public enum Period {
     JANVIER(""), FEVRIER(""), MARS(""), AVRIL(""), MAI(""), JUIN(""), JUILLET(""), AOUT(""), SEPTEMBRE(""), OCTOBRE(""), NOVEMBRE(""), DECEMBRE("");
 
-    private String name;
+    private final String name;
 
     Period(String name) {
         this.name = name;
