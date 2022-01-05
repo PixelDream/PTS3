@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="23dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/card_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="60dp"
+            android:text="Pommes"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="35dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/clock">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="60dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="15dp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="35dp"
+            android:paddingLeft="90dp"
+            android:text="en 10 minutes"
+            android:textColor="@color/white"
+            android:textSize="15dp">
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/button_green"
+        android:text=">" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="18dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/pomme" />
+
+</RelativeLayout>

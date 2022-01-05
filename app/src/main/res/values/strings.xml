@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Mon Potager</string>
+
+    <string name="default_web_clinent_id">1076885930625-7cpdu4fbp0niq5ida0fgjcvtal3u8ef7.apps.googleusercontent.com</string>
+
+    <string name="facebook_app_id">536268104118922</string>
+    <string name="fb_login_protocol_scheme">fb536268104118922</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="white_heart">🤍</string>
+    <string name="red_heart">❤</string>
+    <string name="email_error">Please enter a email address</string>
+    <string name="error_invalid_email">Email is not valid</string>
 </resources>
