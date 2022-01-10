@@ -95,11 +95,12 @@ public class Garden implements Serializable {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Exclude
-    public long getDayLeft() {
-        Calendar c = Calendar.getInstance();
-        c.setTime(date);
-        c.add(Calendar.DATE, vegetable.getDuration());
+    public long getDayDuration() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.DATE, vegetable.getDuration());
 
-        return Duration.between(date.toInstant(), c.toInstant()).toDays();
+        return Duration.between(date.toInstant(), calendar.toInstant()).toDays();
     }
+
 }

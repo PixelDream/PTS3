@@ -24,8 +24,8 @@ import fr.iut.monpotager.model.Garden;
 
 public class CustomGardenListAdapter extends BaseAdapter implements Filterable {
 
-    private List<Garden> listData;
     private final LayoutInflater layoutInflater;
+    private List<Garden> listData;
 
     public CustomGardenListAdapter(Context context, List<Garden> listData) {
         super();
@@ -65,7 +65,7 @@ public class CustomGardenListAdapter extends BaseAdapter implements Filterable {
 
         TextView GardenDate = view.findViewById(R.id.GardenDate);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            GardenDate.setText(garden.getDayLeft() + " jours avant récolte");
+            GardenDate.setText(garden.getDayDuration() + " jours avant récolte");
         }
 
         TextView GardenQuantity = view.findViewById(R.id.GardenQuantity);

@@ -17,10 +17,12 @@ import fr.iut.monpotager.manager.UserManager;
 import fr.iut.monpotager.model.Tip;
 
 public class HomeFragment extends Fragment {
-    EditText searchBar;
-    TextView helloUser, titleTip, textTip;
     private final UserManager userManager = UserManager.getInstance();
     private final TipManager tipManager = TipManager.getInstance();
+//    LinearLayout seasonPlant;
+    EditText searchBar;
+    TextView helloUser, titleTip, textTip;
+//    private final VegetableManager vegetableManager = VegetableManager.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class HomeFragment extends Fragment {
         helloUser = root.findViewById(R.id.helloUser);
         titleTip = root.findViewById(R.id.titleTip);
         textTip = root.findViewById(R.id.textTip);
+//        seasonPlant = root.findViewById(R.id.seasonPlant);
 
         helloUser.setText("Bonjour " + userManager.getFirstName());
 
@@ -51,9 +54,25 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onErrorResult(Exception e) {
-                //TODO : Manage log
             }
         });
+
+/*        vegetableManager.getVegetables(new Callback() {
+            @Override
+            public void onSuccessResult(Object result) {
+                Vegetable vegetable = (Vegetable) result;
+                Calendar calendar = Calendar.getInstance();
+
+                if (vegetable.getAdviseRecolt().contains(calendar.get(Calendar.MONTH))) {
+                    ImageView plantImage = new ImageView(getContext());
+                    Picasso.get().load(vegetable.getPicture()).transform(new RoundedCornersTransformation(128, 5)).resize(1024, 1024).centerCrop().into(plantImage);
+                }
+            }
+
+            @Override
+            public void onErrorResult(Exception e) {}
+        });*/
+
 
         return root;
     }

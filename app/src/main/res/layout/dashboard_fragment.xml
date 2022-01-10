@@ -77,66 +77,51 @@
         android:layout_marginTop="215dp"
         app:srcCompat="@drawable/tips" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="355dp"
-        android:text="Fruits et légumes de saison"
-        android:textSize="20dp"
-        android:textStyle="bold">
+    <!-- <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="20dp"
+         android:layout_marginTop="355dp"
+         android:text="Fruits et légumes de saison"
+         android:textSize="20dp"
+         android:textStyle="bold">
 
-    </TextView>
+     </TextView>
 
-    <HorizontalScrollView
-        android:id="@+id/flsaison"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginTop="370dp"
-        android:layout_marginBottom="10dp"
-        android:scrollbars="none">
+     <HorizontalScrollView
+         android:id="@+id/flsaison"
+         android:layout_width="match_parent"
+         android:layout_height="180dp"
+         android:layout_marginTop="370dp"
+         android:layout_marginBottom="10dp"
+         android:scrollbars="none">
 
-        <LinearLayout
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:id="@+id/seasonPlant"
+             >
+
+             <ImageView
+                 android:layout_width="180dp"
+                 android:layout_height="200dp"
+                 android:layout_marginLeft="20dp"
+                 android:src="@drawable/kiwi">
+             </ImageView>
+
+         </LinearLayout>
+     </HorizontalScrollView>-->
+
+    <!--    <TextView
+            android:id="@+id/title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/kiwi">
-
-            </ImageView>
-
-
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/pomme">
-
-            </ImageView>
-
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/pomme">
-
-            </ImageView>
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <TextView
-        android:id="@+id/title2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/flsaison"
-        android:layout_marginLeft="20dp"
-        android:text="Ce que vous avez planté l'an dernier"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+            android:layout_below="@id/flsaison"
+            android:layout_marginLeft="20dp"
+            android:text="Ce que vous avez planté l'an dernier"
+            android:textSize="20dp"
+            android:textStyle="bold" />-->
 
 
     <ScrollView

@@ -13,13 +13,14 @@
         android:textSize="16sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView6"
+    <LinearLayout
+        android:id="@+id/advise_maintenance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textView5"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="40dp"
-        android:text="             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper quis lectus nulla at. Viverra ipsum nunc aliquet bibendum enim. Ut eu sem integer vitae. Lacus vestibulum sed arcu non odio euismod lacinia. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Egestas sed tempus urna et. Est ullamcorper eget nulla facilisi etiam dignissim diam quis enim. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Vitae proin sagittis nisl rhoncus mattis rhoncus. Elementum sagittis vitae et leo duis. Phasellus egesta" />
+        android:layout_marginTop="25dp"
+        android:orientation="vertical" />
 
     <ImageView
         android:id="@+id/imageView2"

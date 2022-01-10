@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,8 +19,6 @@ import com.squareup.picasso.Picasso;
 import java.text.SimpleDateFormat;
 
 import fr.iut.monpotager.R;
-import fr.iut.monpotager.controller.fragment.HomeFragment;
-import fr.iut.monpotager.controller.fragment.plant.AddToGardenDialog;
 import fr.iut.monpotager.controller.fragment.search.adapter.RoundedCornersTransformation;
 import fr.iut.monpotager.controller.utils.Callback;
 import fr.iut.monpotager.manager.GardenManager;
@@ -71,7 +68,7 @@ public class CharacteristicFragment extends Fragment {
             gardenManager.removeVegetableFromGarden(garden.getId(), new Callback() {
                 @Override
                 public void onSuccessResult(Object result) {
-                    Fragment fragment = new HomeFragment();
+                    Fragment fragment = new GardenFragment();
 
                     FragmentManager fm = getActivity().getSupportFragmentManager();
                     FragmentTransaction transaction = fm.beginTransaction();

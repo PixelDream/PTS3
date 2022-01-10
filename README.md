@@ -98,17 +98,7 @@ Les types :
 
 
 ### La Javadoc
-La javadoc est automatiquement modifiée lors d'un push sur la branche "master" et envoyée sur github pages par la suite : https://pixeldream.github.io/PTS3/
-
-### Github Actions
-
-Pour l'intégration continue, nous avons mis en place github actions.
-
-Lors d'un push sur master
-* Build APK
-    * 
-* Create javadoc
-    * dz
+La javadoc est automatiquement modifiée lors d'un push sur la branche "master" et envoyée sur github pages par la suite : https://pixeldream.github.io/PTS3
 
 
 <br/>

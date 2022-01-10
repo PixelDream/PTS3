@@ -1,7 +1,5 @@
 package fr.iut.monpotager.manager;
 
-import android.telecom.Call;
-
 import java.util.Date;
 
 import fr.iut.monpotager.controller.utils.Callback;

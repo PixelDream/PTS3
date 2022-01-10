@@ -17,9 +17,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.mobsandgeeks.saripaar.ValidationError;
@@ -34,8 +31,6 @@ import java.util.Date;
 import java.util.List;
 
 import fr.iut.monpotager.R;
-import fr.iut.monpotager.controller.fragment.HomeFragment;
-import fr.iut.monpotager.controller.fragment.garden.CharacteristicFragment;
 import fr.iut.monpotager.manager.GardenManager;
 import fr.iut.monpotager.model.Vegetable;
 

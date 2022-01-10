@@ -42,14 +42,9 @@ android {
         release {
             if (System.getenv("CI")) {
                 signingConfig signingConfigs.release
-                shrinkResources true
-                minifyEnabled true
-                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
-                        'proguard-rules.pro'
-            } else {
-                minifyEnabled false
-                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             }
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
         android.applicationVariants.all { variant ->

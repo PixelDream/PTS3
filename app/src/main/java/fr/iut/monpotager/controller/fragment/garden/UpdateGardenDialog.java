@@ -17,9 +17,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.mobsandgeeks.saripaar.ValidationError;
@@ -45,10 +42,9 @@ public class UpdateGardenDialog extends DialogFragment implements Validator.Vali
     final private DateFormat dateFormat;
 
     private final GardenManager gardenManager;
-
+    Garden garden;
     private Validator validator;
     private boolean isValid = false;
-
     @NotEmpty
     private EditText choiceDate;
     @NotEmpty
@@ -56,8 +52,6 @@ public class UpdateGardenDialog extends DialogFragment implements Validator.Vali
     private EditText choiceQuantity;
     private Button updateGarden;
     private Spinner spinnerUnit;
-
-    Garden garden;
 
 
     public UpdateGardenDialog() {

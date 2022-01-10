@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -26,9 +27,9 @@ import fr.iut.monpotager.model.Vegetable;
 public class PlantFragment extends Fragment {
     private static final String DESCRIBABLE_KEY = "vegetable";
     private List<Button> btnList;
-    private boolean liked = false;
 
-    private Button likeBtn, addToGarden;
+    private Button addToGarden;
+    private LinearLayout advise_maintenance, advise_recolt;
 
     public static PlantFragment newInstance(Vegetable vegetable) {
         PlantFragment fragment = new PlantFragment();
@@ -62,11 +63,14 @@ public class PlantFragment extends Fragment {
         ImageView plantImage = root.findViewById(R.id.plantImage);
         Picasso.get().load(vegetable.getPicture()).transform(new RoundedCornersTransformation(128, 5)).resize(2048, 2048).centerCrop().into(plantImage);
 
-        likeBtn = root.findViewById(R.id.likeBtn);
-        likeBtn.setOnClickListener(v -> changeHeart());
-
-        addToGarden = root.findViewById(R.id.updateGarden);
+        addToGarden = root.findViewById(R.id.addToGarden);
         addToGarden.setOnClickListener(v -> addToGarden(vegetable));
+
+        advise_maintenance = root.findViewById(R.id.advise_maintenance);
+        adviseMaintenance(vegetable);
+
+        advise_recolt = root.findViewById(R.id.advise_recolt);
+        adviseRecolt(vegetable);
 
         updateGraph(root.findViewById(R.id.firstLine), root.findViewById(R.id.secondeLine), root.findViewById(R.id.thirdLine), vegetable);
 
@@ -120,15 +124,6 @@ public class PlantFragment extends Fragment {
 
     }
 
-    public void changeHeart() {
-        if (liked) {
-            likeBtn.setText(R.string.white_heart);
-        } else {
-            likeBtn.setText(R.string.red_heart);
-        }
-        liked = !liked;
-    }
-
     private void addToGarden(Vegetable vegetable) {
         DialogFragment dialogFragment = new AddToGardenDialog();
         Bundle bundle = new Bundle();
@@ -149,5 +144,21 @@ public class PlantFragment extends Fragment {
         lifeTime.setText(Math.round(vegetable.getDuration() / 7) + " semaines");
         final TextView climate = container.findViewById(R.id.climateText);
         climate.setText(vegetable.getTemperature() + "°C");
+    }
+
+    private void adviseMaintenance(Vegetable vegetable) {
+        for (String advise : vegetable.getAdviseMaintenance()) {
+            TextView textView = new TextView(getContext());
+            textView.setText("- " + advise);
+            advise_maintenance.addView(textView);
+        }
+    }
+
+    private void adviseRecolt(Vegetable vegetable) {
+        for (String advise : vegetable.getAdviseRecolt()) {
+            TextView textView = new TextView(getContext());
+            textView.setText("- " + advise);
+            advise_recolt.addView(textView);
+        }
     }
 }

@@ -22,8 +22,8 @@ import fr.iut.monpotager.model.Vegetable;
 
 public class CustomVegetableListAdapter extends BaseAdapter implements Filterable {
 
-    private List<Vegetable> listData;
     private final LayoutInflater layoutInflater;
+    private List<Vegetable> listData;
 
     public CustomVegetableListAdapter(Context context, List<Vegetable> listData) {
         super();

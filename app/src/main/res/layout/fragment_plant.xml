@@ -33,21 +33,21 @@
         android:minHeight="180dp"
         android:src="@drawable/tomate" />
 
-    <Button
-        android:id="@+id/likeBtn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="205dp"
-        android:background="@drawable/input"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        android:text="@string/white_heart"
-        android:textSize="24sp"
-        app:backgroundTint="@color/white" />
+    <!--    <Button
+            android:id="@+id/likeBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="205dp"
+            android:background="@drawable/input"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="@string/white_heart"
+            android:textSize="24sp"
+            app:backgroundTint="@color/white" />-->
 
     <Button
-        android:id="@+id/updateGarden"
+        android:id="@+id/addToGarden"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="315dp"
