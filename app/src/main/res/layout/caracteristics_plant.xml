@@ -43,6 +43,15 @@
         android:layout_marginTop="200dp"
         android:background="@drawable/edit" />
 
+
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/trash" />
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

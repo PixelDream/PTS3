@@ -65,7 +65,7 @@ public class PlantFragment extends Fragment {
         likeBtn = root.findViewById(R.id.likeBtn);
         likeBtn.setOnClickListener(v -> changeHeart());
 
-        addToGarden = root.findViewById(R.id.addToGarden);
+        addToGarden = root.findViewById(R.id.updateGarden);
         addToGarden.setOnClickListener(v -> addToGarden(vegetable));
 
         updateGraph(root.findViewById(R.id.firstLine), root.findViewById(R.id.secondeLine), root.findViewById(R.id.thirdLine), vegetable);

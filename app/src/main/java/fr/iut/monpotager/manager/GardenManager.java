@@ -1,8 +1,11 @@
 package fr.iut.monpotager.manager;
 
+import android.telecom.Call;
+
 import java.util.Date;
 
 import fr.iut.monpotager.controller.utils.Callback;
+import fr.iut.monpotager.model.Garden;
 import fr.iut.monpotager.model.Vegetable;
 import fr.iut.monpotager.repository.GardenRepository;
 import fr.iut.monpotager.repository.UserRepository;
@@ -37,6 +40,14 @@ public class GardenManager {
 
     public void addVegetableToGarden(Vegetable vegetable, int quantity, Date date, String unit, Runnable callback) {
         gardenRepository.addVegetableToGarden(vegetable, quantity, date, unit, callback);
+    }
+
+    public void updateVegetableFromGarden(String id, Garden garden, Callback callback) {
+        gardenRepository.updateVegetableFromGarden(id, garden, callback);
+    }
+
+    public void removeVegetableFromGarden(String id, Callback callback) {
+        gardenRepository.removeVegetableFromGarden(id, callback);
     }
 
     public void getCurrentGarden(Callback callback) {

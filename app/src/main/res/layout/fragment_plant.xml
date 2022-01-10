@@ -47,7 +47,7 @@
         app:backgroundTint="@color/white" />
 
     <Button
-        android:id="@+id/addToGarden"
+        android:id="@+id/updateGarden"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="315dp"

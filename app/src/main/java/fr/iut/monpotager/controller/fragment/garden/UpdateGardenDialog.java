@@ -1,4 +1,4 @@
-package fr.iut.monpotager.controller.fragment.plant;
+package fr.iut.monpotager.controller.fragment.garden;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -34,14 +34,14 @@ import java.util.Date;
 import java.util.List;
 
 import fr.iut.monpotager.R;
-import fr.iut.monpotager.controller.fragment.HomeFragment;
-import fr.iut.monpotager.controller.fragment.garden.CharacteristicFragment;
+import fr.iut.monpotager.controller.fragment.plant.DateInputMask;
+import fr.iut.monpotager.controller.utils.Callback;
 import fr.iut.monpotager.manager.GardenManager;
-import fr.iut.monpotager.model.Vegetable;
+import fr.iut.monpotager.model.Garden;
 
-public class AddToGardenDialog extends DialogFragment implements Validator.ValidationListener {
+public class UpdateGardenDialog extends DialogFragment implements Validator.ValidationListener {
 
-    private static final String TAG = "AddToGardenDialog";
+    private static final String TAG = "UpdateGardenDialog";
     final private DateFormat dateFormat;
 
     private final GardenManager gardenManager;
@@ -54,11 +54,13 @@ public class AddToGardenDialog extends DialogFragment implements Validator.Valid
     @NotEmpty
     @Min(value = 1)
     private EditText choiceQuantity;
-    private Button addToGarden;
+    private Button updateGarden;
     private Spinner spinnerUnit;
 
+    Garden garden;
 
-    public AddToGardenDialog() {
+
+    public UpdateGardenDialog() {
         gardenManager = GardenManager.getInstance();
         dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     }
@@ -76,7 +78,7 @@ public class AddToGardenDialog extends DialogFragment implements Validator.Valid
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        View view = inflater.inflate(R.layout.dialog_add_to_garden, null);
+        View view = inflater.inflate(R.layout.dialog_update_garden, null);
 
         choiceDate = view.findViewById(R.id.choiceDate);
         choiceDate.setText(dateFormat.format(new Date()));
@@ -89,13 +91,17 @@ public class AddToGardenDialog extends DialogFragment implements Validator.Valid
         spinnerUnit.setAdapter(spinnerUnitAdapter);
 
 
-        Vegetable vegetable = (Vegetable) getArguments().getSerializable("vegetable");
-        addToGarden = view.findViewById(R.id.updateGarden);
-        addToGarden.setOnClickListener(v -> {
+        garden = (Garden) getArguments().getSerializable("garden");
+        updateGarden = view.findViewById(R.id.updateGarden);
+        updateGarden.setOnClickListener(v -> {
             validator.validate();
             if (isValid)
-                addToGarden(vegetable, requireActivity().findViewById(R.id.fragment_plant));
+                setUpdateGarden(requireActivity().findViewById(R.id.fragment_plant));
         });
+
+        choiceDate.setText(dateFormat.format(garden.getDate()));
+        choiceQuantity.setText(String.valueOf(garden.getQuantity()));
+        spinnerUnit.setSelection(spinnerUnitAdapter.getPosition(garden.getUnit()));
 
 
         builder.setView(view);
@@ -110,11 +116,23 @@ public class AddToGardenDialog extends DialogFragment implements Validator.Valid
         return dialog;
     }
 
-    private void addToGarden(Vegetable vegetable, View v) {
+    private void setUpdateGarden(View v) {
         try {
-            gardenManager.addVegetableToGarden(vegetable, Integer.parseInt(choiceQuantity.getText().toString()), dateFormat.parse(choiceDate.getText().toString()), spinnerUnit.getSelectedItem().toString(), () -> {
-                Snackbar success = Snackbar.make(v, "ajouté au potager !", Snackbar.LENGTH_SHORT);
-                success.show();
+            garden.setQuantity(Integer.parseInt(choiceQuantity.getText().toString()));
+            garden.setDate(dateFormat.parse(choiceDate.getText().toString()));
+            garden.setUnit(spinnerUnit.getSelectedItem().toString());
+            gardenManager.updateVegetableFromGarden(garden.getId(), garden, new Callback() {
+                @Override
+                public void onSuccessResult(Object result) {
+                    Snackbar success = Snackbar.make(v, "potager modifié !", Snackbar.LENGTH_SHORT);
+                    success.show();
+                }
+
+                @Override
+                public void onErrorResult(Exception e) {
+                    Snackbar success = Snackbar.make(v, "erreur", Snackbar.LENGTH_SHORT);
+                    success.show();
+                }
             });
             this.getDialog().cancel();
         } catch (ParseException e) {
