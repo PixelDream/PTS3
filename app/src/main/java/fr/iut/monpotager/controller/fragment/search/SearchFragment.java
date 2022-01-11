@@ -1,5 +1,7 @@
 package fr.iut.monpotager.controller.fragment.search;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -73,12 +75,24 @@ public class SearchFragment extends Fragment {
         listView.setOnItemClickListener((parent, view, position, id) -> {
             Vegetable vegetable = (Vegetable) parent.getItemAtPosition(position);
 
+            SharedPreferences settings = getActivity().getPreferences(Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putString(vegetable.getId(), "null");
+            editor.apply();
+
+            // Remove over ten history
+            if (settings.getAll().size() > 10) {
+                settings.getAll().remove(settings.getAll().size() - 1);
+            }
+
+
             searchVegetable.clearFocus();
 
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
             PlantFragment plantFragment = PlantFragment.newInstance(vegetable);
 
             transaction.replace(R.id.container, plantFragment);
+            transaction.addToBackStack(null);
             transaction.commit();
         });
 

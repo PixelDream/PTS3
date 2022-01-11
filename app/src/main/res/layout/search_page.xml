@@ -60,7 +60,6 @@
         android:dividerHeight="20dp"
         android:foregroundGravity="center"
         android:scrollbars="none" />
-    />
 
 
 </RelativeLayout>

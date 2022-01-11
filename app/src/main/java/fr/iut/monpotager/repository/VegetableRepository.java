@@ -67,17 +67,6 @@ public final class VegetableRepository {
         });
     }
 
-//    public void addVegetable(String vegetableId, int quantity, Date date, Runnable callback) {
-//        DocumentReference gardenRef = getGardenCollection().document();
-//        Garden garden = new Garden(vegetableId, quantity, date, userManager.getCurrentUser().getUid());
-//
-//        // Store Vegetable to Firestore garden
-//        gardenRef.set(garden).addOnSuccessListener(unused -> {
-//            garden.setId(gardenRef.getId());
-//            callback.run();
-//        });
-//    }
-
     public void getVegetableById(String uid, Callback callback) {
 
         getVegetableDocument(uid).get().addOnCompleteListener(task -> {

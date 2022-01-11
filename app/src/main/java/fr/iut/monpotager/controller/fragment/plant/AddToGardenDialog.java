@@ -108,7 +108,7 @@ public class AddToGardenDialog extends DialogFragment implements Validator.Valid
     private void addToGarden(Vegetable vegetable, View v) {
         try {
             gardenManager.addVegetableToGarden(vegetable, Integer.parseInt(choiceQuantity.getText().toString()), dateFormat.parse(choiceDate.getText().toString()), spinnerUnit.getSelectedItem().toString(), () -> {
-                Snackbar success = Snackbar.make(v, "ajouté au potager !", Snackbar.LENGTH_SHORT);
+                Snackbar success = Snackbar.make(v, "Ajouté au potager !", Snackbar.LENGTH_SHORT);
                 success.show();
             });
             this.getDialog().cancel();

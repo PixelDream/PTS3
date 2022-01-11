@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius tortor a libero "
+                android:text="Chargement..."
                 android:textColor="@color/white"
                 android:textSize="12dp" />
         </ScrollView>
@@ -83,73 +83,75 @@
         android:layout_marginTop="165dp"
         app:srcCompat="@drawable/tips" />
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="330dp"
-        android:text="Fruits et légumes de saison"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <HorizontalScrollView
-        android:id="@+id/flsaison"
+    <LinearLayout
+        android:id="@+id/seasonPanel"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:layout_marginTop="370dp"
-        android:layout_marginBottom="10dp"
-        android:scrollbars="none">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="invisible">
 
-        <LinearLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="330dp"
+            android:text="Fruits et légumes de saison"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/kiwi">
+        <HorizontalScrollView
+            android:id="@+id/flsaison"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:scrollbars="none">
 
-            </ImageView>
+            <LinearLayout
+                android:id="@+id/seasonPlant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+        </HorizontalScrollView>
 
 
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/pomme">
+    </LinearLayout>
 
-            </ImageView>
+    <LinearLayout
+        android:id="@+id/historyPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seasonPanel"
+        android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/pomme">
-
-            </ImageView>
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <!--    <TextView
+        <TextView
             android:id="@+id/title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/flsaison"
-            android:layout_marginLeft="20dp"
-            android:text="Ce que vous avez planté l'an dernier"
+            android:layout_marginLeft="35dp"
+            android:text="Recherches récentes"
             android:textSize="20dp"
             android:textStyle="bold" />
 
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="match_parent"
             android:layout_below="@id/title2"
+            android:layout_marginHorizontal="35dp"
             android:scrollbars="none">
 
+            <LinearLayout
+                android:id="@+id/recentSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
 
-        </ScrollView>-->
+
+        </ScrollView>
+
+    </LinearLayout>
+
 </RelativeLayout>

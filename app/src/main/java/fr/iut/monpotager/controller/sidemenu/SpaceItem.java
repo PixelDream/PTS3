@@ -25,7 +25,6 @@ public class SpaceItem extends DrawerItem<SpaceItem.ViewHolder> {
 
     @Override
     public void bindViewHolder(ViewHolder holder) {
-
     }
 
     @Override

@@ -13,7 +13,7 @@ import fr.iut.monpotager.repository.VegetableRepository;
 public class VegetableManager {
 
     private static volatile VegetableManager instance;
-    private VegetableRepository vegetableRepository;
+    private final VegetableRepository vegetableRepository;
 
     private VegetableManager() {
         vegetableRepository = VegetableRepository.getInstance();

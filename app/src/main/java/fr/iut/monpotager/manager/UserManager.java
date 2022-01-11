@@ -18,9 +18,11 @@ public class UserManager {
 
     public static UserManager getInstance() {
         UserManager result = instance;
+
         if (result != null) {
             return result;
         }
+
         synchronized (UserRepository.class) {
             if (instance == null) {
                 instance = new UserManager();

@@ -1,12 +1,15 @@
 package fr.iut.monpotager.controller.fragment.garden;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -17,6 +20,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import fr.iut.monpotager.R;
 import fr.iut.monpotager.controller.fragment.search.adapter.RoundedCornersTransformation;
@@ -26,7 +30,6 @@ import fr.iut.monpotager.model.Garden;
 
 public class CharacteristicFragment extends Fragment {
 
-    private static final String TAG = "Fragment";
     private static final String DESCRIBABLE_KEY = "Garden";
     private GardenManager gardenManager;
 
@@ -34,6 +37,7 @@ public class CharacteristicFragment extends Fragment {
     private TextView plantName, gardenDate, gardenQuantity;
     private ImageView plantImage;
     private AppCompatImageButton edit, delete;
+    private LinearLayout taskList;
 
     public static CharacteristicFragment newInstance(Garden garden) {
         CharacteristicFragment fragment = new CharacteristicFragment();
@@ -44,6 +48,7 @@ public class CharacteristicFragment extends Fragment {
         return fragment;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         gardenManager = GardenManager.getInstance();
@@ -73,8 +78,9 @@ public class CharacteristicFragment extends Fragment {
                     FragmentManager fm = getActivity().getSupportFragmentManager();
                     FragmentTransaction transaction = fm.beginTransaction();
                     transaction.replace(R.id.container, fragment);
+                    transaction.addToBackStack(null);
                     transaction.commit();
-                    Snackbar success = Snackbar.make(v, "supprimé du potager !", Snackbar.LENGTH_SHORT);
+                    Snackbar success = Snackbar.make(v, "Supprimé du potager !", Snackbar.LENGTH_SHORT);
                     success.show();
                 }
 
@@ -97,6 +103,44 @@ public class CharacteristicFragment extends Fragment {
 
         gardenQuantity = root.findViewById(R.id.gardenQuantity);
         gardenQuantity.setText(garden.getQuantity() + " " + garden.getUnit());
+
+        // Task section
+        taskList = root.findViewById(R.id.taskList);
+
+        if (!garden.isFinish()) {
+
+            if (!garden.getVegetable().getPlantingMonth().isEmpty()) {
+                View child = getLayoutInflater().inflate(R.layout.task_item, null);
+
+                long dayLeft = garden.getDayDuration() / 2;
+                Calendar calendar = Calendar.getInstance();
+                calendar.add(Calendar.DATE, Math.toIntExact(dayLeft));
+
+                TextView taskTitle = child.findViewById(R.id.taskTitle);
+                taskTitle.setText("Planter dans " + dayLeft + " jours");
+
+                TextView taskDate = child.findViewById(R.id.taskDate);
+                taskDate.setText(simpleDateFormat.format(calendar.getTime()));
+
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 200);
+                lp.setMargins(0, 0, 0, 20);
+
+                child.setLayoutParams(lp);
+
+                taskList.addView(child);
+            }
+
+            View child = getLayoutInflater().inflate(R.layout.task_item, null);
+
+            TextView taskTitle = child.findViewById(R.id.taskTitle);
+            taskTitle.setText("Récolter dans " + garden.getDayDuration() + " jours");
+
+            TextView taskDate = child.findViewById(R.id.taskDate);
+            taskDate.setText(simpleDateFormat.format(garden.getDateRecolt()));
+
+            taskList.addView(child);
+
+        }
 
 
         return root;

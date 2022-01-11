@@ -136,12 +136,16 @@ public class PlantFragment extends Fragment {
     public void insertPlantSpec(ViewGroup container, Vegetable vegetable) {
         final TextView plantName = container.findViewById(R.id.plantName);
         plantName.setText(vegetable.getName());
+
         final TextView humidity = container.findViewById(R.id.humidity);
         humidity.setText(vegetable.getWater() + "%");
+
         final TextView sun = container.findViewById(R.id.sunText);
         sun.setText(Integer.toString(vegetable.getSunshine()));
+
         final TextView lifeTime = container.findViewById(R.id.lifeTime);
         lifeTime.setText(Math.round(vegetable.getDuration() / 7) + " semaines");
+
         final TextView climate = container.findViewById(R.id.climateText);
         climate.setText(vegetable.getTemperature() + "°C");
     }
@@ -149,7 +153,8 @@ public class PlantFragment extends Fragment {
     private void adviseMaintenance(Vegetable vegetable) {
         for (String advise : vegetable.getAdviseMaintenance()) {
             TextView textView = new TextView(getContext());
-            textView.setText("- " + advise);
+            textView.setText(advise);
+            textView.setPadding(0, 0, 0, 25);
             advise_maintenance.addView(textView);
         }
     }
@@ -157,7 +162,8 @@ public class PlantFragment extends Fragment {
     private void adviseRecolt(Vegetable vegetable) {
         for (String advise : vegetable.getAdviseRecolt()) {
             TextView textView = new TextView(getContext());
-            textView.setText("- " + advise);
+            textView.setText(advise);
+            textView.setPadding(0, 0, 0, 25);
             advise_recolt.addView(textView);
         }
     }

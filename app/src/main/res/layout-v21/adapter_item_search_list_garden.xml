@@ -33,28 +33,6 @@
             android:inputType="textCapSentences"
             android:textStyle="bold" />
 
-        <!--    <LinearLayout-->
-        <!--        android:layout_width="350dp"-->
-        <!--        android:layout_height="20dp"-->
-        <!--        android:layout_marginStart="30dp"-->
-        <!--        android:layout_marginLeft="30dp"-->
-        <!--        android:orientation="horizontal"-->
-        <!--        app:layout_column="0"-->
-        <!--        app:layout_row="1">-->
-        <!--        <ImageView-->
-        <!--            android:id="@+id/imageView1"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            app:srcCompat="@drawable/water" />-->
-
-        <!--        <ImageView-->
-        <!--            android:id="@+id/imageView2"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginLeft="5dp"-->
-        <!--            app:srcCompat="@drawable/water" />-->
-        <!--    </LinearLayout>-->
-
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"

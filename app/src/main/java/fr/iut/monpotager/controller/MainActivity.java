@@ -41,7 +41,9 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private static final int POS_GARDEN = 2;
     private static final int POS_MY_PROFILE = 3;
     private static final int POS_LOGOUT = 5;
+
     private final UserManager userManager = UserManager.getInstance();
+
     private String[] screenTitles;
     private Drawable[] screenIcons;
 
@@ -113,9 +115,11 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         } else if (position == POS_GARDEN) {
             GardenFragment gardenFragment = new GardenFragment();
             transaction.replace(R.id.container, gardenFragment);
+            transaction.addToBackStack(null);
         } else if (position == POS_MY_PROFILE) {
             SettingFragment settingFragment = new SettingFragment();
             transaction.replace(R.id.container, settingFragment);
+            transaction.addToBackStack(null);
         } else if (position == POS_LOGOUT) {
             userManager.signOut();
             Intent intent = getIntent();
@@ -125,7 +129,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
 
 
         slidingRootNav.closeMenu();
-        transaction.addToBackStack(null);
         transaction.commit();
     }
 
@@ -151,11 +154,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         }
         ta.recycle();
         return icons;
-    }
-
-    @Override
-    public void onBackPressed() {
-        finish();
     }
 
     @ColorInt

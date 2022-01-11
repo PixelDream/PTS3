@@ -85,10 +85,7 @@ public final class GardenRepository {
     }
 
     public void updateVegetableFromGarden(String id, Garden garden, Callback callback) {
-        DocumentReference gardenRef = getGardenCollection().document();
-
         // Get Vegetable from Firestore garden
-        Garden g = new Garden();
         getGardenCollection().whereEqualTo("userId", userManager.getCurrentUser().getUid()).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
@@ -101,10 +98,6 @@ public final class GardenRepository {
                 callback.onErrorResult(task.getException());
             }
         });
-
-        // Store changed Vegetable to Firestore garden
-        /*gardenRef.update(g.toMap()).addOnSuccessListener(unused -> {
-        });*/
     }
 
     public void getCurrentGarden(Callback callback) {

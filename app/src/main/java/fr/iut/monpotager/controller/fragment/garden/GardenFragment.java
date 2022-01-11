@@ -23,17 +23,11 @@ public class GardenFragment extends Fragment {
     private static final String TAG = "GardenFragment";
     private GardenManager gardenManager;
 
-    private ArrayList origList;
     private ArrayList<Garden> vegetableListFirebase;
     private ListView listView;
     private CustomGardenListAdapter adapter;
     private ViewGroup root;
 
-    /**
-     * Create app
-     *
-     * @param savedInstanceState
-     */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -54,6 +48,7 @@ public class GardenFragment extends Fragment {
             CharacteristicFragment characteristicFragment = CharacteristicFragment.newInstance(garden);
 
             transaction.replace(R.id.container, characteristicFragment);
+            transaction.addToBackStack(null);
             transaction.commit();
         });
 
@@ -71,8 +66,6 @@ public class GardenFragment extends Fragment {
             }
         });
 
-
-        //origList = (ArrayList) vegetableListFirebase.clone();
 
         return root;
     }

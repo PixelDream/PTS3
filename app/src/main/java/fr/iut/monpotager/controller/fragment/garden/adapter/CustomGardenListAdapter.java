@@ -118,7 +118,4 @@ public class CustomGardenListAdapter extends BaseAdapter implements Filterable {
         return filter;
     }
 
-    public void setListData(List<Garden> listData) {
-        this.listData = listData;
-    }
 }

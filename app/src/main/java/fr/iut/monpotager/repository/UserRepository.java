@@ -131,42 +131,36 @@ public final class UserRepository {
     public void changeEmail(String eMail, String eMailActual, String pw) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         // Get auth credentials from the user for re-authentication
-        AuthCredential credential = EmailAuthProvider.getCredential(eMailActual, pw); // Current Login Credentials \\
+        AuthCredential credential = EmailAuthProvider.getCredential(eMailActual, pw); // Current Login Credentials
         // Prompt the user to re-provide their sign-in credentials
         user.reauthenticate(credential)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        Log.d("email", "User re-authenticated.");
-                        //Now change your email address \\
-                        //----------------Code for Changing Email Address----------\\
-                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        user.updateEmail(eMail)
-                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            Log.d("email", "User email address updated.");
-                                        }
+                .addOnCompleteListener(task -> {
+                    Log.d("email", "User re-authenticated.");
+                    //Now change your email address \\
+                    FirebaseUser user1 = FirebaseAuth.getInstance().getCurrentUser();
+                    user1.updateEmail(eMail)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Log.d("email", "User email address updated.");
                                     }
-                                });
-                        //----------------------------------------------------------\\
-                    }
+                                }
+                            });
                 });
 
-        //user.updateEmail(eMail);
     }
 
     public void changePass(String pass, String eMailActual, String pw) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-// Get auth credentials from the user for re-authentication. The example below shows
-// email and password credentials but there are multiple possible providers,
-// such as GoogleAuthProvider or FacebookAuthProvider.
+        // Get auth credentials from the user for re-authentication. The example below shows
+        // email and password credentials but there are multiple possible providers,
+        // such as GoogleAuthProvider or FacebookAuthProvider.
         AuthCredential credential = EmailAuthProvider
                 .getCredential(eMailActual, pw);
 
-// Prompt the user to re-provide their sign-in credentials
+        // Prompt the user to re-provide their sign-in credentials
         user.reauthenticate(credential)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {

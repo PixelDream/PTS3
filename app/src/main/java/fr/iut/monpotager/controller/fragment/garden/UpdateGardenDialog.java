@@ -17,6 +17,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.mobsandgeeks.saripaar.ValidationError;
@@ -128,6 +130,7 @@ public class UpdateGardenDialog extends DialogFragment implements Validator.Vali
                     success.show();
                 }
             });
+
             this.getDialog().cancel();
         } catch (ParseException e) {
             Log.d(TAG, "Error during parsing date");

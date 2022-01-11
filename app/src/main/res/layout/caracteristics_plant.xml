@@ -136,98 +136,16 @@
             </TextView>
 
             <LinearLayout
-                android:id="@+id/linearLayout"
+                android:id="@+id/taskList"
                 android:layout_width="match_parent"
-                android:layout_height="164dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="50dp"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.465"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RelativeLayout">
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/card_light">
-
-                    <TextView
-                        android:id="@+id/task1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Planter dans 2 jours"
-                        android:textColor="@color/white"
-                        android:textSize="15dp"
-                        android:textStyle="bold">
-
-                    </TextView>
-
-                    <ImageView
-                        android:id="@+id/calendarImage1"
-                        android:layout_width="20dp"
-                        android:layout_height="50dp"
-                        android:layout_below="@id/task1"
-                        android:layout_marginLeft="10dp"
-                        android:src="@drawable/calendar_pic_white">
-
-                    </ImageView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="25dp"
-                        android:text="02/02/2012"
-                        android:textColor="@color/white"
-                        android:textSize="10dp">
-
-
-                    </TextView>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:background="@drawable/card_light">
-
-                    <TextView
-                        android:id="@+id/task2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Récolter dans 20 jours"
-                        android:textColor="@color/white"
-                        android:textSize="15dp"
-                        android:textStyle="bold">
-
-                    </TextView>
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="50dp"
-                        android:layout_below="@id/task2"
-                        android:layout_marginLeft="10dp"
-                        android:src="@drawable/calendar_pic_white">
-
-                    </ImageView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="25dp"
-                        android:text="02/02/2012"
-                        android:textColor="@color/white"
-                        android:textSize="10dp">
-
-
-                    </TextView>
-
-                </RelativeLayout>
 
 
             </LinearLayout>

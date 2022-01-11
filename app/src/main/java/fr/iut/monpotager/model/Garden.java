@@ -2,8 +2,6 @@ package fr.iut.monpotager.model;
 
 import android.os.Build;
 
-import androidx.annotation.RequiresApi;
-
 import com.google.firebase.firestore.Exclude;
 
 import java.io.Serializable;
@@ -93,14 +91,35 @@ public class Garden implements Serializable {
         return objectMap;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Exclude
     public long getDayDuration() {
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        calendar.add(Calendar.DATE, vegetable.getDuration());
 
-        return Duration.between(date.toInstant(), calendar.toInstant()).toDays();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            return vegetable.getDuration() - Duration.between(date.toInstant(), calendar.toInstant()).toDays();
+        }
+
+        return -1;
+    }
+
+    @Exclude
+    public Date getDateRecolt() {
+        Calendar calendar = Calendar.getInstance();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            calendar.add(Calendar.DATE, Math.toIntExact(getDayDuration()));
+            return calendar.getTime();
+        }
+
+        return null;
+    }
+
+    @Exclude
+    public boolean isFinish() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            return getDayDuration() <= 0L;
+        }
+
+        return false;
     }
 
 }
